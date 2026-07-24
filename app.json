@@ -1,0 +1,40 @@
+{
+  "id": "55de0f74-9af3-4de1-b765-5464e4c7e232",
+  "name": "RoldoRent",
+  "publisher": "INTWO",
+  "version": "1.0.440.25",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "18bf9581-1542-4df1-993a-e528edbb3997",
+      "name": "EQM 365 Rental",
+      "version": "27.5.202622.74971",
+      "publisher": "Armada Dynamics AS"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "25.0.0.0",
+  "idRanges": [
+    {
+      "from": 60000,
+      "to": 60149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": false,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false,
+    "applyToDevExtension": false
+  },
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
