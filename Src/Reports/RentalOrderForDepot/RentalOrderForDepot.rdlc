@@ -99,7 +99,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Klantgegevens:</Value>
+                                                    <Value>Kundendaten:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -137,7 +137,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Depotgegevens:</Value>
+                                                    <Value>Einzahlungsdaten:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1332,7 +1332,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Contractnummer</Value>
+                                                    <Value>Vertragsnummer</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1404,7 +1404,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Klantnaam:</Value>
+                                                    <Value>Kundenname:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1459,7 +1459,6 @@
                                               <PaddingRight>5pt</PaddingRight>
                                             </Style>
                                           </Textbox>
-                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                     </TablixCells>
@@ -1476,7 +1475,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Referentie:</Value>
+                                                    <Value>Referenz:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1618,7 +1617,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Ophaaldatum</Value>
+                                                    <Value>Abholdatum</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1899,7 +1898,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Artikelnr.</Value>
+                                                    <Value>Artikel-nr.</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1943,7 +1942,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Omschrijving</Value>
+                                                    <Value>Beschreibung</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Century Gothic</FontFamily>
@@ -1987,7 +1986,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Aantal</Value>
+                                                    <Value>Menge</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Century Gothic</FontFamily>
@@ -2457,7 +2456,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Materialen:</Value>
+                                      <Value>Materialien:</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2493,7 +2492,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Verhuuropdracht</Value>
+                                      <Value>Mietauftrag</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2532,7 +2531,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Opmerking:</Value>
+                                      <Value>Bemerkung:</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2608,6 +2607,7 @@
                             </Border>
                           </Style>
                         </Rectangle>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -2670,9 +2670,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>0.57819cm</Top>
+                  <Top>0.3352cm</Top>
                   <Height>0.43333cm</Height>
-                  <Width>5.62309cm</Width>
+                  <Width>4cm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -2699,9 +2699,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>1.01153cm</Top>
-                  <Height>0.38395cm</Height>
-                  <Width>5.62309cm</Width>
+                  <Top>0.76854cm</Top>
+                  <Height>0.43333cm</Height>
+                  <Width>4cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -2729,9 +2729,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>1.39547cm</Top>
-                  <Height>0.44039cm</Height>
-                  <Width>5.62309cm</Width>
+                  <Top>1.20187cm</Top>
+                  <Height>0.43333cm</Height>
+                  <Width>4cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -2759,10 +2759,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>0.57819cm</Top>
-                  <Left>12.50182cm</Left>
-                  <Height>0.31339cm</Height>
-                  <Width>6.49818cm</Width>
+                  <Top>0.33554cm</Top>
+                  <Left>9.6cm</Left>
+                  <Height>0.43333cm</Height>
+                  <Width>9.32654cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -2779,7 +2779,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>="KVK Apeldoorn: " &amp; Fields!CompanyRegNo.Value</Value>
+                          <Value>="Handelskammer Apeldoorn: " &amp; Fields!CompanyRegNo.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -2790,10 +2790,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>0.57818cm</Top>
-                  <Left>6.3cm</Left>
+                  <Top>0.3352cm</Top>
+                  <Left>4cm</Left>
                   <Height>0.43333cm</Height>
-                  <Width>5.64954cm</Width>
+                  <Width>5.6cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -2810,7 +2810,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>="BTW.nr.: " &amp; Fields!CompanyVATRegNo.Value</Value>
+                          <Value>="USt-IdNr.: " &amp; Fields!CompanyVATRegNo.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -2821,10 +2821,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>1.01152cm</Top>
-                  <Left>6.3cm</Left>
-                  <Height>0.38395cm</Height>
-                  <Width>5.64954cm</Width>
+                  <Top>0.76854cm</Top>
+                  <Left>4cm</Left>
+                  <Height>0.43333cm</Height>
+                  <Width>5.6cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -2852,10 +2852,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>1.39546cm</Top>
-                  <Left>6.3cm</Left>
-                  <Height>0.44039cm</Height>
-                  <Width>5.64954cm</Width>
+                  <Top>1.23715cm</Top>
+                  <Left>4cm</Left>
+                  <Height>0.43333cm</Height>
+                  <Width>5.6cm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
@@ -2880,9 +2880,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox137</rd:DefaultName>
-                  <Top>0.00663cm</Top>
+                  <Top>0.03528cm</Top>
+                  <Left>0.14641cm</Left>
                   <Height>0.29992cm</Height>
-                  <Width>19cm</Width>
+                  <Width>18.78013cm</Width>
                   <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
@@ -2913,10 +2914,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>1.06797cm</Top>
-                  <Left>12.48594cm</Left>
-                  <Height>0.31339cm</Height>
-                  <Width>6.51406cm</Width>
+                  <Top>0.80381cm</Top>
+                  <Left>9.6cm</Left>
+                  <Height>0.39806cm</Height>
+                  <Width>9.32654cm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
@@ -2928,8 +2929,7 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0.01128in</Top>
-              <Height>1.97873cm</Height>
+              <Height>2.2cm</Height>
               <Width>19cm</Width>
               <Style>
                 <Border>

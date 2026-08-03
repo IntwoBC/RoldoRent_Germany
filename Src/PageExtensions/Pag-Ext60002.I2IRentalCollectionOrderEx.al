@@ -95,6 +95,25 @@ pageextension 60002 "I2I Rental Collection Order" extends "EQM Rental Collection
     {
         addlast(Reporting)
         {
+            action("Order Confirmation Return")
+            {
+                Caption = 'Order Confirmation for Return Transport';
+                Image = Print;
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Report;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                trigger OnAction()
+                var
+                    RentalDispHeader: Record "EQM Rental Dispatch Header";
+                    OrderConfirmationReturn: Report "I2I Order Conf. for Ret. Tran.";
+                begin
+                    RentalDispHeader.SetRange("No.", Rec."No.");
+                    OrderConfirmationReturn.SetTableView(RentalDispHeader);
+                    OrderConfirmationReturn.Run();
+                end;
+            }
             action("Transport Order Return")
             {
                 Caption = 'Transport Order Return';

@@ -4,7 +4,7 @@ permissionset 60000 GeneratedPermission
 {
     Assignable = true;
     Permissions = report "Credit Note" = X,
-        report "Order Conf. for Ret. Transport" = X,
+        report "I2I Order Conf. for Ret. Tran." = X,
         report "Order Conf. W/O Transport" = X,
         report "Order Confirmation" = X,
         report "Posted Rental Invoice" = X,

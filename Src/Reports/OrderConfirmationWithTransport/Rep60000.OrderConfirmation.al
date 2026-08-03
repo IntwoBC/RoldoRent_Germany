@@ -47,15 +47,18 @@ Report 60000 "Order Confirmation"
             column(ShipToAddr7; ShipToAddr[7]) { }
             column(ShipToAddr8; ShipToAddr[8]) { }
             column(ContactEmail; ContactEmail) { }
-            column(CompanyPhoneNo; CompanyInfo."Phone No.") { }
-            column(CompanyEmail; CompanyInfo."E-Mail") { }
-            column(CompanyHomePage; CompanyInfo."Home Page") { }
+            column(CompanyPhoneNo; CompanyPhoneNo) { }
+            column(CompanyEmail; CompanyEmail) { }
+            column(CompanyHomePage; CompanyHomePage) { }
             column(CompanyBankName; CompanyInfo."Bank Name") { }
             column(CompanyBankAccNo; CompanyInfo."Bank Account No.") { }
             column(CompanyVATRegNo; CompanyInfo."VAT Registration No.") { }
             column(CompanyRegNo; CompanyInfo."Registration No.") { }
             column(CompanySwiftCode; CompanyInfo."SWIFT Code") { }
             column(UserName; UserName) { }
+            //Threshold Columns
+            column(AboveThreshold; AboveThreshold) { }
+            column(BelowThreshold; BelowThreshold) { }
             dataitem("EQM Rental Line"; "EQM Rental Line")
             {
                 DataItemLink = "Contract Type" = field("Contract Type"), "Contract No." = field("Contract No.");
@@ -73,6 +76,17 @@ Report 60000 "Order Confirmation"
                         CurrReport.Skip();
                 end;
             }
+            trigger OnPreDataItem()
+            var
+                GLSetup: Record "General Ledger Setup";
+            begin
+                GLSetup.Get();
+                AboveThreshold := Format(GLSetup."I2I Rental Price Abv. Thres.", 0, '<Precision,2:2><Standard Format,1>');
+                AboveThreshold := AboveThreshold.Replace(',', '|').Replace('.', ',').Replace('|', '.');
+                BelowThreshold := Format(GLSetup."I2I Rental Price Bel. Thres.", 0, '<Precision,2:2><Standard Format,1>');
+                BelowThreshold := BelowThreshold.Replace(',', '|').Replace('.', ',').Replace('|', '.');
+            end;
+
             trigger OnAfterGetRecord()
             var
                 Contact: Record Contact;
@@ -82,6 +96,7 @@ Report 60000 "Order Confirmation"
                 ShipAddress(EQMRentalHeader);
                 CustomerAddress(EQMRentalHeader);
                 CompanyAddress();
+                UpdatePhEmailHP(EQMRentalHeader);
                 if Contact.Get(EQMRentalHeader."Contact No.") then begin
                     ContactEmail := Contact."E-Mail";
                 end;
@@ -122,8 +137,13 @@ Report 60000 "Order Confirmation"
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
         ContactEmail: Text[100];
+        CompanyPhoneNo: Text[100];
+        CompanyEmail: Text[100];
+        CompanyHomePage: Text[100];
         OutBoundText: Text;
         UserName: Text[100];
+        AboveThreshold: Text[20];
+        BelowThreshold: Text[20];
 
     procedure ShipAddress(RentalHeader: Record "EQM Rental Header")
     var
@@ -357,5 +377,35 @@ Report 60000 "Order Confirmation"
             Country.Get(CompanyInfoL."Country/Region Code");
             CompanyAddr[LineNo] := Country.Name;
         end;
+    end;
+
+    procedure UpdatePhEmailHP(RentalHeader: Record "EQM Rental Header")
+    var
+        Customer: Record Customer;
+        CustomerPosting: Record "Customer Posting Group";
+        CompanyInfoL: Record "Company Information";
+    begin
+        CompanyInfoL.Get();
+
+        CompanyPhoneNo := CompanyInfoL."Phone No.";
+        CompanyEmail := CompanyInfoL."E-Mail";
+        CompanyHomePage := CompanyInfoL."Home Page";
+
+        if not Customer.Get(RentalHeader."Bill-to Customer No.") then
+            exit;
+
+        if not CustomerPosting.Get(Customer."Customer Posting Group") then
+            exit;
+
+        if (CustomerPosting.Code = 'AUSTRIA') or (CustomerPosting.Description = 'AUSTRIA') then begin
+            CompanyPhoneNo := CompanyInfoL."I2I Phone No. AT";
+            CompanyEmail := CompanyInfoL."I2I Email AT";
+            CompanyHomePage := CompanyInfoL."I2I Home Page AT";
+        end else
+            if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
+                CompanyPhoneNo := CompanyInfoL."I2I Phone No. CH";
+                CompanyEmail := CompanyInfoL."I2I Email CH";
+                CompanyHomePage := CompanyInfoL."I2I Home Page CH";
+            end;
     end;
 }

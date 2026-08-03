@@ -126,6 +126,7 @@ report 60010 "I2I Combine Invoice"
                 Clear(CustomerAddress);
                 CustomerAddressL(SalesInvoiceHeader);
                 CompanyAddress();
+                UpdatePhEmailHP(SalesInvoiceHeader);
                 SetInvoicePeriodDates(SalesInvoiceHeader);
                 TotalLineAmount := CalculateLineAmount(SalesInvoiceHeader);
                 VATLblTxt := StrSubstNo(VATLbl, GetInvoiceVATPercent(SalesInvoiceHeader));
@@ -210,23 +211,23 @@ report 60010 "I2I Combine Invoice"
         TotalAmount: Decimal;
         TotalVATAmount: Decimal;
         TotalInclAmount: Decimal;
-        CombineInvLbl: Label 'Combine Invoice';
-        ReferenceLbl: Label 'Reference :';
-        ProjectCodeLbl: Label 'Project Code';
-        CustomerLbl: Label 'Customer';
-        DateLbl: Label 'Date';
-        InvNoLbl: Label 'Invoice No.';
-        StartDateLbl: Label 'Starting Date';
-        EndDateLbl: Label 'Ending Date';
-        ProjectNoLbl: Label 'Project No.';
-        DescriptionLbl: Label 'Description';
-        AmountLbl: Label 'Amount';
-        TotalLbl: Label 'Total';
-        ExclVATLbl: Label 'Total %1 Excl. VAT';
+        CombineInvLbl: Label 'Sammelrechnung';
+        ReferenceLbl: Label 'Referenz:';
+        ProjectCodeLbl: Label 'Projektcode';
+        CustomerLbl: Label 'Kunde';
+        DateLbl: Label 'Datum';
+        InvNoLbl: Label 'Rechnungsnr.';
+        StartDateLbl: Label 'Anfangsdatum';
+        EndDateLbl: Label 'Enddatum';
+        ProjectNoLbl: Label 'Projektnr.';
+        DescriptionLbl: Label 'Beschreibung';
+        AmountLbl: Label 'Betrag';
+        TotalLbl: Label 'Gesamt';
+        ExclVATLbl: Label 'Gesamt %1 exkl. MwSt.';
         ExclVATLblTxt: Text[100];
-        VATLbl: Label '%1% VAT';
+        VATLbl: Label '%1 % MwSt.';
         VATLblTxt: Text[100];
-        InclVATLbl: Label 'Total %1 Incl. VAT';
+        InclVATLbl: Label 'Gesamt %1 inkl. MwSt.';
         InclVATLblTxt: Text[100];
 
     procedure CustomerAddressL(SalesInvHeader: Record "Sales Invoice Header");
@@ -357,5 +358,35 @@ report 60010 "I2I Combine Invoice"
             exit(SalesInvHeader."Currency Code");
 
         exit('EUR');
+    end;
+
+    procedure UpdatePhEmailHP(SalesInvHeader: Record "Sales Invoice Header")
+    var
+        Customer: Record Customer;
+        CustomerPosting: Record "Customer Posting Group";
+        CompanyInfoL: Record "Company Information";
+    begin
+        CompanyInfoL.Get();
+
+        CompanyPhNo := CompanyInfoL."Phone No.";
+        CompanyEmail := CompanyInfoL."E-Mail";
+        CompanyHP := CompanyInfoL."Home Page";
+
+        if not Customer.Get(SalesInvHeader."Bill-to Customer No.") then
+            exit;
+
+        if not CustomerPosting.Get(Customer."Customer Posting Group") then
+            exit;
+
+        if (CustomerPosting.Code = 'AUSTRIA') or (CustomerPosting.Description = 'AUSTRIA') then begin
+            CompanyPhNo := CompanyInfoL."I2I Phone No. AT";
+            CompanyEmail := CompanyInfoL."I2I Email AT";
+            CompanyHP := CompanyInfoL."I2I Home Page AT";
+        end else
+            if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
+                CompanyPhNo := CompanyInfoL."I2I Phone No. CH";
+                CompanyEmail := CompanyInfoL."I2I Email CH";
+                CompanyHP := CompanyInfoL."I2I Home Page CH";
+            end;
     end;
 }

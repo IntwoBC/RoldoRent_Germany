@@ -48,9 +48,9 @@ report 60008 "Rental Order For depot"
             column(ShipToAddr7; ShipToAddr[7]) { }
             column(ShipToAddr8; ShipToAddr[8]) { }
             column(ContactEmail; ContactEmail) { }
-            column(CompanyPhoneNo; CompanyInfo."Phone No.") { }
-            column(CompanyEmail; CompanyInfo."E-Mail") { }
-            column(CompanyHomePage; CompanyInfo."Home Page") { }
+            column(CompanyPhoneNo; CompanyPhoneNo) { }
+            column(CompanyEmail; CompanyEmail) { }
+            column(CompanyHomePage; CompanyHomePage) { }
             column(CompanyBankName; CompanyInfo."Bank Name") { }
             column(CompanyBankAccNo; CompanyInfo."Bank Account No.") { }
             column(CompanyVATRegNo; CompanyInfo."VAT Registration No.") { }
@@ -80,6 +80,7 @@ report 60008 "Rental Order For depot"
                 ShipAddress(EQMRentalHeader);
                 CustomerAddress(EQMRentalHeader);
                 CompanyAddress();
+                UpdatePhEmailHP(EQMRentalHeader);
                 if Contact.Get(EQMRentalHeader."Contact No.") then
                     ContactEmail := Contact."E-Mail";
             end;
@@ -116,6 +117,9 @@ report 60008 "Rental Order For depot"
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
         ContactEmail: Text[100];
+        CompanyPhoneNo: Text[100];
+        CompanyEmail: Text[100];
+        CompanyHomePage: Text[100];
         OutBoundText: Text;
 
     procedure ShipAddress(RentalHeader: Record "EQM Rental Header")
@@ -297,5 +301,35 @@ report 60008 "Rental Order For depot"
             Country.Get(CompanyInfoL."Country/Region Code");
             CompanyAddr[LineNo] := Country.Name;
         end;
+    end;
+
+    procedure UpdatePhEmailHP(RentalHeader: Record "EQM Rental Header")
+    var
+        Customer: Record Customer;
+        CustomerPosting: Record "Customer Posting Group";
+        CompanyInfoL: Record "Company Information";
+    begin
+        CompanyInfoL.Get();
+
+        CompanyPhoneNo := CompanyInfoL."Phone No.";
+        CompanyEmail := CompanyInfoL."E-Mail";
+        CompanyHomePage := CompanyInfoL."Home Page";
+
+        if not Customer.Get(RentalHeader."Bill-to Customer No.") then
+            exit;
+
+        if not CustomerPosting.Get(Customer."Customer Posting Group") then
+            exit;
+
+        if (CustomerPosting.Code = 'AUSTRIA') or (CustomerPosting.Description = 'AUSTRIA') then begin
+            CompanyPhoneNo := CompanyInfoL."I2I Phone No. AT";
+            CompanyEmail := CompanyInfoL."I2I Email AT";
+            CompanyHomePage := CompanyInfoL."I2I Home Page AT";
+        end else
+            if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
+                CompanyPhoneNo := CompanyInfoL."I2I Phone No. CH";
+                CompanyEmail := CompanyInfoL."I2I Email CH";
+                CompanyHomePage := CompanyInfoL."I2I Home Page CH";
+            end;
     end;
 }

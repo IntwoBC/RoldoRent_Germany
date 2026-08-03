@@ -583,6 +583,7 @@ report 60007 "Purchase Order"
                 EBuyFromAddr[8] := CountryRegionL.Name;
 
                 FormatAddressFields(PurchHdr);
+                UpdatePhEmailHP(PurchHdr);
                 FormatDocumentFields(PurchHdr);
 
 
@@ -885,6 +886,39 @@ report 60007 "Purchase Order"
         CduFormatAddr.PurchHeaderPayTo(PayToVendAddr, vRecPurchHeader);
         CduFormatAddr.PurchHeaderShipTo(EShipToAddr, vRecPurchHeader);
         CduFormatAddr.PurchHeaderBuyFrom(EBuyFromAddr, vRecPurchHeader);
+    end;
+
+    procedure UpdatePhEmailHP(PurchaseHeader: Record "Purchase Header")
+    var
+        Customer: Record Customer;
+        CustomerPosting: Record "Customer Posting Group";
+        CompanyInfoL: Record "Company Information";
+    begin
+        CompanyInfoL.Get();
+
+        RecCompanyInfo."Phone No." := CompanyInfoL."Phone No.";
+        RecCompanyInfo."E-Mail" := CompanyInfoL."E-Mail";
+        RecCompanyInfo."Home Page" := CompanyInfoL."Home Page";
+
+        if PurchaseHeader."Sell-to Customer No." = '' then
+            exit;
+
+        if not Customer.Get(PurchaseHeader."Sell-to Customer No.") then
+            exit;
+
+        if not CustomerPosting.Get(Customer."Customer Posting Group") then
+            exit;
+
+        if (CustomerPosting.Code = 'AUSTRIA') or (CustomerPosting.Description = 'AUSTRIA') then begin
+            RecCompanyInfo."Phone No." := CompanyInfoL."I2I Phone No. AT";
+            RecCompanyInfo."E-Mail" := CompanyInfoL."I2I Email AT";
+            RecCompanyInfo."Home Page" := CompanyInfoL."I2I Home Page AT";
+        end else
+            if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
+                RecCompanyInfo."Phone No." := CompanyInfoL."I2I Phone No. CH";
+                RecCompanyInfo."E-Mail" := CompanyInfoL."I2I Email CH";
+                RecCompanyInfo."Home Page" := CompanyInfoL."I2I Home Page CH";
+            end;
     end;
 
     procedure LocationAddress(PurchaseHeader: Record "Purchase Header")

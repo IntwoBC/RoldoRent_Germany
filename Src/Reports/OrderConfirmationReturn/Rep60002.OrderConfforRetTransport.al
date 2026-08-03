@@ -1,4 +1,4 @@
-report 60002 "Order Conf. for Ret. Transport"
+report 60002 "I2I Order Conf. for Ret. Tran."
 {
     ApplicationArea = All;
     Caption = 'Order Confirmation Return';
@@ -51,9 +51,9 @@ report 60002 "Order Conf. for Ret. Transport"
             column(ShipToAddr8; ShipToAddr[8]) { }
             column(ContactEmail; "I2I Contact E-Mail") { }
             column(ContactName; "I2I Contact Name") { }
-            column(CompanyPhoneNo; CompanyInfo."Phone No.") { }
-            column(CompanyEmail; CompanyInfo."E-Mail") { }
-            column(CompanyHomePage; CompanyInfo."Home Page") { }
+            column(CompanyPhoneNo; CompanyPhoneNo) { }
+            column(CompanyEmail; CompanyEmail) { }
+            column(CompanyHomePage; CompanyHomePage) { }
             column(CompanyBankName; CompanyInfo."Bank Name") { }
             column(CompanyBankAccNo; CompanyInfo."Bank Account No.") { }
             column(CompanyVATRegNo; CompanyInfo."VAT Registration No.") { }
@@ -98,6 +98,7 @@ report 60002 "Order Conf. for Ret. Transport"
                 ShipAddress(EQMRentalDispatchHeader);
                 CustomerAddress(EQMRentalDispatchHeader);
                 CompanyAddress();
+                UpdatePhEmailHP(EQMRentalDispatchHeader);
                 if SalesPerson.Get(EQMRentalDispatchHeader."Salesperson Code") then begin
                     ContactEmail := SalesPerson."E-Mail";
                     ContactName := SalesPerson.Name;
@@ -158,6 +159,9 @@ report 60002 "Order Conf. for Ret. Transport"
         CompanyAddr: array[8] of Text[100];
         ContactEmail: Text[100];
         ContactName: Text[100];
+        CompanyPhoneNo: Text[100];
+        CompanyEmail: Text[100];
+        CompanyHomePage: Text[100];
         CustContactNo: Text[100];
         ShipAgentName: Text[100];
         OutBoundText: Text[2048];
@@ -323,6 +327,36 @@ report 60002 "Order Conf. for Ret. Transport"
             Country.Get(CompanyInfoL."Country/Region Code");
             CompanyAddr[LineNo] := Country.Name;
         end;
+    end;
+
+    procedure UpdatePhEmailHP(RentalDispHdr: Record "EQM Rental Dispatch Header")
+    var
+        Customer: Record Customer;
+        CustomerPosting: Record "Customer Posting Group";
+        CompanyInfoL: Record "Company Information";
+    begin
+        CompanyInfoL.Get();
+
+        CompanyPhoneNo := CompanyInfoL."Phone No.";
+        CompanyEmail := CompanyInfoL."E-Mail";
+        CompanyHomePage := CompanyInfoL."Home Page";
+
+        if not Customer.Get(RentalDispHdr."Customer No.") then
+            exit;
+
+        if not CustomerPosting.Get(Customer."Customer Posting Group") then
+            exit;
+
+        if (CustomerPosting.Code = 'AUSTRIA') or (CustomerPosting.Description = 'AUSTRIA') then begin
+            CompanyPhoneNo := CompanyInfoL."I2I Phone No. AT";
+            CompanyEmail := CompanyInfoL."I2I Email AT";
+            CompanyHomePage := CompanyInfoL."I2I Home Page AT";
+        end else
+            if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
+                CompanyPhoneNo := CompanyInfoL."I2I Phone No. CH";
+                CompanyEmail := CompanyInfoL."I2I Email CH";
+                CompanyHomePage := CompanyInfoL."I2I Home Page CH";
+            end;
     end;
 
     local procedure GetOutboundMemoL(var RentalDispHeader: Record "EQM Rental Dispatch Header"): Text

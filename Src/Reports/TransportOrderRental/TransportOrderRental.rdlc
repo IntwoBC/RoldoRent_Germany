@@ -99,7 +99,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Afhaaladres Roldo Rent:</Value>
+                                                    <Value>Abholadresse Roldo Rent:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -137,7 +137,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Afleveradres klant:              </Value>
+                                                    <Value>Lieferadresse Kunde:              </Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1328,7 +1328,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Contractnummer</Value>
+                                                    <Value>Vertragsnummer</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1400,7 +1400,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Contactpersoon:</Value>
+                                                    <Value>Ansprechpartner:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1471,7 +1471,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>ContactEmail:</Value>
+                                                    <Value>Kontakt-E-Mail:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1542,7 +1542,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Referentie:</Value>
+                                                    <Value>Referenz:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1755,7 +1755,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Transporteur:</Value>
+                                                    <Value>Spediteur:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1830,7 +1830,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Ophaaldatum:</Value>
+                                                    <Value>Abholdatum:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1905,7 +1905,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Afleverdatum transport:</Value>
+                                                    <Value>Anlieferdatum Transport:</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -2032,7 +2032,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Materialen:</Value>
+                                      <Value>Materialien:</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2106,7 +2106,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Transportopdracht huur</Value>
+                                      <Value>Transportauftrag Miete</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2206,7 +2206,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Omschrijving</Value>
+                                                    <Value>Beschreibung</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -2245,7 +2245,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Aantal</Value>
+                                                    <Value>Menge</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -2284,7 +2284,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Totaal gewicht (kg)</Value>
+                                                    <Value>Gesamtgewicht (kg)</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -2742,7 +2742,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Opmerking: </Value>
+                                      <Value>Bemerkung: </Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2807,7 +2807,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>Aantal laadmeter:
+                                      <Value>Anzahl Lademeter:
 </Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
@@ -2825,8 +2825,8 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>Datum:                                 ………………………………….
-Naam (volledig):                  ………………………………….
-Handtekening klant:            ………………………………….</Value>
+Name (vollständig):             ………………………………….
+Unterschrift Kunde:            ………………………………….</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2864,7 +2864,51 @@ Handtekening klant:            ………………………………….</Value>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Heeft u vragen, neem dan gerust contact met mij op via tel. 0341 – 56 43 40 of e-mail info@roldorent.nl.</Value>
+                                      <Value>Haben Sie Fragen, dann kontaktieren Sie mich gerne unter Tel. </Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=Fields!CompanyPhoneNo.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value> oder per E-Mail </Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=Fields!CompanyEmail.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>.</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2883,7 +2927,29 @@ Handtekening klant:            ………………………………….</Value>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Op deze bestelling zijn onze algemene voorwaarden van toepassing, zie www.roldorent.nl/downloads.</Value>
+                                      <Value>Für diese Bestellung gelten unsere allgemeinen Geschäftsbedingungen, siehe </Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=Fields!CompanyHomePage.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>/downloads.</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2924,6 +2990,7 @@ Handtekening klant:            ………………………………….</Value>
                             </Border>
                           </Style>
                         </Rectangle>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -2986,9 +3053,9 @@ Handtekening klant:            ………………………………….</Value>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>0.57819cm</Top>
+                  <Top>0.3352cm</Top>
                   <Height>0.43333cm</Height>
-                  <Width>5.62309cm</Width>
+                  <Width>4cm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3015,9 +3082,9 @@ Handtekening klant:            ………………………………….</Value>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>1.01153cm</Top>
-                  <Height>0.38395cm</Height>
-                  <Width>5.62309cm</Width>
+                  <Top>0.76854cm</Top>
+                  <Height>0.43333cm</Height>
+                  <Width>4cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -3045,9 +3112,9 @@ Handtekening klant:            ………………………………….</Value>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>1.39547cm</Top>
-                  <Height>0.44039cm</Height>
-                  <Width>5.62309cm</Width>
+                  <Top>1.20187cm</Top>
+                  <Height>0.43333cm</Height>
+                  <Width>4cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -3075,10 +3142,10 @@ Handtekening klant:            ………………………………….</Value>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>0.57819cm</Top>
-                  <Left>12.37128cm</Left>
-                  <Height>0.31339cm</Height>
-                  <Width>6.4406cm</Width>
+                  <Top>0.33554cm</Top>
+                  <Left>9.6cm</Left>
+                  <Height>0.43333cm</Height>
+                  <Width>9.32654cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -3095,7 +3162,7 @@ Handtekening klant:            ………………………………….</Value>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>="KVK Apeldoorn: " &amp; Fields!CompanyRegNo.Value</Value>
+                          <Value>="Handelskammer Apeldoorn: " &amp; Fields!CompanyRegNo.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -3106,10 +3173,10 @@ Handtekening klant:            ………………………………….</Value>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>0.57818cm</Top>
-                  <Left>6.20811cm</Left>
+                  <Top>0.3352cm</Top>
+                  <Left>4cm</Left>
                   <Height>0.43333cm</Height>
-                  <Width>5.64954cm</Width>
+                  <Width>5.6cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -3126,7 +3193,7 @@ Handtekening klant:            ………………………………….</Value>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>="BTW.nr.: " &amp; Fields!CompanyVATRegNo.Value</Value>
+                          <Value>="USt-IdNr.: " &amp; Fields!CompanyVATRegNo.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -3137,10 +3204,10 @@ Handtekening klant:            ………………………………….</Value>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>1.01152cm</Top>
-                  <Left>6.20811cm</Left>
-                  <Height>0.38395cm</Height>
-                  <Width>5.64954cm</Width>
+                  <Top>0.76854cm</Top>
+                  <Left>4cm</Left>
+                  <Height>0.43333cm</Height>
+                  <Width>5.6cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -3168,10 +3235,10 @@ Handtekening klant:            ………………………………….</Value>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>1.39546cm</Top>
-                  <Left>6.20811cm</Left>
-                  <Height>0.44039cm</Height>
-                  <Width>5.64954cm</Width>
+                  <Top>1.23715cm</Top>
+                  <Left>4cm</Left>
+                  <Height>0.43333cm</Height>
+                  <Width>5.6cm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
@@ -3196,8 +3263,8 @@ Handtekening klant:            ………………………………….</Value>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox137</rd:DefaultName>
-                  <Top>0.00663cm</Top>
-                  <Left>0.01587cm</Left>
+                  <Top>0.03528cm</Top>
+                  <Left>0.14641cm</Left>
                   <Height>0.29992cm</Height>
                   <Width>18.78013cm</Width>
                   <ZIndex>7</ZIndex>
@@ -3230,10 +3297,10 @@ Handtekening klant:            ………………………………….</Value>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>1.06797cm</Top>
-                  <Left>12.3554cm</Left>
-                  <Height>0.31339cm</Height>
-                  <Width>6.4406cm</Width>
+                  <Top>0.80381cm</Top>
+                  <Left>9.6cm</Left>
+                  <Height>0.39806cm</Height>
+                  <Width>9.32654cm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
@@ -3245,10 +3312,8 @@ Handtekening klant:            ………………………………….</Value>
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0.01128in</Top>
-              <Left>0.13054cm</Left>
-              <Height>1.97873cm</Height>
-              <Width>18.81188cm</Width>
+              <Height>2.2cm</Height>
+              <Width>19cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
