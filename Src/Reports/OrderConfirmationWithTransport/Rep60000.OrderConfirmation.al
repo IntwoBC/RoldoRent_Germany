@@ -47,18 +47,26 @@ Report 60000 "Order Confirmation"
             column(ShipToAddr7; ShipToAddr[7]) { }
             column(ShipToAddr8; ShipToAddr[8]) { }
             column(ContactEmail; ContactEmail) { }
+            //Footer Fields
+            column(CompanyNameTxt; CompanyNameTxt) { }
+            column(CompanyAddressTxt; CompanyAddressTxt) { }
+            column(CompanyCityTxt; CompanyCityTxt) { }
             column(CompanyPhoneNo; CompanyPhoneNo) { }
             column(CompanyEmail; CompanyEmail) { }
             column(CompanyHomePage; CompanyHomePage) { }
-            column(CompanyBankName; CompanyInfo."Bank Name") { }
-            column(CompanyBankAccNo; CompanyInfo."Bank Account No.") { }
+            column(CompanyRegNo; CompanyRegNo) { }
+            column(CompanyContactPerson; CompanyContactPerson) { }
+            column(CompanyBankName; CompanyBankName) { }
+            column(CompanyBankAccNo; CompanyBankAccNo) { }
             column(CompanyVATRegNo; CompanyInfo."VAT Registration No.") { }
-            column(CompanyRegNo; CompanyInfo."Registration No.") { }
-            column(CompanySwiftCode; CompanyInfo."SWIFT Code") { }
+            column(CompanySwiftCode; CompanySwiftCode) { }
+            column(CompanyDOC; CompanyInfo."I2I DOC. Text") { }
             column(UserName; UserName) { }
             //Threshold Columns
             column(AboveThreshold; AboveThreshold) { }
             column(BelowThreshold; BelowThreshold) { }
+            column(OpeningHours; OpeningHours) { }
+            column(OpeningHoursLbl; OpeningHoursLbl) { }
             dataitem("EQM Rental Line"; "EQM Rental Line")
             {
                 DataItemLink = "Contract Type" = field("Contract Type"), "Contract No." = field("Contract No.");
@@ -96,7 +104,9 @@ Report 60000 "Order Confirmation"
                 ShipAddress(EQMRentalHeader);
                 CustomerAddress(EQMRentalHeader);
                 CompanyAddress();
-                UpdatePhEmailHP(EQMRentalHeader);
+                UpdateFooterData(EQMRentalHeader);
+                GetHomePageFromLocation(EQMRentalHeader."Location Code");
+
                 if Contact.Get(EQMRentalHeader."Contact No.") then begin
                     ContactEmail := Contact."E-Mail";
                 end;
@@ -137,13 +147,23 @@ Report 60000 "Order Confirmation"
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
         ContactEmail: Text[100];
+        CompanyNameTxt: Text[100];
+        CompanyAddressTxt: Text[100];
+        CompanyCityTxt: Text[100];
         CompanyPhoneNo: Text[100];
         CompanyEmail: Text[100];
         CompanyHomePage: Text[100];
+        CompanyRegNo: Text[100];
+        CompanyContactPerson: Text[100];
+        CompanyBankAccNo: Text[100];
+        CompanyBankName: Text[100];
+        CompanySwiftCode: Text[100];
         OutBoundText: Text;
         UserName: Text[100];
         AboveThreshold: Text[20];
         BelowThreshold: Text[20];
+        OpeningHours: Text[100];
+        OpeningHoursLbl: Label 'Öffnungszeiten';
 
     procedure ShipAddress(RentalHeader: Record "EQM Rental Header")
     var
@@ -379,7 +399,7 @@ Report 60000 "Order Confirmation"
         end;
     end;
 
-    procedure UpdatePhEmailHP(RentalHeader: Record "EQM Rental Header")
+    procedure UpdateFooterData(RentalOrder: Record "EQM Rental Header")
     var
         Customer: Record Customer;
         CustomerPosting: Record "Customer Posting Group";
@@ -387,11 +407,26 @@ Report 60000 "Order Confirmation"
     begin
         CompanyInfoL.Get();
 
+        CompanyNameTxt := CompanyInfoL.Name;
+        CompanyAddressTxt := CompanyInfoL.Address;
+        if CompanyInfoL."Address 2" <> '' then
+            CompanyAddressTxt += ', ' + CompanyInfoL."Address 2";
+
+        if (CompanyInfoL."Post Code" <> '') or (CompanyInfoL.City <> '') then begin
+            CompanyCityTxt := CompanyInfoL."Post Code" + ' ' + CompanyInfoL.City;
+        end;
+
+
         CompanyPhoneNo := CompanyInfoL."Phone No.";
         CompanyEmail := CompanyInfoL."E-Mail";
         CompanyHomePage := CompanyInfoL."Home Page";
+        CompanyRegNo := CompanyInfoL."Registration No.";
+        CompanyContactPerson := CompanyInfoL."Contact Person";
+        CompanyBankName := CompanyInfoL."Bank Name";
+        CompanyBankAccNo := CompanyInfoL."Bank Account No.";
+        CompanySwiftCode := CompanyInfoL."SWIFT Code";
 
-        if not Customer.Get(RentalHeader."Bill-to Customer No.") then
+        if not Customer.Get(RentalOrder."Customer No.") then
             exit;
 
         if not CustomerPosting.Get(Customer."Customer Posting Group") then
@@ -401,11 +436,35 @@ Report 60000 "Order Confirmation"
             CompanyPhoneNo := CompanyInfoL."I2I Phone No. AT";
             CompanyEmail := CompanyInfoL."I2I Email AT";
             CompanyHomePage := CompanyInfoL."I2I Home Page AT";
+            CompanyRegNo := CompanyInfoL."I2I Company Reg No. AT";
+            CompanyContactPerson := CompanyInfoL."I2I Contact Person AT";
+            CompanyBankName := CompanyInfoL."I2I Bank Name AT";
+            CompanyBankAccNo := CompanyInfoL."I2I Bank Acc. No. AT";
+            CompanySwiftCode := CompanyInfoL."I2I Swift AT";
         end else
             if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
                 CompanyPhoneNo := CompanyInfoL."I2I Phone No. CH";
                 CompanyEmail := CompanyInfoL."I2I Email CH";
                 CompanyHomePage := CompanyInfoL."I2I Home Page CH";
+                CompanyRegNo := CompanyInfoL."I2I Company Reg No. CH";
+                CompanyContactPerson := CompanyInfoL."I2I Contact Person CH";
+                CompanyBankName := CompanyInfoL."I2I Bank Name CH";
+                CompanyBankAccNo := CompanyInfoL."I2I Bank Acc. No. CH";
+                CompanySwiftCode := CompanyInfoL."I2I Swift CH";
             end;
     end;
+
+    procedure GetHomePageFromLocation(LocationCode: Code[20])
+    var
+        LocationL: Record Location;
+    begin
+        Clear(LocationL);
+        if not LocationL.Get(LocationCode) then begin
+            OpeningHours := '';
+            exit;
+        end;
+
+        OpeningHours := LocationL."Home Page";
+    end;
+
 }

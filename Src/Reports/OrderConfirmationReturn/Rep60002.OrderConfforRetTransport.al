@@ -51,14 +51,22 @@ report 60002 "I2I Order Conf. for Ret. Tran."
             column(ShipToAddr8; ShipToAddr[8]) { }
             column(ContactEmail; "I2I Contact E-Mail") { }
             column(ContactName; "I2I Contact Name") { }
+            //Footer Fields
+            column(CompanyNameTxt; CompanyNameTxt) { }
+            column(CompanyAddressTxt; CompanyAddressTxt) { }
+            column(CompanyCityTxt; CompanyCityTxt) { }
             column(CompanyPhoneNo; CompanyPhoneNo) { }
             column(CompanyEmail; CompanyEmail) { }
             column(CompanyHomePage; CompanyHomePage) { }
-            column(CompanyBankName; CompanyInfo."Bank Name") { }
-            column(CompanyBankAccNo; CompanyInfo."Bank Account No.") { }
+            column(CompanyRegNo; CompanyRegNo) { }
+            column(CompanyContactPerson; CompanyContactPerson) { }
+            column(CompanyBankName; CompanyBankName) { }
+            column(CompanyBankAccNo; CompanyBankAccNo) { }
             column(CompanyVATRegNo; CompanyInfo."VAT Registration No.") { }
-            column(CompanyRegNo; CompanyInfo."Registration No.") { }
-            column(CompanySwiftCode; CompanyInfo."SWIFT Code") { }
+            column(CompanySwiftCode; CompanySwiftCode) { }
+            column(CompanyDOC; CompanyInfo."I2I DOC. Text") { }
+            column(OpeningHours; OpeningHours) { }
+            column(OpeningHoursLbl; OpeningHoursLbl) { }
             column(I2I_Transportation_Charges; "I2I Transportation Charges") { }
             //TransportLines
             column(TranspGLAcc; TranspGLAcc) { }
@@ -98,7 +106,8 @@ report 60002 "I2I Order Conf. for Ret. Tran."
                 ShipAddress(EQMRentalDispatchHeader);
                 CustomerAddress(EQMRentalDispatchHeader);
                 CompanyAddress();
-                UpdatePhEmailHP(EQMRentalDispatchHeader);
+                UpdateFooterData(EQMRentalDispatchHeader);
+                GetHomePageFromLocation(EQMRentalDispatchHeader."Receiving Location Code");
                 if SalesPerson.Get(EQMRentalDispatchHeader."Salesperson Code") then begin
                     ContactEmail := SalesPerson."E-Mail";
                     ContactName := SalesPerson.Name;
@@ -159,9 +168,17 @@ report 60002 "I2I Order Conf. for Ret. Tran."
         CompanyAddr: array[8] of Text[100];
         ContactEmail: Text[100];
         ContactName: Text[100];
+        CompanyNameTxt: Text[100];
+        CompanyAddressTxt: Text[100];
+        CompanyCityTxt: Text[100];
         CompanyPhoneNo: Text[100];
         CompanyEmail: Text[100];
         CompanyHomePage: Text[100];
+        CompanyRegNo: Text[100];
+        CompanyContactPerson: Text[100];
+        CompanyBankAccNo: Text[100];
+        CompanyBankName: Text[100];
+        CompanySwiftCode: Text[100];
         CustContactNo: Text[100];
         ShipAgentName: Text[100];
         OutBoundText: Text[2048];
@@ -171,6 +188,8 @@ report 60002 "I2I Order Conf. for Ret. Tran."
         TranspQuantity: Decimal;
         TranspCost: Decimal;
         CreatedName: Text[100];
+        OpeningHours: Text[100];
+        OpeningHoursLbl: Label 'Öffnungszeiten';
 
     procedure ShipAddress(RentalDispHdr: Record "EQM Rental Dispatch Header")
     var
@@ -329,7 +348,7 @@ report 60002 "I2I Order Conf. for Ret. Tran."
         end;
     end;
 
-    procedure UpdatePhEmailHP(RentalDispHdr: Record "EQM Rental Dispatch Header")
+    procedure UpdateFooterData(RentalCollectionOrder: Record "EQM Rental Dispatch Header")
     var
         Customer: Record Customer;
         CustomerPosting: Record "Customer Posting Group";
@@ -337,11 +356,26 @@ report 60002 "I2I Order Conf. for Ret. Tran."
     begin
         CompanyInfoL.Get();
 
+        CompanyNameTxt := CompanyInfoL.Name;
+        CompanyAddressTxt := CompanyInfoL.Address;
+        if CompanyInfoL."Address 2" <> '' then
+            CompanyAddressTxt += ', ' + CompanyInfoL."Address 2";
+
+        if (CompanyInfoL."Post Code" <> '') or (CompanyInfoL.City <> '') then begin
+            CompanyCityTxt := CompanyInfoL."Post Code" + ' ' + CompanyInfoL.City;
+        end;
+
+
         CompanyPhoneNo := CompanyInfoL."Phone No.";
         CompanyEmail := CompanyInfoL."E-Mail";
         CompanyHomePage := CompanyInfoL."Home Page";
+        CompanyRegNo := CompanyInfoL."Registration No.";
+        CompanyContactPerson := CompanyInfoL."Contact Person";
+        CompanyBankName := CompanyInfoL."Bank Name";
+        CompanyBankAccNo := CompanyInfoL."Bank Account No.";
+        CompanySwiftCode := CompanyInfoL."SWIFT Code";
 
-        if not Customer.Get(RentalDispHdr."Customer No.") then
+        if not Customer.Get(RentalCollectionOrder."Customer No.") then
             exit;
 
         if not CustomerPosting.Get(Customer."Customer Posting Group") then
@@ -351,11 +385,21 @@ report 60002 "I2I Order Conf. for Ret. Tran."
             CompanyPhoneNo := CompanyInfoL."I2I Phone No. AT";
             CompanyEmail := CompanyInfoL."I2I Email AT";
             CompanyHomePage := CompanyInfoL."I2I Home Page AT";
+            CompanyRegNo := CompanyInfoL."I2I Company Reg No. AT";
+            CompanyContactPerson := CompanyInfoL."I2I Contact Person AT";
+            CompanyBankName := CompanyInfoL."I2I Bank Name AT";
+            CompanyBankAccNo := CompanyInfoL."I2I Bank Acc. No. AT";
+            CompanySwiftCode := CompanyInfoL."I2I Swift AT";
         end else
             if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
                 CompanyPhoneNo := CompanyInfoL."I2I Phone No. CH";
                 CompanyEmail := CompanyInfoL."I2I Email CH";
                 CompanyHomePage := CompanyInfoL."I2I Home Page CH";
+                CompanyRegNo := CompanyInfoL."I2I Company Reg No. CH";
+                CompanyContactPerson := CompanyInfoL."I2I Contact Person CH";
+                CompanyBankName := CompanyInfoL."I2I Bank Name CH";
+                CompanyBankAccNo := CompanyInfoL."I2I Bank Acc. No. CH";
+                CompanySwiftCode := CompanyInfoL."I2I Swift CH";
             end;
     end;
 
@@ -394,5 +438,17 @@ report 60002 "I2I Order Conf. for Ret. Tran."
             TranspGLACCName := GLAccount.Name;
         TranspQuantity := 1;
         TranspCost := Price;
+    end;
+
+    procedure GetHomePageFromLocation(LocationCode: Code[20])
+    var
+        LocationL: Record Location;
+    begin
+        Clear(LocationL);
+        if not LocationL.Get(LocationCode) then begin
+            OpeningHours := '';
+            exit;
+        end;
+        OpeningHours := LocationL."Home Page";
     end;
 }

@@ -44,18 +44,26 @@ report 60003 "Credit Note"
             column(ShipToAddr8; ShipToAddr[8]) { }
             column(ContactEmail; ContactEmail) { }
             column(ContactName; ContactName) { }
+            //Footer Fields
+            column(CompanyNameTxt; CompanyNameTxt) { }
+            column(CompanyAddressTxt; CompanyAddressTxt) { }
+            column(CompanyCityTxt; CompanyCityTxt) { }
             column(CompanyPhoneNo; CompanyPhoneNo) { }
             column(CompanyEmail; CompanyEmail) { }
             column(CompanyHomePage; CompanyHomePage) { }
-            column(CompanyBankName; CompanyInfo."Bank Name") { }
-            column(CompanyBankAccNo; CompanyInfo."Bank Account No.") { }
+            column(CompanyRegNo; CompanyRegNo) { }
+            column(CompanyContactPerson; CompanyContactPerson) { }
+            column(CompanyBankName; CompanyBankName) { }
+            column(CompanyBankAccNo; CompanyBankAccNo) { }
             column(CompanyVATRegNo; CompanyInfo."VAT Registration No.") { }
-            column(CompanyRegNo; CompanyInfo."Registration No.") { }
-            column(CompanySwiftCode; CompanyInfo."SWIFT Code") { }
+            column(CompanySwiftCode; CompanySwiftCode) { }
+            column(CompanyDOC; CompanyInfo."I2I DOC. Text") { }
             column(CustContactNo; CustContactNo) { }
             column(Amount_Including_VAT; "Amount Including VAT") { }
             column(Amount; Amount) { }
             column(VATAmount; VATAmount) { }
+            column(OpeningHours; OpeningHours) { }
+            column(OpeningHoursLbl; OpeningHoursLbl) { }
             dataitem("Sales Cr.Memo Line"; "Sales Cr.Memo Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -78,7 +86,8 @@ report 60003 "Credit Note"
                 ShipAddress(SalesCrMemoHeader);
                 CustomerAddress(SalesCrMemoHeader);
                 CompanyAddress();
-                UpdatePhEmailHP(SalesCrMemoHeader);
+                UpdateFooterData(SalesCrMemoHeader);
+                GetHomePageFromLocation(SalesCrMemoHeader."Location Code");
                 if Contact.Get(SalesCrMemoHeader."Bill-to Contact No.") then begin
                     ContactEmail := Contact."E-Mail";
                     ContactName := Contact.Name;
@@ -136,13 +145,23 @@ report 60003 "Credit Note"
         CompanyAddr: array[8] of Text[100];
         ContactEmail: Text[100];
         ContactName: Text[100];
+        CompanyNameTxt: Text[100];
+        CompanyAddressTxt: Text[100];
+        CompanyCityTxt: Text[100];
         CompanyPhoneNo: Text[100];
         CompanyEmail: Text[100];
         CompanyHomePage: Text[100];
+        CompanyRegNo: Text[100];
+        CompanyContactPerson: Text[100];
+        CompanyBankAccNo: Text[100];
+        CompanyBankName: Text[100];
+        CompanySwiftCode: Text[100];
         CustContactNo: Text[100];
         ShipAgentName: Text[100];
         VATAmount: Decimal;
         VATPercent: Decimal;
+        OpeningHours: Text[100];
+        OpeningHoursLbl: Label 'Openingstijden';
 
     procedure ShipAddress(SalesCrMemoHeader: Record "Sales Cr.Memo Header")
     var
@@ -288,11 +307,11 @@ report 60003 "Credit Note"
             LineNo += 1;
         end;
 
-        // County
-        if CompanyInfoL.County <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL.County;
-            LineNo += 1;
-        end;
+        // // County
+        // if CompanyInfoL.County <> '' then begin
+        //     CompanyAddr[LineNo] := CompanyInfoL.County;
+        //     LineNo += 1;
+        // end;
 
         // Country
         if CompanyInfoL."Country/Region Code" <> '' then begin
@@ -301,7 +320,7 @@ report 60003 "Credit Note"
         end;
     end;
 
-    procedure UpdatePhEmailHP(SalesCrMemoHeader: Record "Sales Cr.Memo Header")
+    procedure UpdateFooterData(SalesCrMemoHeader: Record "Sales Cr.Memo Header")
     var
         Customer: Record Customer;
         CustomerPosting: Record "Customer Posting Group";
@@ -309,9 +328,24 @@ report 60003 "Credit Note"
     begin
         CompanyInfoL.Get();
 
+        CompanyNameTxt := CompanyInfoL.Name;
+        CompanyAddressTxt := CompanyInfoL.Address;
+        if CompanyInfoL."Address 2" <> '' then
+            CompanyAddressTxt += ', ' + CompanyInfoL."Address 2";
+
+        if (CompanyInfoL."Post Code" <> '') or (CompanyInfoL.City <> '') then begin
+            CompanyCityTxt := CompanyInfoL."Post Code" + ' ' + CompanyInfoL.City;
+        end;
+
+
         CompanyPhoneNo := CompanyInfoL."Phone No.";
         CompanyEmail := CompanyInfoL."E-Mail";
         CompanyHomePage := CompanyInfoL."Home Page";
+        CompanyRegNo := CompanyInfoL."Registration No.";
+        CompanyContactPerson := CompanyInfoL."Contact Person";
+        CompanyBankName := CompanyInfoL."Bank Name";
+        CompanyBankAccNo := CompanyInfoL."Bank Account No.";
+        CompanySwiftCode := CompanyInfoL."SWIFT Code";
 
         if not Customer.Get(SalesCrMemoHeader."Bill-to Customer No.") then
             exit;
@@ -323,11 +357,34 @@ report 60003 "Credit Note"
             CompanyPhoneNo := CompanyInfoL."I2I Phone No. AT";
             CompanyEmail := CompanyInfoL."I2I Email AT";
             CompanyHomePage := CompanyInfoL."I2I Home Page AT";
+            CompanyRegNo := CompanyInfoL."I2I Company Reg No. AT";
+            CompanyContactPerson := CompanyInfoL."I2I Contact Person AT";
+            CompanyBankName := CompanyInfoL."I2I Bank Name AT";
+            CompanyBankAccNo := CompanyInfoL."I2I Bank Acc. No. AT";
+            CompanySwiftCode := CompanyInfoL."I2I Swift AT";
         end else
             if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
                 CompanyPhoneNo := CompanyInfoL."I2I Phone No. CH";
                 CompanyEmail := CompanyInfoL."I2I Email CH";
                 CompanyHomePage := CompanyInfoL."I2I Home Page CH";
+                CompanyRegNo := CompanyInfoL."I2I Company Reg No. CH";
+                CompanyContactPerson := CompanyInfoL."I2I Contact Person CH";
+                CompanyBankName := CompanyInfoL."I2I Bank Name CH";
+                CompanyBankAccNo := CompanyInfoL."I2I Bank Acc. No. CH";
+                CompanySwiftCode := CompanyInfoL."I2I Swift CH";
             end;
+    end;
+
+    procedure GetHomePageFromLocation(LocationCode: Code[20])
+    var
+        LocationL: Record Location;
+    begin
+        Clear(LocationL);
+        if not LocationL.Get(LocationCode) then begin
+            OpeningHours := '';
+            exit;
+        end;
+
+        OpeningHours := LocationL."Home Page";
     end;
 }

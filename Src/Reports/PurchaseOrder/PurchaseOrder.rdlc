@@ -6413,6 +6413,12 @@ End Function
         <Field Name="VATAmountFormat">
           <DataField>VATAmountFormat</DataField>
         </Field>
+        <Field Name="OpeningHours">
+          <DataField>OpeningHours</DataField>
+        </Field>
+        <Field Name="OpeningHoursLbl">
+          <DataField>OpeningHoursLbl</DataField>
+        </Field>
         <Field Name="OutputNo">
           <DataField>OutputNo</DataField>
         </Field>

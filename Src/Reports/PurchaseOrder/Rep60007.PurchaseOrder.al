@@ -171,6 +171,8 @@ report 60007 "Purchase Order"
             column(TotLineAmount; TotLineAmount) { }
             column(VATAmtText; VATAmtLine.VATAmountText()) { }
             column(VATAmount; VATAmtLine."VAT Amount") { }
+            column(OpeningHours; OpeningHours) { }
+            column(OpeningHoursLbl; OpeningHoursLbl) { }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -661,6 +663,7 @@ report 60007 "Purchase Order"
 
                 OutBoundText := GetOutboundMemoL(PurchHdr);
                 LocationAddress(PurchHdr);
+                GetHomePageFromLocation(PurchHdr."Location Code");
             end;
         }
     }
@@ -804,6 +807,8 @@ report 60007 "Purchase Order"
         VendorG: Record Vendor;
         No: Code[50];
         OutBoundText: Text[2048];
+        OpeningHours: Text[100];
+        OpeningHoursLbl: Label 'Öffnungszeiten';
 
     local procedure Trl(pLblName: Text): Text;
     begin
@@ -974,5 +979,18 @@ report 60007 "Purchase Order"
             Country.Get(Location."Country/Region Code");
             LocationAddr[LineNo] := Country.Name;
         end;
+    end;
+
+    procedure GetHomePageFromLocation(LocationCode: Code[20])
+    var
+        LocationL: Record Location;
+    begin
+        Clear(LocationL);
+        if not LocationL.Get(LocationCode) then begin
+            OpeningHours := '';
+            exit;
+        end;
+
+        OpeningHours := LocationL."Home Page";
     end;
 }
