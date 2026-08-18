@@ -52,33 +52,6 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox6">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value />
-                                                    <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
-                                                      <FontSize>8pt</FontSize>
-                                                      <FontWeight>SemiBold</FontWeight>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style />
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <rd:DefaultName>Textbox6</rd:DefaultName>
-                                            <Style>
-                                              <Border>
-                                                <Style>None</Style>
-                                              </Border>
-                                              <PaddingLeft>5pt</PaddingLeft>
-                                              <PaddingRight>5pt</PaddingRight>
-                                            </Style>
-                                          </Textbox>
                                           <ColSpan>4</ColSpan>
                                         </CellContents>
                                       </TablixCell>
@@ -99,7 +72,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Lieferadresse</Value>
+                                                    <Value>=Fields!DeliveryAddressLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -137,7 +110,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Abholadresse Kunde</Value>
+                                                    <Value>=Fields!CustomerPickupAddressLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -170,66 +143,13 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox32">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>=Fields!CustAddr1.Value</Value>
-                                                    <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
-                                                      <FontSize>8pt</FontSize>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style />
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <rd:DefaultName>Textbox32</rd:DefaultName>
-                                            <Style>
-                                              <Border>
-                                                <Style>None</Style>
-                                              </Border>
-                                              <PaddingLeft>5pt</PaddingLeft>
-                                              <PaddingRight>5pt</PaddingRight>
-                                            </Style>
-                                          </Textbox>
                                           <ColSpan>3</ColSpan>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell />
                                       <TablixCell />
                                       <TablixCell>
-                                        <CellContents>
-                                          <Textbox Name="Textbox36">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>=Fields!ShipToAddr1.Value</Value>
-                                                    <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
-                                                      <FontSize>8pt</FontSize>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style />
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <rd:DefaultName>Textbox36</rd:DefaultName>
-                                            <Style>
-                                              <Border>
-                                                <Style>None</Style>
-                                              </Border>
-                                              <PaddingLeft>5pt</PaddingLeft>
-                                              <PaddingRight>5pt</PaddingRight>
-                                            </Style>
-                                          </Textbox>
-                                        </CellContents>
+                                        <CellContents></CellContents>
                                       </TablixCell>
                                     </TablixCells>
                                   </TablixRow>
@@ -1106,7 +1026,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!OpeningHoursLbl.Value &amp;" "&amp; Fields!OpeningHours.Value</Value>
+                                                    <Value></Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -1328,7 +1248,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Vertragsnummer</Value>
+                                                    <Value>=Fields!ContractNumberLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1400,7 +1320,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Kundenname:</Value>
+                                                    <Value>=Fields!CustomerNameLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1471,7 +1391,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Referenz:</Value>
+                                                    <Value>=Fields!ReferenceLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1613,7 +1533,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Spediteur:</Value>
+                                                    <Value>=Fields!CarrierLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1688,7 +1608,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Abholdatum:</Value>
+                                                    <Value>=Fields!PickupDateLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1763,7 +1683,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Anlieferdatum Transport:</Value>
+                                                    <Value>=Fields!TransportDeliveryDateLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1888,7 +1808,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Materialien:</Value>
+                                      <Value>=Fields!MaterialsLbl.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -1942,9 +1862,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Datum:                                 ………………………………….
-Name (vollständig):             ………………………………….
-Unterschrift Kunde:            ………………………………….</Value>
+                                      <Value>=Fields!DeliveryConfirmationLbl.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2001,7 +1919,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Haben Sie Fragen, dann kontaktieren Sie mich gerne unter Tel. </Value>
+                                      <Value>=Fields!ContactInfoTxt.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2012,7 +1930,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>=Fields!CompanyPhoneNo.Value</Value>
+                                      <Value>=""</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2023,7 +1941,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value> oder per E-Mail </Value>
+                                      <Value>=""</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2034,7 +1952,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>=Fields!CompanyEmail.Value</Value>
+                                      <Value>=""</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2053,7 +1971,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Für diese Bestellung gelten unsere allgemeinen Geschäftsbedingungen, siehe </Value>
+                                      <Value>=Fields!TermsAndConditionsTxt.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2064,7 +1982,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>=Fields!CompanyHomePage.Value</Value>
+                                      <Value>=""</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2075,7 +1993,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>/downloads.</Value>
+                                      <Value>=""</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2115,7 +2033,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Transportauftrag Retoure</Value>
+                                      <Value>=Fields!TransportOrderReturnLbl.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2176,7 +2094,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Artikelnr.</Value>
+                                                    <Value>=Fields!ItemNumberLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -2215,7 +2133,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Beschreibung</Value>
+                                                    <Value>=Fields!DescriptionLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -2254,7 +2172,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Menge</Value>
+                                                    <Value>=Fields!QuantityLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -2293,7 +2211,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Gesamtgewicht (kg)</Value>
+                                                    <Value>=Fields!TotalWeightKgLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -2631,7 +2549,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                             <Paragraph>
                                               <TextRuns>
                                                 <TextRun>
-                                                  <Value>No </Value>
+                                                  <Value>=Fields!NoHeaderLbl.Value</Value>
                                                   <Style>
                                                     <FontStyle>Normal</FontStyle>
                                                     <FontFamily>Segoe UI</FontFamily>
@@ -2766,7 +2684,7 @@ Unterschrift Kunde:            ………………………………….</Value>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Bemerkung:</Value>
+                                      <Value>=Fields!RemarksLbl.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -3496,6 +3414,63 @@ End Function
         </Field>
         <Field Name="OpeningHoursLbl">
           <DataField>OpeningHoursLbl</DataField>
+        </Field>
+        <Field Name="DeliveryAddressLbl">
+          <DataField>DeliveryAddressLbl</DataField>
+        </Field>
+        <Field Name="CustomerPickupAddressLbl">
+          <DataField>CustomerPickupAddressLbl</DataField>
+        </Field>
+        <Field Name="ContractNumberLbl">
+          <DataField>ContractNumberLbl</DataField>
+        </Field>
+        <Field Name="CustomerNameLbl">
+          <DataField>CustomerNameLbl</DataField>
+        </Field>
+        <Field Name="ReferenceLbl">
+          <DataField>ReferenceLbl</DataField>
+        </Field>
+        <Field Name="CarrierLbl">
+          <DataField>CarrierLbl</DataField>
+        </Field>
+        <Field Name="PickupDateLbl">
+          <DataField>PickupDateLbl</DataField>
+        </Field>
+        <Field Name="TransportDeliveryDateLbl">
+          <DataField>TransportDeliveryDateLbl</DataField>
+        </Field>
+        <Field Name="MaterialsLbl">
+          <DataField>MaterialsLbl</DataField>
+        </Field>
+        <Field Name="TransportOrderReturnLbl">
+          <DataField>TransportOrderReturnLbl</DataField>
+        </Field>
+        <Field Name="ItemNumberLbl">
+          <DataField>ItemNumberLbl</DataField>
+        </Field>
+        <Field Name="DescriptionLbl">
+          <DataField>DescriptionLbl</DataField>
+        </Field>
+        <Field Name="QuantityLbl">
+          <DataField>QuantityLbl</DataField>
+        </Field>
+        <Field Name="TotalWeightKgLbl">
+          <DataField>TotalWeightKgLbl</DataField>
+        </Field>
+        <Field Name="NoHeaderLbl">
+          <DataField>NoHeaderLbl</DataField>
+        </Field>
+        <Field Name="RemarksLbl">
+          <DataField>RemarksLbl</DataField>
+        </Field>
+        <Field Name="DeliveryConfirmationLbl">
+          <DataField>DeliveryConfirmationLbl</DataField>
+        </Field>
+        <Field Name="ContactInfoTxt">
+          <DataField>ContactInfoTxt</DataField>
+        </Field>
+        <Field Name="TermsAndConditionsTxt">
+          <DataField>TermsAndConditionsTxt</DataField>
         </Field>
         <Field Name="No_EQMRentalLine">
           <DataField>No_EQMRentalLine</DataField>

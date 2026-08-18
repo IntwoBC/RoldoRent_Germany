@@ -205,27 +205,27 @@ codeunit 60000 "I2I Rental Contr. Sub Mgt."
             IsHandled := true;
     end;
 
-    [EventSubscriber(ObjectType::Page, Page::"Posted Sales Invoices", OnAfterActionEvent, 'Print', false, false)]
-    local procedure OnAfterPrintActionEvent(var Rec: Record "Sales Invoice Header")
-    begin
-        Codeunit.Run(Codeunit::"Sales Inv.-Printed", Rec);
-    end;
+    // [EventSubscriber(ObjectType::Page, Page::"Posted Sales Invoices", OnAfterActionEvent, 'Print', false, false)]
+    // local procedure OnAfterPrintActionEvent(var Rec: Record "Sales Invoice Header")
+    // begin
+    //     Codeunit.Run(Codeunit::"Sales Inv.-Printed", Rec);
+    // end;
 
-    [EventSubscriber(ObjectType::Page, Page::"Posted Sales Invoices", OnAfterActionEvent, 'Email', false, false)]
-    local procedure OnAfterEmailActionEvent(var Rec: Record "Sales Invoice Header")
-    begin
-        Codeunit.Run(Codeunit::"Sales Inv.-Printed", Rec);
-    end;
+    // [EventSubscriber(ObjectType::Page, Page::"Posted Sales Invoices", OnAfterActionEvent, 'Email', false, false)]
+    // local procedure OnAfterEmailActionEvent(var Rec: Record "Sales Invoice Header")
+    // begin
+    //     Codeunit.Run(Codeunit::"Sales Inv.-Printed", Rec);
+    // end;
 
-    [EventSubscriber(ObjectType::Page, Page::"EQM Posted Rental Invoices", OnAfterActionEvent, 'Print', false, false)]
-    local procedure OnAfterPrintActionEventRental(var Rec: Record "Sales Invoice Header")
-    begin
-        Codeunit.Run(Codeunit::"Sales Inv.-Printed", Rec);
-    end;
+    // [EventSubscriber(ObjectType::Page, Page::"EQM Posted Rental Invoices", OnAfterActionEvent, 'Print', false, false)]
+    // local procedure OnAfterPrintActionEventRental(var Rec: Record "Sales Invoice Header")
+    // begin
+    //     Codeunit.Run(Codeunit::"Sales Inv.-Printed", Rec);
+    // end;
 
-    [EventSubscriber(ObjectType::Page, Page::"EQM Posted Rental Invoices", OnAfterActionEvent, 'Email', false, false)]
-    local procedure OnAfterEmailActionEventRental(var Rec: Record "Sales Invoice Header")
-    begin
-        Codeunit.Run(Codeunit::"Sales Inv.-Printed", Rec);
-    end;
+    // [EventSubscriber(ObjectType::Page, Page::"EQM Posted Rental Invoices", OnAfterActionEvent, 'Email', false, false)]
+    // local procedure OnAfterEmailActionEventRental(var Rec: Record "Sales Invoice Header")
+    // begin
+    //     Codeunit.Run(Codeunit::"Sales Inv.-Printed", Rec);
+    // end;
 }

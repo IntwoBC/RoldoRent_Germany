@@ -1,0 +1,1629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="de-DE" original="RoldoRent PTE by Armada">
+    <body>
+      <group id="body">
+        <trans-unit id="Report 2427146384 - NamedType 1245862610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target state="translated">Gesamtbetrag</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType AmountLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 2898685577" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.:</source>
+          <target state="translated">Kunden-Nr.:</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType CustomerNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1542941690" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <target state="translated">Datum</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType DateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="translated">Artikelbezeichnung</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3988748604" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Discount %</source>
+          <target state="translated">Rabatt %</target>
+          <note from="Developer" annotates="general" priority="2">%  is a literal percent sign</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType DiscountPctLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 481445982" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date:</source>
+          <target state="translated">Zahlbar bis:</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType DueDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3309968797" size-unit="char" translate="yes" xml:space="preserve">
+          <source>excl. VAT</source>
+          <target state="translated">Netto</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType ExclVATLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3964871683" size-unit="char" translate="yes" xml:space="preserve">
+          <source>incl. VAT</source>
+          <target state="translated">Brutto</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType InclVATLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1259904353" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Date:</source>
+          <target state="translated">Rechnungsdatum:</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType InvoiceDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3330534589" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Invoice</source>
+          <target state="translated">Rechnung</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType InvoiceTitleLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1988219453" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mutation</source>
+          <target state="translated">Materialbewegung</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType MutationLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3632926527" size-unit="char" translate="yes" xml:space="preserve">
+          <source>On rent as of</source>
+          <target state="translated">Vermietet ab</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType OnRentAsOfLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 2694455927" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Terms:</source>
+          <target state="translated">Zahlungsbedingungen:</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType PaymentTermsLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 471129168" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Price/Day</source>
+          <target state="translated">Preis / Tag</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType PricePerDayLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1415756030" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code:</source>
+          <target state="translated">Projektnummer:</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType ProjectCodeLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 358261150" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. on Rent</source>
+          <target state="translated">Menge in Miete</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType QtyOnRentLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 2448900585" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt No.</source>
+          <target state="translated">Belegnr.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType ReceiptNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 16357567" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Days</source>
+          <target state="translated">Miettage</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType RentalDaysLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3096712723" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Period:</source>
+          <target state="translated">Mietzeitraum:</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType RentalPeriodHdrLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3187523764" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your Reference:</source>
+          <target state="translated">Ihr Zeichen:</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType YourReferenceLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 453033153" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rent</source>
+          <target state="translated">Ausgabe</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType RentLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 416273108" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return</source>
+          <target state="translated">Rückgabe</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType ReturnLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 608550454" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total EUR</source>
+          <target state="translated">Gesamt Netto- EUR</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType TotalEURLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 472982654" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total EUR</source>
+          <target state="translated">Gesamt Brutto-EUR</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType TotalInclEURLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1113073684" size-unit="char" translate="yes" xml:space="preserve">
+          <source>up to and incl.</source>
+          <target state="translated">bis einschließlich</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType UntilLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 2617756395" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <target state="translated">MwSt.</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType VATLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1201184860" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT No.:</source>
+          <target state="translated">Steuer-Nr.:</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType VATNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3542564261" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT reverse charge.</source>
+          <target state="translated">Reverse Charge – Steuerschuldnerschaft des Leistungsempfängers</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType VATReverseChargeLbl</note>
+        </trans-unit>
+        <trans-unit id="Table 4012853753 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Availability Calculation Breakdown</source>
+          <target state="translated">Verfugbarkeitsberechnungsaufschluss</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Calc. Breakdown - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4012853753 - Field 1141956482 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Component Line No.</source>
+          <target state="translated">Komponentenpositionsnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Calc. Breakdown - Field Component Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4012853753 - Field 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the calculation term.</source>
+          <target state="translated">Gibt den Berechnungsterm an.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Calc. Breakdown - Field Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 4012853753 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="translated">Beschreibung</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Calc. Breakdown - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4012853753 - Field 3953424068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Total</source>
+          <target state="translated">Ist Summe</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Calc. Breakdown - Field Is Total - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4012853753 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target state="translated">Zeilennr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Calc. Breakdown - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4012853753 - Field 2704404533 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the signed quantity contributed by this term.</source>
+          <target state="translated">Specifies the signed quantity contributed by this term.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Calc. Breakdown - Field Quantity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 4012853753 - Field 2704404533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <target state="translated">Menge</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Calc. Breakdown - Field Quantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Component Availability Detail</source>
+          <target state="translated">Komponentenverfugbarkeitsdetail</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 621504254 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the available quantity of the component.</source>
+          <target state="translated">Gibt die verfugbare Menge der Komponente an.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Available Quantity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 621504254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Available Quantity</source>
+          <target state="translated">Verfugbare Menge</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Available Quantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 2779907713 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether this component is the bottleneck limiting availability.</source>
+          <target state="translated">Gibt an, ob diese Komponente der Engpass ist.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Bottleneck - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 2779907713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bottleneck</source>
+          <target state="translated">Engpass</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Bottleneck - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 3828955071 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the item number of the component.</source>
+          <target state="translated">Gibt die Artikelnr. der Komponente an.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Component Item No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 3828955071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Component Item No.</source>
+          <target state="translated">Komponentenartikelnr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Component Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the description of the component item.</source>
+          <target state="translated">Gibt die Beschreibung des Komponentenartikels an.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="translated">Beschreibung</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target state="translated">Zeilennr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 1632050288 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of complete sets possible from this component.</source>
+          <target state="translated">gibt an the Nummer of complete sets moglich from this Komponente.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Possible Sets - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 1632050288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Possible Sets</source>
+          <target state="translated">Mogliche Sets</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Possible Sets - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 3165469050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many of this component are needed per set.</source>
+          <target state="translated">Gibt an, wie viele dieser Komponente pro Set benotigt werden.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Quantity per Set - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 3802426225 - Field 3165469050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity per Set</source>
+          <target state="translated">Menge pro Set</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Avail. Component Detail - Field Quantity per Set - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1623091799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calendar Location Order</source>
+          <target state="translated">Calendar Location Auftrag</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Calendar Location Order - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1623091799 - Field 3349558288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Include</source>
+          <target state="translated">Include</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Calendar Location Order - Field Include - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1623091799 - Field 2161572060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Code</source>
+          <target state="translated">Location Code</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Calendar Location Order - Field Location Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1623091799 - Field 390917702 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target state="translated">Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Calendar Location Order - Field Location Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1623091799 - Field 3915705456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sort Order</source>
+          <target state="translated">Sort Auftrag</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Calendar Location Order - Field Sort Order - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ADA Rental Invoice Movement</source>
+          <target state="translated">ADA Miet Rechnung Movement</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 3663673454 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aantal in huur</source>
+          <target state="translated">Aantal in huur</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field AantalInHuur - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 2318768673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bedrag</source>
+          <target state="translated">Bedrag</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field Bedrag - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 3334802063 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bonnr. Huur</source>
+          <target state="translated">Bonnr. Huur</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field BonnrHuur - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 3092500552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bonnr. Retour</source>
+          <target state="translated">Bonnr. Retour</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field BonnrRetour - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 2451570813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datum Huur</source>
+          <target state="translated">Datum Huur</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field DatumHuur - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 3633558710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datum Retour</source>
+          <target state="translated">Datum Retour</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field DatumRetour - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="translated">Beschreibung</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 2341009946 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ext. Line No.</source>
+          <target state="translated">Ext. Zeile No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field ExtLineNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 249905037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Huur-dagen</source>
+          <target state="translated">Huur-dagen</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field HuurDagen - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 793915170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is Return Line</source>
+          <target state="translated">Is Ruckgabe Line</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field IsReturnLine - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 4055685255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Korting %</source>
+          <target state="translated">Korting %</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field KortingPct - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target state="translated">Zeilennr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 658056487 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mutatie</source>
+          <target state="translated">Mutatie</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field Mutatie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 1985700409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prijs/dag</source>
+          <target state="translated">Prijs/dag</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field PrijsPerDag - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 683570739 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental No.</source>
+          <target state="translated">Miet No.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field RentalNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 786605410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sort Date</source>
+          <target state="translated">Sort Datum</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field SortDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3073125690 - Field 1333338216 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sort Order</source>
+          <target state="translated">Sort Auftrag</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ADA Rental Invoice Movement - Field SortOrder - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Availability Calculation Breakdown</source>
+          <target state="translated">Verfugbarkeitsberechnungsaufschluss</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - NamedType 925151809" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract %1 line %2</source>
+          <target state="translated">Contract %2 Zeile %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - NamedType ContractNetLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - NamedType 2168226330" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Expected Returns</source>
+          <target state="translated">Miet Expected Returns</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - NamedType ExpRentalReturnsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - NamedType 3691251604" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory (Item Ledger Entries)</source>
+          <target state="translated">Inventory (Artikel Ledger Entries)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - NamedType InventoryLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - NamedType 3293797499" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Net active rental reservations for item %1 (%2..%3)</source>
+          <target state="translated">Net active Miet reservations for item %1 (%2..%3)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - NamedType NetReservationsHeaderLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - NamedType 125510504" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Orders</source>
+          <target state="translated">Purchase Orders</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - NamedType PurchaseOrdersLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - NamedType 2075849188" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Deliveries</source>
+          <target state="translated">Miet Deliveries</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - NamedType RentalDeliveriesLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - NamedType 1410165795" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Reservations</source>
+          <target state="translated">Miet Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - NamedType RentalReservationsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - NamedType 1950038997" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Returns</source>
+          <target state="translated">Miet Returns</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - NamedType RentalReturnsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - NamedType 2088850276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Sales Deliveries</source>
+          <target state="translated">Miet Verkauf Deliveries</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - NamedType RentalSalesDeliveriesLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - NamedType 4211022969" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Orders</source>
+          <target state="translated">Verkauf Orders</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - NamedType SalesOrdersLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - Control 2470140483 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the component and context for which the availability is broken down.</source>
+          <target state="translated">gibt an the Komponente and context for which the Verfugbarkeit is broken down.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - Control HeaderInfo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the calculation term.</source>
+          <target state="translated">Gibt den Berechnungsterm an.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4012853753 - Control 2704404533 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the quantity. Drill down to see the underlying entries.</source>
+          <target state="translated">Specifies the quantity. Drill down to see the underlying entries.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Calc. Breakdown - Control Quantity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Component Availability</source>
+          <target state="translated">Komponente Verfugbarkeit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - NamedType 2630519460" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Availability breakdown for component %1 %2</source>
+          <target state="translated">Verfugbarkeit breakdown for Komponente %2 %2</target>
+          <note from="Developer" annotates="general" priority="2">%1 = component item no., %2 = description</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - NamedType BreakdownHeaderLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - NamedType 2441575172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parent item %1 %2 (%3)</source>
+          <target state="translated">Parent Artikel %3 %3 (%3)</target>
+          <note from="Developer" annotates="general" priority="2">%1 = item no., %2 = description, %3 = location or period</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - NamedType ParentInfoLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - NamedType 3717263348" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Available to take: %1</source>
+          <target state="translated">Available to take: %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = the parent item's available to take quantity</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - NamedType ParentOwnStockLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - NamedType 3282660074" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Complete units that can be delivered (rented out): %1</source>
+          <target state="translated">Complete units that can be delivered (rented out): %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = number of complete units</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - NamedType PossibleSetsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - Control 4049675358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the parent item and location for which the complete units are calculated.</source>
+          <target state="translated">gibt an the parent Artikel and location for which the complete units are calculated.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - Control ParentInfo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - Control 1649496718 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the parent item's available to take quantity.</source>
+          <target state="translated">Specifies the parent item&apos;s available to take quantity.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - Control ParentOwnStock - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - Control 3786622330 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of complete units that can be delivered (rented out), limited by the bottleneck component.</source>
+          <target state="translated">gibt an the Nummer of complete units that can be delivered (rented out), limited by the Engpass Komponente.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - Control PossibleSetsTotal - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - Control 621504254 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many of this component are available at the location.</source>
+          <target state="translated">gibt an how many of this Komponente are verfugbar at the location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - Control Available Quantity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - Control 2779907713 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether this component is the bottleneck that limits the number of complete units that can be delivered (rented out).</source>
+          <target state="translated">gibt an whether this Komponente is the Engpass that limits the Nummer of complete units that can be delivered (rented out).</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - Control Bottleneck - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - Control 3828955071 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the component item number.</source>
+          <target state="translated">gibt an the Komponente Artikel Nummer.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - Control Component Item No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the component description.</source>
+          <target state="translated">gibt an the Komponente Beschreibung.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - Control 1632050288 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many complete units this component allows to be delivered (rented out).</source>
+          <target state="translated">Specifies how many complete units this component allows to be delivered (rented out).</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - Control Possible Sets - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3802426225 - Control 3165469050 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many of this component are needed for one complete set.</source>
+          <target state="translated">gibt an how many of this Komponente are needed for one complete Set.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Avail. Component Detail - Control Quantity per Set - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Availability by Location (Roldo)</source>
+          <target state="translated">Artikel Verfugbarkeit by Location (Roldo)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - NamedType 3238539963" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Available Quantity for Rental (total)</source>
+          <target state="translated">Available Quantity for Miet (total)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - NamedType AvailableTotalLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - NamedType 2168226330" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Expected Returns</source>
+          <target state="translated">Miet Expected Returns</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - NamedType ExpRentalReturnsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - NamedType 3691251604" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory (Item Ledger Entries)</source>
+          <target state="translated">Inventory (Artikel Ledger Entries)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - NamedType InventoryLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - NamedType 4206739047" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Availability breakdown for item %1 %2 (%3)</source>
+          <target state="translated">Verfugbarkeit breakdown for Artikel %3 %3 (%3)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - NamedType ItemBreakdownHeaderLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - NamedType 125510504" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Orders</source>
+          <target state="translated">Purchase Orders</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - NamedType PurchaseOrdersLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - NamedType 2075849188" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Deliveries</source>
+          <target state="translated">Miet Deliveries</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - NamedType RentalDeliveriesLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - NamedType 1410165795" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Reservations</source>
+          <target state="translated">Miet Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - NamedType RentalReservationsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - NamedType 1950038997" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Returns</source>
+          <target state="translated">Miet Returns</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - NamedType RentalReturnsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - NamedType 2088850276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Sales Deliveries</source>
+          <target state="translated">Miet Verkauf Deliveries</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - NamedType RentalSalesDeliveriesLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - NamedType 4211022969" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Orders</source>
+          <target state="translated">Verkauf Orders</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - NamedType SalesOrdersLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 3955332963 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 2603424115 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col10 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 3241120732 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col11 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 3878817349 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col12 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 221546670 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col13 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 52637647 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col14 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 1573455518 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 935758901 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col3 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 2042243112 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col4 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 1404546495 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col5 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 3317636346 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col6 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 2679939729 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col7 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 1104667924 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col8 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 466971307 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity at this location.</source>
+          <target state="translated">gibt an verfugbar Menge at this location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Col9 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the item description.</source>
+          <target state="translated">gibt an the Artikel Beschreibung.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the item number.</source>
+          <target state="translated">gibt an the Artikel Nummer.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target state="translated">Options</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 33150226 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that the availability is reduced to the number of complete units that can actually be delivered (rented out) based on available components.</source>
+          <target state="translated">Specifies that the availability is reduced to the number of complete units that can actually be delivered (rented out) based on available components.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control BasedOnComponentAvailField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 33150226 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Based on Component Availability</source>
+          <target state="translated">Based on Komponente Verfugbarkeit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control BasedOnComponentAvailField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 3811185706 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date up to which availability is calculated.</source>
+          <target state="translated">Specifies the Datum up to which availability is calculated.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control DateFilterField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 3811185706 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date Filter</source>
+          <target state="translated">Datum Filter</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control DateFilterField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 1843541089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies which locations are shown as columns. Leave blank to show all locations, or select specific locations to compare only those.</source>
+          <target state="translated">Specifies which locations are shown as columns. Leave blank to show all locations, or select specific locations to compare only those.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control LocationFilterField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 1843541089 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Filter</source>
+          <target state="translated">Location Filter</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control LocationFilterField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 4076402023 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether items that are used as a component in another item are shown. When disabled, component items are hidden.</source>
+          <target state="translated">gibt an whether items that are used as a Komponente in another Artikel are shown. When disabled, Komponente items are hidden.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control ShowComponentsField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 4076402023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Components</source>
+          <target state="translated">Show Components</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control ShowComponentsField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 3675922110 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that only locations where the item has a positive available quantity to take are shown as columns.</source>
+          <target state="translated">Specifies that only locations where the item has a positive available quantity to take are shown as columns.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control ShowOnlyAvailableLocationsField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 3675922110 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Only Available Locations</source>
+          <target state="translated">Show Only verfugbar Locations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control ShowOnlyAvailableLocationsField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 611128697 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that only items with components are shown, displaying how many complete units can be delivered (rented out) per location.</source>
+          <target state="translated">gibt an that only items with components are shown, displaying how many complete units can be delivered (rented out) per location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control ShowOnlyParentItemsField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 611128697 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Only Parent Items</source>
+          <target state="translated">Show Only Parent Items</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control ShowOnlyParentItemsField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 7478867 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether rental reservations and expected rental returns are included in the calculation.</source>
+          <target state="translated">Gibt an, ob rental reservations and expected rental returns are included in the calculation.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control ShowReservationField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 7478867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Reservations</source>
+          <target state="translated">Show Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control ShowReservationField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 499554678 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether sales and purchase reservations from open sales and purchase orders are included in the availability calculation.</source>
+          <target state="translated">Gibt an, ob sales and purchase reservations from open sales and purchase orders are included in the availability calculation.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control ShowSalesAndPurchaseReservationsField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Control 499554678 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Sales and Purchase Reservations</source>
+          <target state="translated">Show Verkauf and Purchase Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Control ShowSalesAndPurchaseReservationsField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 2876958691 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open the item card.</source>
+          <target state="translated">Open the Artikel card.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action ItemCard - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 2876958691 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Card</source>
+          <target state="translated">Card</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action ItemCard - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 859623117 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Move the date filter one day forward.</source>
+          <target state="translated">Move the Datum filter one day forward.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action NextDay - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 859623117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next Day</source>
+          <target state="translated">Next Day</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action NextDay - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 1258879199 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Navigate to the next set of locations.</source>
+          <target state="translated">Navigate to the next set of locations.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action NextSet - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 1258879199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next Set</source>
+          <target state="translated">Next Set</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action NextSet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 2123651247 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Move the date filter one day back.</source>
+          <target state="translated">Move the Datum filter one day back.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action PreviousDay - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 2123651247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Previous Day</source>
+          <target state="translated">Previous Day</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action PreviousDay - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 1461909405 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Navigate to the previous set of locations.</source>
+          <target state="translated">Navigate to the previous set of locations.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action PreviousSet - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 1461909405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Previous Set</source>
+          <target state="translated">Previous Set</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action PreviousSet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 2026913255 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recalculate the availability using the current filters and settings.</source>
+          <target state="translated">Recalculate the availability using the current filters and settings.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action Refresh - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3990622278 - Action 2026913255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Refresh</source>
+          <target state="translated">Refresh</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. by Location - Action Refresh - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Availability Calendar (Roldo)</source>
+          <target state="translated">Artikel Verfugbarkeit Calendar (Roldo)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - NamedType 3238539963" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Available Quantity for Rental (total)</source>
+          <target state="translated">Available Quantity for Miet (total)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - NamedType AvailableTotalLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - NamedType 2168226330" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Expected Returns</source>
+          <target state="translated">Miet Expected Returns</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - NamedType ExpRentalReturnsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - NamedType 3691251604" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory (Item Ledger Entries)</source>
+          <target state="translated">Inventory (Artikel Ledger Entries)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - NamedType InventoryLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - NamedType 4206739047" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Availability breakdown for item %1 %2 (%3)</source>
+          <target state="translated">Verfugbarkeit breakdown for Artikel %3 %3 (%3)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - NamedType ItemBreakdownHeaderLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - NamedType 125510504" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Orders</source>
+          <target state="translated">Purchase Orders</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - NamedType PurchaseOrdersLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - NamedType 2075849188" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Deliveries</source>
+          <target state="translated">Miet Deliveries</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - NamedType RentalDeliveriesLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - NamedType 1410165795" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Reservations</source>
+          <target state="translated">Miet Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - NamedType RentalReservationsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - NamedType 1950038997" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Returns</source>
+          <target state="translated">Miet Returns</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - NamedType RentalReturnsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - NamedType 2088850276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Sales Deliveries</source>
+          <target state="translated">Miet Verkauf Deliveries</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - NamedType RentalSalesDeliveriesLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - NamedType 4211022969" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Orders</source>
+          <target state="translated">Verkauf Orders</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - NamedType SalesOrdersLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 3157985307 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnEight - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 3228374545 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnEleven - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 3502238894 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnFive - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 3479631812 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnFour - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 2343087398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnFourteen - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 541359118 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnNine - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 2147010526 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnOne - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 2166711367 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnSeven - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 2395290384 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnSix - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 1197197251 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnTen - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 2280408453 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnThirteen - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 2591511116 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnThree - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 3862408345 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnTwelve - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 3786220126 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies available quantity for this period.</source>
+          <target state="translated">gibt an verfugbar Menge for this period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ColumnTwo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the item description.</source>
+          <target state="translated">gibt an the Artikel Beschreibung.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the item number.</source>
+          <target state="translated">gibt an the Artikel Nummer.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target state="translated">Options</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 622785858 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether to show net change for the period or balance at date.</source>
+          <target state="translated">Gibt an, ob to show net change for the period or balance at date.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control AmountTypeField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 622785858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View as</source>
+          <target state="translated">View as</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control AmountTypeField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 622785858 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Net Change,Balance at Date</source>
+          <target state="translated">Net Change,Balance at Datum</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control AmountTypeField - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 33150226 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that the availability is reduced to the number of complete units that can actually be delivered (rented out) based on available components.</source>
+          <target state="translated">Specifies that the availability is reduced to the number of complete units that can actually be delivered (rented out) based on available components.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control BasedOnComponentAvailField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 33150226 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Based on Component Availability</source>
+          <target state="translated">Based on Komponente Verfugbarkeit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control BasedOnComponentAvailField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 1843541089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a location filter for availability calculation.</source>
+          <target state="translated">gibt an a location filter for Verfugbarkeit calculation.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control LocationFilterField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 1843541089 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Filter</source>
+          <target state="translated">Location Filter</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control LocationFilterField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 512120465 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the period length for each column.</source>
+          <target state="translated">gibt an the period length for each column.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control PeriodTypeField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 512120465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View By</source>
+          <target state="translated">View By</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control PeriodTypeField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 512120465 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Day,Week,Month,Quarter,Year</source>
+          <target state="translated">Day,Week,Month,Quarter,Year</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control PeriodTypeField - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 4076402023 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether items that are used as a component in another item are shown. When disabled, component items are hidden.</source>
+          <target state="translated">gibt an whether items that are used as a Komponente in another Artikel are shown. When disabled, Komponente items are hidden.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ShowComponentsField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 4076402023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Components</source>
+          <target state="translated">Show Components</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ShowComponentsField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 611128697 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that only items with components are shown, displaying how many complete units can be delivered (rented out) per period.</source>
+          <target state="translated">gibt an that only items with components are shown, displaying how many complete units can be delivered (rented out) per period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ShowOnlyParentItemsField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 611128697 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Only Parent Items</source>
+          <target state="translated">Show Only Parent Items</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ShowOnlyParentItemsField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 7478867 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether rental reservations and expected returns are included in the calculation.</source>
+          <target state="translated">Gibt an, ob rental reservations and expected returns are included in the calculation.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ShowReservationField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 7478867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Reservations</source>
+          <target state="translated">Show Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ShowReservationField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 499554678 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether sales and purchase reservations from open sales and purchase orders are included in the availability calculation.</source>
+          <target state="translated">Gibt an, ob sales and purchase reservations from open sales and purchase orders are included in the availability calculation.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ShowSalesAndPurchaseReservationsField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 499554678 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Sales and Purchase Reservations</source>
+          <target state="translated">Show Verkauf and Purchase Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control ShowSalesAndPurchaseReservationsField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 3411122186 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the start date for the calendar.</source>
+          <target state="translated">gibt an the start Datum for the calendar.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control StartDateField - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Control 3411122186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <target state="translated">Start Datum</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Control StartDateField - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Action 456533495 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show the availability of the selected item across locations.</source>
+          <target state="translated">Show the Verfugbarkeit of the selected Artikel across locations.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Action AvailByLocation - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Action 456533495 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Availability by Location</source>
+          <target state="translated">Verfugbarkeit by Location</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Action AvailByLocation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Action 2876958691 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open the item card.</source>
+          <target state="translated">Open the Artikel card.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Action ItemCard - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Action 2876958691 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Card</source>
+          <target state="translated">Card</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Action ItemCard - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Action 1639220638 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Navigate to the next period.</source>
+          <target state="translated">Navigate to the next Zeitraum.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Action NextPeriod - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Action 1639220638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Next Period</source>
+          <target state="translated">Next Period</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Action NextPeriod - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Action 477982176 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Navigate to the previous period.</source>
+          <target state="translated">Navigate to the previous Zeitraum.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Action PreviousPeriod - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Action 477982176 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Previous Period</source>
+          <target state="translated">Previous Period</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Action PreviousPeriod - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Action 2026913255 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recalculate the availability using the current filters and settings.</source>
+          <target state="translated">Recalculate the availability using the current filters and settings.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Action Refresh - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1911143570 - Action 2026913255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Refresh</source>
+          <target state="translated">Refresh</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Calendar - Action Refresh - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Availability Location Setup</source>
+          <target state="translated">Artikel Verfugbarkeit Location Setup</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Control 3349558288 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether this location is shown in the availability calendar.</source>
+          <target state="translated">gibt an whether this location is shown in the Verfugbarkeit calendar.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Control Include - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Control 2161572060 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the location code.</source>
+          <target state="translated">Specifies the location Code.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Control Location Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Control 390917702 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the location name.</source>
+          <target state="translated">gibt an the location name.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Control Location Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Control 3915705456 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the display order. Lower numbers appear first.</source>
+          <target state="translated">gibt an the display Auftrag. Lower numbers appear first.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Control Sort Order - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Action 59423316 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add any new locations that are not yet in the list. Existing entries are kept unchanged.</source>
+          <target state="translated">Add any new locations that are not yet in the list. Existing entries are kept unchanged.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Action Initialize - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Action 59423316 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Add Locations</source>
+          <target state="translated">Add Locations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Action Initialize - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Action 3069824669 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Move the selected location one position down.</source>
+          <target state="translated">Move the selected location one position down.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Action MoveDown - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Action 3069824669 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Move Down</source>
+          <target state="translated">Move Down</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Action MoveDown - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Action 2816622752 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Move the selected location one position up.</source>
+          <target state="translated">Move the selected location one position up.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Action MoveUp - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3284874826 - Action 2816622752 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Move Up</source>
+          <target state="translated">Move Up</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ADA Item Avail. Location Setup - Action MoveUp - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Rental Invoice</source>
+          <target state="translated">Posted Miet Rechnung</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - ReportLayout 2972038830 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Rental Invoice</source>
+          <target state="translated">Posted Miet Rechnung</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - ReportLayout DefaultRDLC - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 771576713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Proforma Rental Invoice</source>
+          <target state="translated">Proforma-Mietrechnung</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Proforma Rental Invoice - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 771576713 - ReportLayout 2972038830 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Proforma Rental Invoice</source>
+          <target state="translated">Proforma-Mietrechnung</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Proforma Rental Invoice - ReportLayout DefaultRDLC - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Item Availability by Location</source>
+          <target state="translated">Show Artikel Verfugbarkeit by Location</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - RequestPage 2516438534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Availability by Location</source>
+          <target state="translated">Artikel Verfugbarkeit by Location</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - RequestPage RequestOptionsPage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 2104579650 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that the availability is reduced to the number of complete units that can actually be delivered (rented out) based on available components.</source>
+          <target state="translated">Specifies that the availability is reduced to the number of complete units that can actually be delivered (rented out) based on available components.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldBasedOnComponentAvail - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 2104579650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Based on Component Availability</source>
+          <target state="translated">Based on Komponente Verfugbarkeit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldBasedOnComponentAvail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 2860514666 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date up to which availability is calculated.</source>
+          <target state="translated">Specifies the Datum up to which availability is calculated.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldDateFilter - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 2860514666 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date Filter</source>
+          <target state="translated">Datum Filter</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldDateFilter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 3389700665 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies which locations are shown as columns. Leave blank to show all locations, or select specific locations to compare only those.</source>
+          <target state="translated">Specifies which locations are shown as columns. Leave blank to show all locations, or select specific locations to compare only those.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldLocationFilter - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 3389700665 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Filter</source>
+          <target state="translated">Location Filter</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldLocationFilter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 3995876431 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether items that are used as a component in another item are shown. When disabled, component items are hidden.</source>
+          <target state="translated">gibt an whether items that are used as a Komponente in another Artikel are shown. When disabled, Komponente items are hidden.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldShowComponents - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 3995876431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Components</source>
+          <target state="translated">Show Components</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldShowComponents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 3601164894 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that only locations where the item has a positive available quantity to take are shown as columns.</source>
+          <target state="translated">Specifies that only locations where the item has a positive available quantity to take are shown as columns.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldShowOnlyAvailableLocations - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 3601164894 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Only Available Locations</source>
+          <target state="translated">Show Only verfugbar Locations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldShowOnlyAvailableLocations - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 1950484129 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that only items with components are shown, displaying how many complete units can be delivered (rented out).</source>
+          <target state="translated">gibt an that only items with components are shown, displaying how many complete units can be delivered (rented out).</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldShowOnlyParentItems - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 1950484129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Only Parent Items</source>
+          <target state="translated">Show Only Parent Items</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldShowOnlyParentItems - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 1737767723 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether rental reservations and expected rental returns are included in the calculation.</source>
+          <target state="translated">Gibt an, ob rental reservations and expected rental returns are included in the calculation.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldShowReservation - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 1737767723 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Reservations</source>
+          <target state="translated">Show Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldShowReservation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 1340204662 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether sales and purchase reservations from open sales and purchase orders are included in the availability calculation.</source>
+          <target state="translated">Gibt an, ob sales and purchase reservations from open sales and purchase orders are included in the availability calculation.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldShowSalesAndPurchaseReservations - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 235109238 - Control 1340204662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Sales and Purchase Reservations</source>
+          <target state="translated">Show Verkauf and Purchase Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. by Loc. - Control FieldShowSalesAndPurchaseReservations - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Item Availability Calendar</source>
+          <target state="translated">Show Artikel Verfugbarkeit Calendar</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - RequestPage 2516438534 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Availability Calendar</source>
+          <target state="translated">Artikel Verfugbarkeit Calendar</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - RequestPage RequestOptionsPage - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 1281689314 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether to show net change for the period or balance at date.</source>
+          <target state="translated">Gibt an, ob to show net change for the period or balance at date.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldAmountType - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 1281689314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View as</source>
+          <target state="translated">View as</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldAmountType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 1281689314 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Net Change,Balance at Date</source>
+          <target state="translated">Net Change,Balance at Datum</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldAmountType - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 2104579650 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that the availability is reduced to the number of complete units that can actually be delivered (rented out) based on available components.</source>
+          <target state="translated">Specifies that the availability is reduced to the number of complete units that can actually be delivered (rented out) based on available components.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldBasedOnComponentAvail - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 2104579650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Based on Component Availability</source>
+          <target state="translated">Based on Komponente Verfugbarkeit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldBasedOnComponentAvail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 2073543337 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the period length for each column.</source>
+          <target state="translated">gibt an the period length for each column.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldPeriodType - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 2073543337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View By</source>
+          <target state="translated">View By</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldPeriodType - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 2073543337 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Day,Week,Month,Quarter,Year</source>
+          <target state="translated">Day,Week,Month,Quarter,Year</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldPeriodType - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 3995876431 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether items that are used as a component in another item are shown. When disabled, component items are hidden.</source>
+          <target state="translated">gibt an whether items that are used as a Komponente in another Artikel are shown. When disabled, Komponente items are hidden.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldShowComponents - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 3995876431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Components</source>
+          <target state="translated">Show Components</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldShowComponents - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 1950484129 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that only items with components are shown, displaying how many complete units can be delivered (rented out) per period.</source>
+          <target state="translated">gibt an that only items with components are shown, displaying how many complete units can be delivered (rented out) per period.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldShowOnlyParentItems - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 1950484129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Only Parent Items</source>
+          <target state="translated">Show Only Parent Items</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldShowOnlyParentItems - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 1737767723 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether rental reservations and expected returns are included in the calculation.</source>
+          <target state="translated">Gibt an, ob rental reservations and expected returns are included in the calculation.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldShowReservation - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 1737767723 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Reservations</source>
+          <target state="translated">Show Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldShowReservation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 1340204662 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies whether sales and purchase reservations from open sales and purchase orders are included in the availability calculation.</source>
+          <target state="translated">Gibt an, ob sales and purchase reservations from open sales and purchase orders are included in the availability calculation.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldShowSalesAndPurchaseReservations - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 1340204662 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Show Sales and Purchase Reservations</source>
+          <target state="translated">Show Verkauf and Purchase Reservations</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldShowSalesAndPurchaseReservations - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 2344343002 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the start date for the calendar.</source>
+          <target state="translated">gibt an the start Datum for the calendar.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldStartDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 2344343002 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <target state="translated">Start Datum</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control FieldStartDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 3375402297 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies which locations are included in the availability calculation. Leave blank to include all locations, or select specific locations.</source>
+          <target state="translated">Specifies which locations are included in the availability calculation. Leave blank to include all locations, or select specific locations.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control LocationFilter2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 1821194679 - Control 3375402297 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Filter</source>
+          <target state="translated">Location Filter</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Show Item Avail. Calendar - Control LocationFilter2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2734216301 - Action 3750177216 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2481322484">
+          <source>Opens the Item Availability by Location showing how many complete units can be delivered (rented out) per location.</source>
+          <target state="translated">Opens the Artikel Verfugbarkeit by Location showing how many complete units can be delivered (rented out) per location.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADA Rental Mgr. RC - Action ADAItemAvailByLocation - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2734216301 - Action 3750177216 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2481322484">
+          <source>Item Calendar by locations (Roldo)</source>
+          <target state="translated">Artikel Calendar by locations (Roldo)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADA Rental Mgr. RC - Action ADAItemAvailByLocation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2734216301 - Action 2653242098 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2481322484">
+          <source>Opens the Item Availability Calendar showing how many complete units can be delivered (rented out) based on component stock.</source>
+          <target state="translated">Opens the Artikel Verfugbarkeit Calendar showing how many complete units can be delivered (rented out) based on Komponente stock.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADA Rental Mgr. RC - Action ADAItemAvailCalendarAssembled - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2734216301 - Action 2653242098 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2481322484">
+          <source>Item Calendar (Roldo)</source>
+          <target state="translated">Artikel Calendar (Roldo)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADA Rental Mgr. RC - Action ADAItemAvailCalendarAssembled - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
+
+

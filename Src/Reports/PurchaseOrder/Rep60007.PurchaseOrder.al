@@ -13,8 +13,6 @@ report 60007 "Purchase Order"
             DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order));
             RequestFilterFields = "No.", "Buy-from Vendor No.", "No. Printed";
             RequestFilterHeading = 'Purchase Order';
-            column(lblAllowInvDisc; Trl('AllowInvDisc')) { }
-            column(lblAmount; Trl('Amount')) { }
             column(OutBoundText; OutBoundText) { }
             column(LocationAddr1; LocationAddr[1]) { }
             column(LocationAddr2; LocationAddr[2]) { }
@@ -22,76 +20,6 @@ report 60007 "Purchase Order"
             column(LocationAddr4; LocationAddr[4]) { }
             column(LocationAddr5; LocationAddr[5]) { }
             column(LocationAddr6; LocationAddr[6]) { }
-            column(lblBankAccNo; Trl('BankAccNo')) { }
-            column(lblBankName; Trl('BankName')) { }
-            column(lblBuyFromAddress; Trl('BuyFromAddress')) { }
-            column(lblBuyFromVendorNo; Trl('BuyFromVendorNo')) { }
-            column(lblCompanyRegistrationNo; Trl('CompanyRegistrationNo')) { }
-            column(lblDescription; Trl('Description')) { }
-            column(lblDirectUnitCost; Trl('DirectUnitCost')) { }
-            column(lblDocumentDate; Trl('DocumentDate')) { }
-            column(lblDueDate; Trl('DueDate')) { }
-            column(lblEmail; Trl('Email')) { }
-            column(lblExpectedReceiptDate; Trl('ExpectedReceiptDate')) { }
-            column(lblFaxNo; Trl('FaxNo')) { }
-            column(lblGiroNo; Trl('GiroNo')) { }
-            column(lblGLAccountNo; Trl('GLAccountNo')) { }
-            column(lblHeaderDimensions; Trl('HeaderDimensions')) { }
-            column(lblHomePage; Trl('HomePage')) { }
-            column(lblIBAN; Trl('IBAN')) { }
-            column(lblInvDiscAmount; Trl('InvDiscAmount')) { }
-            column(lblInvDiscBaseAmount; Trl('InvDiscBaseAmount')) { }
-            column(lblInvoiceDate; Trl('InvoiceDate')) { }
-            column(lblInvoiceNo; Trl('InvoiceNo')) { }
-            column(lblLineAmount; Trl('LineAmount')) { }
-            column(lblLineDimensions; Trl('LineDimensions')) { }
-            column(lblLineDiscountPerc; Trl('LineDiscountPerc')) { }
-            column(lblNo; Trl('No')) { }
-            column(lblOrderNo; Trl('OrderNo')) { }
-            column(lblPageOf; Trl('Page{0}of{1}')) { }
-            column(lblPaymentDiscountVAT; Trl('PaymentDiscountVAT')) { }
-            column(lblPaymentTerms; Trl('Payment Terms')) { }
-            column(lblPayToAddress; Trl('PayToVendorAddress')) { }
-            column(lblPayToVendorNo; Trl('PayToVendorNo')) { }
-            column(lblPhoneNo; Trl('PhoneNo')) { }
-            column(lblPrepaymentPaymentTerms; Trl('PrepaymentPaymentTerms')) { }
-            column(lblPrepaymentSpecification; Trl('PrepaymentSpecification')) { }
-            column(lblPrepaymentVATSpecification; Trl('PrepaymentVATSpecification')) { }
-            column(lblPricesInclVAT; Trl('PricesInclVAT')) { }
-            column(lblPromisedReceiptDate; Trl('PromisedReceiptDate')) { }
-            column(lblPurchPerson; Trl('Purchaser')) { }
-            column(lblQuantity; Trl('Quantity')) { }
-            column(lblRequestedReceiptDate; Trl('RequestedReceiptDate')) { }
-            column(lblShipment; Trl('Shipment')) { }
-            column(lblShipmentMethod; Trl('Shipment Method')) { }
-            column(lblShipToAddress; Trl('ShipToAddress')) { }
-            column(lblSubtotal; Trl('Subtotal')) { }
-            column(lblSWIFT; Trl('SWIFT')) { }
-            column(lblTotal; Trl('Total')) { }
-            column(lblTotalTransFooter; Trl('TotalTransFooter')) { }
-            column(lblTotalTransHeader; Trl('TotalTransHeader')) { }
-            column(lblUOM; Trl('UOM')) { }
-            column(lblVATAmount; Trl('VATAmount')) { }
-            column(lblVATAmountSpecification; Trl('VATAmountSpecification')) { }
-            column(lblVATBase; Trl('VATBase')) { }
-            column(lblVATIdentifier; Trl('VATIdentifier')) { }
-            column(lblVATPerc; Trl('VATPerc')) { }
-            column(lblVATRegistrationNo; Trl('VAT Registration No.')) { }
-            column(lblYourReference; Trl('Your Reference')) { }
-            column(lblBIC; Trl('BIC')) { }
-            column(lblPage; Trl('Page')) { }
-            column(lblPaymentMethod; Trl('PaymentMethod')) { }
-            column(lblTermsAndCond; Trl('TermsAndCond')) { }
-            column(lblOrder; Trl('Order')) { }
-            column(lblLine; Trl('Line')) { }
-            column(LblComment; Trl('Comment')) { }
-            column(lblTaxID; Trl('TaxID')) { }
-            column(lblRoutingNo; Trl('RoutingNo')) { }
-            column(lblLockbox; Trl('LockBox')) { }
-            column(lblVendQuoteNo; Trl('VendQuoteNo')) { }
-            column(lblPurchOrderNo; Trl('Purchase Order No.')) { }
-            column(lblCostCenter; Trl('CostCenter')) { }
-            column(lblProjectCode; Trl('ProjectCode')) { }
             column(BuyFromAddr1; EBuyFromAddr[1]) { }
             column(BuyFromAddr2; EBuyFromAddr[2]) { }
             column(BuyFromAddr3; EBuyFromAddr[3]) { }
@@ -129,14 +57,6 @@ report 60007 "Purchase Order"
             column(HideLineDiscount; HideLineDiscount) { }
             column(LanguageCode; "Language Code") { }
             column(PaymentTermsDesc; "Payment Terms Code") { }
-            column(PayToAddr1; PayToVendAddr[1]) { }
-            column(PayToAddr2; PayToVendAddr[2]) { }
-            column(PayToAddr3; PayToVendAddr[3]) { }
-            column(PayToAddr4; PayToVendAddr[4]) { }
-            column(PayToAddr5; PayToVendAddr[5]) { }
-            column(PayToAddr6; PayToVendAddr[6]) { }
-            column(PayToAddr7; PayToVendAddr[7]) { }
-            column(PayToAddr8; PayToVendAddr[8]) { }
             column(PayToVendorNo; "Pay-to Vendor No.") { }
             column(PostingDate; "Posting Date") { }
             column(PostingDateText; FORMAT("Posting Date", 0, '<Day> <Month Text> <Year4>')) { }
@@ -172,7 +92,36 @@ report 60007 "Purchase Order"
             column(VATAmtText; VATAmtLine.VATAmountText()) { }
             column(VATAmount; VATAmtLine."VAT Amount") { }
             column(OpeningHours; OpeningHours) { }
+            column(CompanyFooterNameTxt; CompanyFooterNameTxt) { }
+            column(CompanyFooterAddressTxt; CompanyFooterAddressTxt) { }
+            column(CompanyFooterCityTxt; CompanyFooterCityTxt) { }
+            column(CompanyFooterRegNo; CompanyFooterRegNo) { }
+            column(CompanyFooterContactPerson; CompanyFooterContactPerson) { }
+            column(CompanyFooterDoc; RecCompanyInfo."I2I DOC. Text") { }
+            column(CompanyFooterBankName; CompanyFooterBankName) { }
+            column(CompanyFooterBankAccNo; CompanyFooterBankAccNo) { }
+            column(CompanyFooterSwiftCode; CompanyFooterSwiftCode) { }
             column(OpeningHoursLbl; OpeningHoursLbl) { }
+            column(PurchaseOrderLbl; PurchaseOrderLbl) { }
+            column(PurchaseOrderNoLbl; PurchaseOrderNoLbl) { }
+            column(PurchaserLbl; PurchaserLbl) { }
+            column(PurchaserEmailLbl; PurchaserEmailLbl) { }
+            column(VATRegistrationNoLbl; VATRegistrationNoLbl) { }
+            column(DateLbl; DateLbl) { }
+            column(OrderLbl; OrderLbl) { }
+            column(VendorNoLbl; VendorNoLbl) { }
+            column(VendorLbl; VendorLbl) { }
+            column(DeliveryAddressLbl; DeliveryAddressLbl) { }
+            column(LineLbl; LineLbl) { }
+            column(ItemNoLbl; ItemNoLbl) { }
+            column(DescriptionLbl; DescriptionLbl) { }
+            column(QuantityLbl; QuantityLbl) { }
+            column(UnitCostLbl; UnitCostLbl) { }
+            column(AmountLbl; AmountLbl) { }
+            column(GeneralTermsAndConditionsLbl; GeneralTermsAndConditionsLbl) { }
+            column(PaymentTermsLbl; PaymentTermsLbl) { }
+            column(ShippingMethodLbl; ShippingMethodLbl) { }
+            column(RemarkLbl; RemarkLbl) { }
             dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
@@ -585,8 +534,13 @@ report 60007 "Purchase Order"
                 EBuyFromAddr[8] := CountryRegionL.Name;
 
                 FormatAddressFields(PurchHdr);
-                UpdatePhEmailHP(PurchHdr);
                 FormatDocumentFields(PurchHdr);
+
+                ReportHelper.UpdateFooterData(PurchHdr."Sell-to Customer No.",
+                CompanyFooterNameTxt, CompanyFooterAddressTxt, CompanyFooterCityTxt,
+                RecCompanyInfo."Phone No.", RecCompanyInfo."E-Mail", RecCompanyInfo."Home Page",
+                CompanyFooterRegNo, CompanyFooterContactPerson,
+                CompanyFooterBankName, CompanyFooterBankAccNo, CompanyFooterSwiftCode);
 
 
                 if not CurrReport.PREVIEW then begin
@@ -661,9 +615,9 @@ report 60007 "Purchase Order"
                 Clear(VendorG);
                 if VendorG.Get("Buy-from Vendor No.") then;
 
-                OutBoundText := GetOutboundMemoL(PurchHdr);
-                LocationAddress(PurchHdr);
-                GetHomePageFromLocation(PurchHdr."Location Code");
+                OutBoundText := ReportHelper.GetMemoTextFromBlob(wlRecRef, PurchHdr.FieldNo("I2I Inbound Memo Text"));
+                ReportHelper.GetShipToAddressFromLocation(PurchHdr."Location Code", LocationAddr);
+                OpeningHours := ReportHelper.GetHomePageFromLocation(PurchHdr."Location Code");
             end;
         }
     }
@@ -745,7 +699,6 @@ report 60007 "Purchase Order"
     end;
 
     var
-        RecLanguage: Record Language;
         RecSalesPurchPerson: Record "Salesperson/Purchaser";
         RecCompanyInfo: Record "Company Information";
         RecGLSetup: Record "General Ledger Setup";
@@ -756,17 +709,13 @@ report 60007 "Purchase Order"
         CduPurchPostPrepmt: Codeunit "Purchase-Post Prepayments";
         CduSegManagement: Codeunit SegManagement;
         CduArchiveManagement: Codeunit ArchiveManagement;
-        EBuyFromAddr: array[8] of Text[50];
-        ECompanyAddr: array[8] of Text[50];
-        CompanyInfoFaxNo: Text;
-        CompanyInfoPhoneNo: Text;
         CopyText: Text[30];
         DimText: Text[120];
-        PayToVendAddr: array[8] of Text[50];
-        EShipToAddr: array[8] of Text[50];
-        ShipToAddr: array[8] of Text[50];
-        LocationAddr: array[8] of Text[50];
-
+        EBuyFromAddr: array[8] of Text[100];
+        ECompanyAddr: array[8] of Text[100];
+        ShipToAddr: array[8] of Text[100];
+        LocationAddr: array[8] of Text[100];
+        ReportHelper: Codeunit "I2I Report Helper";
         TotalExclVATText: Text[50];
         TotalInclVATText: Text[50];
         TotalText: Text[50];
@@ -791,7 +740,6 @@ report 60007 "Purchase Order"
         NoOfLoops: Integer;
         NoOfVATAmountLines: Integer;
         OutputNo: Integer;
-        ReportId: Integer;
         ArchiveDocument: Boolean;
         ArchiveDocumentEnable: Boolean;
         HideLineDiscount: Boolean;
@@ -801,14 +749,41 @@ report 60007 "Purchase Order"
         ShowInternalInfo: Boolean;
         ShowVATLCY: Boolean;
         IntCompanyLocation: Integer;
-        TxtCostCenter: Text[100];
-        TxtProjectCode: Text[50];
         TotalAmountInclVAT: Decimal;
         VendorG: Record Vendor;
         No: Code[50];
+        CompanyFooterNameTxt: Text[100];
+        CompanyFooterAddressTxt: Text[100];
+        CompanyFooterCityTxt: Text[100];
+        CompanyFooterRegNo: Text[100];
+        CompanyFooterContactPerson: Text[100];
+        CompanyFooterDoc: Text[100];
+        CompanyFooterBankName: Text[100];
+        CompanyFooterBankAccNo: Text[100];
+        CompanyFooterSwiftCode: Text[100];
         OutBoundText: Text[2048];
         OpeningHours: Text[100];
         OpeningHoursLbl: Label 'Öffnungszeiten';
+        PurchaseOrderLbl: Label 'Purchase Order';
+        PurchaseOrderNoLbl: Label 'Purchase Order No.';
+        PurchaserLbl: Label 'Purchaser';
+        PurchaserEmailLbl: Label 'Purchaser Email';
+        VATRegistrationNoLbl: Label 'VAT Registration No.:';
+        DateLbl: Label 'Date:';
+        OrderLbl: Label 'Order';
+        VendorNoLbl: Label 'Vendor No.';
+        VendorLbl: Label 'Vendor';
+        DeliveryAddressLbl: Label 'Delivery Address';
+        LineLbl: Label 'Line';
+        ItemNoLbl: Label 'Item No.';
+        DescriptionLbl: Label 'Description';
+        QuantityLbl: Label 'Quantity';
+        UnitCostLbl: Label 'Unit Cost';
+        AmountLbl: Label 'Amount';
+        GeneralTermsAndConditionsLbl: Label 'General Terms and Conditions';
+        PaymentTermsLbl: Label 'Payment Terms';
+        ShippingMethodLbl: Label 'Shipping Method';
+        RemarkLbl: Label 'Remark:';
 
     local procedure Trl(pLblName: Text): Text;
     begin
@@ -821,29 +796,6 @@ report 60007 "Purchase Order"
         ShowInternalInfo := pShowInternalInfoFrom;
         ArchiveDocument := pArchiveDocumentFrom;
         LogInteraction := pLogInteractionFrom;
-    end;
-
-    local procedure GetOutboundMemoL(var PurchHeader: Record "Purchase Header"): Text
-    var
-        InS: InStream;
-        TempText: Text;
-        LineText: Text;
-        NewLine: Text[4];
-    begin
-        //NewLine := '\r\n';
-
-        PurchHeader.CalcFields("I2I Inbound Memo Text");
-
-        if PurchHeader."I2I Inbound Memo Text".HasValue then begin
-            PurchHeader."I2I Inbound Memo Text".CreateInStream(InS);
-
-            while not InS.EOS do begin
-                InS.ReadText(LineText);
-                TempText += LineText;
-            end;
-        end;
-
-        exit(TempText);
     end;
 
     procedure DeductVATAmountLine(var VATAmounLine: Record "VAT Amount Line"; var VATAmountLineDeduct: Record "VAT Amount Line");
@@ -886,111 +838,7 @@ report 60007 "Purchase Order"
         RespCenter: Record "Responsibility Center";
     begin
         CduFormatAddr.GetCompanyAddr(vRecPurchHeader."Responsibility Center", RespCenter, RecCompanyInfo, ECompanyAddr);
-        CompanyInfoPhoneNo := RecCompanyInfo."Phone No.";
-        CompanyInfoFaxNo := RecCompanyInfo."Fax No.";
-        CduFormatAddr.PurchHeaderPayTo(PayToVendAddr, vRecPurchHeader);
-        CduFormatAddr.PurchHeaderShipTo(EShipToAddr, vRecPurchHeader);
+        //CduFormatAddr.PurchHeaderPayTo(PayToVendAddr, vRecPurchHeader);
         CduFormatAddr.PurchHeaderBuyFrom(EBuyFromAddr, vRecPurchHeader);
-    end;
-
-    procedure UpdatePhEmailHP(PurchaseHeader: Record "Purchase Header")
-    var
-        Customer: Record Customer;
-        CustomerPosting: Record "Customer Posting Group";
-        CompanyInfoL: Record "Company Information";
-    begin
-        CompanyInfoL.Get();
-
-        RecCompanyInfo."Phone No." := CompanyInfoL."Phone No.";
-        RecCompanyInfo."E-Mail" := CompanyInfoL."E-Mail";
-        RecCompanyInfo."Home Page" := CompanyInfoL."Home Page";
-
-        if PurchaseHeader."Sell-to Customer No." = '' then
-            exit;
-
-        if not Customer.Get(PurchaseHeader."Sell-to Customer No.") then
-            exit;
-
-        if not CustomerPosting.Get(Customer."Customer Posting Group") then
-            exit;
-
-        if (CustomerPosting.Code = 'AUSTRIA') or (CustomerPosting.Description = 'AUSTRIA') then begin
-            RecCompanyInfo."Phone No." := CompanyInfoL."I2I Phone No. AT";
-            RecCompanyInfo."E-Mail" := CompanyInfoL."I2I Email AT";
-            RecCompanyInfo."Home Page" := CompanyInfoL."I2I Home Page AT";
-        end else
-            if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
-                RecCompanyInfo."Phone No." := CompanyInfoL."I2I Phone No. CH";
-                RecCompanyInfo."E-Mail" := CompanyInfoL."I2I Email CH";
-                RecCompanyInfo."Home Page" := CompanyInfoL."I2I Home Page CH";
-            end;
-    end;
-
-    procedure LocationAddress(PurchaseHeader: Record "Purchase Header")
-    var
-        LineNo: Integer;
-        Customer: Record Customer;
-        Country: Record "Country/Region";
-        Location: Record Location;
-    begin
-        LineNo := 1;
-
-        if not Location.Get(PurchaseHeader."Location Code") then
-            exit;
-
-        // Name
-        if Location.Name <> '' then begin
-            LocationAddr[LineNo] := Location.Name;
-            LineNo += 1;
-        end;
-
-        // Name 2
-        if Location."Name 2" <> '' then begin
-            LocationAddr[LineNo] := Location."Name 2";
-            LineNo += 1;
-        end;
-
-        // Address 1
-        if Location.Address <> '' then begin
-            LocationAddr[LineNo] := Location.Address;
-            LineNo += 1;
-        end;
-
-        // Address 2
-        if Location."Address 2" <> '' then begin
-            LocationAddr[LineNo] := Location."Address 2";
-            LineNo += 1;
-        end;
-
-        // Post Code + City
-        if (Location."Post Code" <> '') or (Location.City <> '') then begin
-            LocationAddr[LineNo] := Location."Post Code" + ' ' + Location.City;
-            LineNo += 1;
-        end;
-
-        // // County
-        // if Location.County <> '' then begin
-        //     LocationAddr[LineNo] := Location.County;
-        //     LineNo += 1;
-        // end;
-
-        // Country
-        if Location."Country/Region Code" <> '' then begin
-            Country.Get(Location."Country/Region Code");
-            LocationAddr[LineNo] := Country.Name;
-        end;
-    end;
-
-    procedure GetHomePageFromLocation(LocationCode: Code[20])
-    var
-        LocationL: Record Location;
-    begin
-        Clear(LocationL);
-        if not LocationL.Get(LocationCode) then begin
-            OpeningHours := '';
-            exit;
-        end;
-
-        OpeningHours := LocationL."Home Page";
     end;
 }

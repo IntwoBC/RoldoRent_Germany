@@ -48,58 +48,18 @@
                                 </TablixColumns>
                                 <TablixRows>
                                   <TablixRow>
-                                    <Height>0.09729cm</Height>
-                                    <TablixCells>
-                                      <TablixCell>
-                                        <CellContents>
-                                          <Textbox Name="Textbox6">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value />
-                                                    <Style>
-                                                      <FontFamily>Segoe UI</FontFamily>
-                                                      <FontSize>8pt</FontSize>
-                                                      <FontWeight>SemiBold</FontWeight>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style />
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <rd:DefaultName>Textbox6</rd:DefaultName>
-                                            <Style>
-                                              <Border>
-                                                <Style>None</Style>
-                                              </Border>
-                                              <PaddingLeft>5pt</PaddingLeft>
-                                              <PaddingRight>5pt</PaddingRight>
-                                            </Style>
-                                          </Textbox>
-                                          <ColSpan>4</ColSpan>
-                                        </CellContents>
-                                      </TablixCell>
-                                      <TablixCell />
-                                      <TablixCell />
-                                      <TablixCell />
-                                    </TablixCells>
-                                  </TablixRow>
-                                  <TablixRow>
                                     <Height>0.31339cm</Height>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="AddressLbl">
+                                          <Textbox Name="CustomerDetailsLbl">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Kundendaten:</Value>
+                                                    <Value>=Fields!CustomerDetailsLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -113,7 +73,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>AddressLbl</rd:DefaultName>
+                                            <rd:DefaultName>CustomerDetailsLbl</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>None</Style>
@@ -130,14 +90,14 @@
                                       <TablixCell />
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox35">
+                                          <Textbox Name="PickupAddressLbl">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Abholadresse</Value>
+                                                    <Value>=Fields!PickupAddressLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -151,7 +111,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox35</rd:DefaultName>
+                                            <rd:DefaultName>PickupAddressLbl</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>None</Style>
@@ -807,13 +767,12 @@
                                   <TablixMember />
                                   <TablixMember />
                                   <TablixMember />
-                                  <TablixMember />
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>4.04075cm</Top>
                               <Left>0.03175cm</Left>
-                              <Height>2.9178cm</Height>
+                              <Height>2.82051cm</Height>
                               <Width>18.95297cm</Width>
                               <Style>
                                 <Border>
@@ -1106,7 +1065,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!OpeningHoursLbl.Value &amp;" "&amp; Fields!OpeningHours.Value</Value>
+                                                    <Value />
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -1331,7 +1290,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Vertragsnummer</Value>
+                                                    <Value>=Fields!ContractNumberLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1396,14 +1355,14 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="lblSalesPerson">
+                                          <Textbox Name="ContactPersonLbl">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Ansprechpartner:</Value>
+                                                    <Value>=Fields!ContactPersonLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1417,7 +1376,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>lblSalesPerson</rd:DefaultName>
+                                            <rd:DefaultName>ContactPersonLbl</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>None</Style>
@@ -1467,14 +1426,14 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="lblEmail">
+                                          <Textbox Name="ContactEmailLbl">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Kontakt-E-Mail:</Value>
+                                                    <Value>=Fields!ContactEmailLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1488,7 +1447,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>lblEmail</rd:DefaultName>
+                                            <rd:DefaultName>ContactEmailLbl</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>None</Style>
@@ -1545,7 +1504,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Referenz:</Value>
+                                                    <Value>=Fields!ReferenceLbL.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1687,7 +1646,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Abholdatum:</Value>
+                                                    <Value>=Fields!PickupDateLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -1758,7 +1717,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Datum</Value>
+                                                    <Value>=Fields!DateLbl.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -2138,7 +2097,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Artikelnr.</Value>
+                                                    <Value>=Fields!ItemNoLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -2182,7 +2141,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Beschreibung</Value>
+                                                    <Value>=Fields!DescriptionLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Century Gothic</FontFamily>
@@ -2226,7 +2185,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Menge</Value>
+                                                    <Value>=Fields!QuantityLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Century Gothic</FontFamily>
@@ -2270,7 +2229,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Eenheidsprijs exkl. USt</Value>
+                                                    <Value>=Fields!UnitPriceExclLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Century Gothic</FontFamily>
@@ -2314,7 +2273,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Eenheid</Value>
+                                                    <Value>=Fields!UOMLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Century Gothic</FontFamily>
@@ -2358,7 +2317,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>Korting %</Value>
+                                                    <Value>=Fields!DiscountPercentLbl.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Century Gothic</FontFamily>
@@ -2958,14 +2917,14 @@
                                 </Border>
                               </Style>
                             </Tablix>
-                            <Textbox Name="Textbox20">
+                            <Textbox Name="OrderConfirmationTextLbl">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Vielen Dank für Ihren Auftrag. Sie haben eine Miet-Reservierung gemäß den untenstehenden Spezifikationen vorgenommen:</Value>
+                                      <Value>=First(Fields!OrderConfirmationTextLbl.Value)</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -2979,7 +2938,7 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox20</rd:DefaultName>
+                              <rd:DefaultName>OrderConfirmationTextLbl</rd:DefaultName>
                               <Top>7.19256cm</Top>
                               <Height>0.38cm</Height>
                               <Width>18.81188cm</Width>
@@ -3001,7 +2960,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Materialien:</Value>
+                                      <Value>=First(Fields!MaterialsLbl.Value)</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -3030,14 +2989,14 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <Textbox Name="Textbox37">
+                            <Textbox Name="DocumentLbl">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Auftragsbestätigung</Value>
+                                      <Value>=First(Fields!DocumentLbl.Value)</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontFamily>Segoe UI</FontFamily>
@@ -3053,7 +3012,7 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox37</rd:DefaultName>
+                              <rd:DefaultName>DocumentLbl</rd:DefaultName>
                               <Top>0.04339cm</Top>
                               <Left>6.02878cm</Left>
                               <Height>0.31339cm</Height>
@@ -3112,106 +3071,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>De kosten voor de in- en uitslag zijn €</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <Format>#,0.00</Format>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                        <TextRun>
-                                          <Value>=Fields!BelowThreshold.Value</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <Format>#,0.00</Format>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                        <TextRun>
-                                          <Value> bij &lt;500 stuks en € </Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <Format>#,0.00</Format>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                        <TextRun>
-                                          <Value>=Fields!AboveThreshold.Value</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <Format>#,0.00</Format>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                        <TextRun>
-                                          <Value> bij &gt;500 stuks items.</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <Format>#,0.00</Format>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style />
-                                    </Paragraph>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value />
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <Format>#,0.00</Format>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style />
-                                    </Paragraph>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Bemerkung:</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                            <Format>#,0.00</Format>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style />
-                                    </Paragraph>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Replace(Fields!OutBoundText.Value, "\r\n", vbCrLf)</Value>
+                                          <Value>=First(Fields!FooterNoteTxt.Value)</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Segoe UI</FontFamily>
@@ -3261,205 +3121,6 @@
                                       </TextRuns>
                                       <Style />
                                     </Paragraph>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Haben Sie Fragen, dann kontaktieren Sie mich gerne unter Tel. </Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                        <TextRun>
-                                          <Value>=Fields!CompanyPhoneNo.Value</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                        <TextRun>
-                                          <Value> oder per E-Mail </Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                        <TextRun>
-                                          <Value>=Fields!CompanyEmail.Value</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                        <TextRun>
-                                          <Value>..</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                        <LineHeight>12pt</LineHeight>
-                                      </Style>
-                                    </Paragraph>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value />
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                        <LineHeight>12pt</LineHeight>
-                                      </Style>
-                                    </Paragraph>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Wenn die Materialien nicht sauber oder gemäß unserer Rückgabeanweisung zurückgegeben werden, werden Kosten berechnet; der Tarif hierfür beträgt 47,50 € pro Arbeitsstunde.</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                        <LineHeight>12pt</LineHeight>
-                                      </Style>
-                                    </Paragraph>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value />
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                        <LineHeight>12pt</LineHeight>
-                                      </Style>
-                                    </Paragraph>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Für diese Bestellung gelten unsere allgemeinen Geschäftsbedingungen, siehe </Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                        <TextRun>
-                                          <Value>=Fields!CompanyHomePage.Value</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                        <TextRun>
-                                          <Value>/downloads.</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                        <LineHeight>12pt</LineHeight>
-                                      </Style>
-                                    </Paragraph>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value />
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                        <LineHeight>12pt</LineHeight>
-                                      </Style>
-                                    </Paragraph>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>Met vriendelijke groet,</Value>
-                                          <Style>
-                                            <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Segoe UI</FontFamily>
-                                            <FontSize>8pt</FontSize>
-                                            <FontWeight>Normal</FontWeight>
-                                            <TextDecoration>None</TextDecoration>
-                                            <Color>#000000</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Left</TextAlign>
-                                        <LineHeight>12pt</LineHeight>
-                                      </Style>
-                                    </Paragraph>
                                   </Paragraphs>
                                   <rd:DefaultName>Textbox20</rd:DefaultName>
                                   <Top>0.75846cm</Top>
@@ -3483,7 +3144,7 @@
                                     <Paragraph>
                                       <TextRuns>
                                         <TextRun>
-                                          <Value>=First(Fields!UserName.Value)</Value>
+                                          <Value />
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
                                             <FontFamily>Segoe UI</FontFamily>
@@ -4203,6 +3864,60 @@ End Function
         </Field>
         <Field Name="OpeningHoursLbl">
           <DataField>OpeningHoursLbl</DataField>
+        </Field>
+        <Field Name="DocumentLbl">
+          <DataField>DocumentLbl</DataField>
+        </Field>
+        <Field Name="ContractNumberLbl">
+          <DataField>ContractNumberLbl</DataField>
+        </Field>
+        <Field Name="ContactPersonLbl">
+          <DataField>ContactPersonLbl</DataField>
+        </Field>
+        <Field Name="ContactEmailLbl">
+          <DataField>ContactEmailLbl</DataField>
+        </Field>
+        <Field Name="ReferenceLbL">
+          <DataField>ReferenceLbL</DataField>
+        </Field>
+        <Field Name="PickupDateLbl">
+          <DataField>PickupDateLbl</DataField>
+        </Field>
+        <Field Name="DateLbl">
+          <DataField>DateLbl</DataField>
+        </Field>
+        <Field Name="CustomerDetailsLbl">
+          <DataField>CustomerDetailsLbl</DataField>
+        </Field>
+        <Field Name="PickupAddressLbl">
+          <DataField>PickupAddressLbl</DataField>
+        </Field>
+        <Field Name="OrderConfirmationTextLbl">
+          <DataField>OrderConfirmationTextLbl</DataField>
+        </Field>
+        <Field Name="MaterialsLbl">
+          <DataField>MaterialsLbl</DataField>
+        </Field>
+        <Field Name="ItemNoLbl">
+          <DataField>ItemNoLbl</DataField>
+        </Field>
+        <Field Name="DescriptionLbl">
+          <DataField>DescriptionLbl</DataField>
+        </Field>
+        <Field Name="QuantityLbl">
+          <DataField>QuantityLbl</DataField>
+        </Field>
+        <Field Name="UnitPriceExclLbl">
+          <DataField>UnitPriceExclLbl</DataField>
+        </Field>
+        <Field Name="UOMLbl">
+          <DataField>UOMLbl</DataField>
+        </Field>
+        <Field Name="DiscountPercentLbl">
+          <DataField>DiscountPercentLbl</DataField>
+        </Field>
+        <Field Name="FooterNoteTxt">
+          <DataField>FooterNoteTxt</DataField>
         </Field>
         <Field Name="No_EQMRentalLine">
           <DataField>No_EQMRentalLine</DataField>

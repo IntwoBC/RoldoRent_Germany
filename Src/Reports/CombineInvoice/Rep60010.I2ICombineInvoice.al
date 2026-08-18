@@ -348,7 +348,6 @@ report 60010 "I2I Combine Invoice"
                 if SalesInvLine."VAT %" <> 0 then
                     exit(SalesInvLine."VAT %");
             until SalesInvLine.Next() = 0;
-
         exit(0);
     end;
 

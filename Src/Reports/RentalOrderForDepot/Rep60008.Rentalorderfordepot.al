@@ -64,6 +64,20 @@ report 60008 "Rental Order For depot"
             column(CompanyDOC; CompanyInfo."I2I DOC. Text") { }
             column(OpeningHours; OpeningHours) { }
             column(OpeningHoursLbl; OpeningHoursLbl) { }
+            column(RentalOrderLbl; RentalOrderLbl) { }
+            column(ContractNoLbl; ContractNoLbl) { }
+            column(CustomerNameLbl; CustomerNameLbl) { }
+            column(ReferenceLbl; ReferenceLbl) { }
+            column(PickupDateLbl; PickupDateLbl) { }
+            column(DateLbl; DateLbl) { }
+            column(CustomerDetailsLbl; CustomerDetailsLbl) { }
+            column(PaymentDetailsLbl; PaymentDetailsLbl) { }
+            column(MaterialsLbl; MaterialsLbl) { }
+            column(ItemNoLbl; ItemNoLbl) { }
+            column(DescriptionLbl; DescriptionLbl) { }
+            column(QuantityLbl; QuantityLbl) { }
+            column(RemarksLbl; RemarksLbl) { }
+
             dataitem("EQM Rental Line"; "EQM Rental Line")
             {
                 DataItemLink = "Contract Type" = field("Contract Type"), "Contract No." = field("Contract No.");
@@ -83,13 +97,30 @@ report 60008 "Rental Order For depot"
             trigger OnAfterGetRecord()
             var
                 Contact: Record Contact;
+                ReportHelper: Codeunit "I2I Report Helper";
+                RecRefL: RecordRef;
             begin
-                OutBoundText := GetOutboundMemoL(EQMRentalHeader);
-                ShipAddress(EQMRentalHeader);
-                CustomerAddress(EQMRentalHeader);
-                CompanyAddress();
-                UpdateFooterData(EQMRentalHeader);
-                GetHomePageFromLocation(EQMRentalHeader."Location Code");
+                RecRefL.GetTable(EQMRentalHeader);
+
+                OutBoundText := ReportHelper.GetMemoTextFromBlob(RecRefL, EQMRentalHeader.FieldNo("Outbound Memo Text"));
+                ReportHelper.GetShipAddressData(RecRefL, ShipToAddr);
+                ReportHelper.GetShipToAddressFromLocation(EQMRentalHeader."Location Code", CustAddr);
+                ReportHelper.UpdateCompanyReportData(
+                    EQMRentalHeader."Customer No.",
+                    EQMRentalHeader."Location Code",
+                    CompanyAddr,
+                    CompanyNameTxt,
+                    CompanyAddressTxt,
+                    CompanyCityTxt,
+                    CompanyPhoneNo,
+                    CompanyEmail,
+                    CompanyHomePage,
+                    CompanyRegNo,
+                    CompanyContactPerson,
+                    CompanyBankName,
+                    CompanyBankAccNo,
+                    CompanySwiftCode,
+                    OpeningHours);
 
                 if Contact.Get(EQMRentalHeader."Contact No.") then
                     ContactEmail := Contact."E-Mail";
@@ -141,253 +172,17 @@ report 60008 "Rental Order For depot"
         OutBoundText: Text;
         OpeningHours: Text[100];
         OpeningHoursLbl: Label 'Öffnungszeiten';
-
-    procedure ShipAddress(RentalHeader: Record "EQM Rental Header")
-    var
-        LineNo: Integer;
-        Country: Record "Country/Region";
-    begin
-        LineNo := 1;
-
-        // Name
-        if RentalHeader."Ship-to Name" <> '' then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to Name";
-            LineNo += 1;
-        end;
-
-        // Name 2
-        if RentalHeader."Ship-to Name 2" <> '' then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to Name 2";
-            LineNo += 1;
-        end;
-
-        // Address 1
-        if RentalHeader."Ship-to Address" <> '' then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to Address";
-            LineNo += 1;
-        end;
-
-        // Address 2
-        if RentalHeader."Ship-to Address 2" <> '' then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to Address 2";
-            LineNo += 1;
-        end;
-
-        // Post Code + City (combined)
-        if (RentalHeader."Ship-to Post Code" <> '') or (RentalHeader."Ship-to-City" <> '') then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to Post Code" + ' ' + RentalHeader."Ship-to-City";
-            LineNo += 1;
-        end;
-
-        // // County
-        // if RentalHeader."Ship-to County" <> '' then begin
-        //     ShipToAddr[LineNo] := RentalHeader."Ship-to County";
-        //     LineNo += 1;
-        // end;
-
-        // Country
-        if RentalHeader."Ship-to Country/Region Code" <> '' then begin
-            Country.Get(RentalHeader."Ship-to Country/Region Code");
-            ShipToAddr[LineNo] := Country.Name;
-        end;
-    end;
-
-    local procedure GetOutboundMemoL(var RentalHeader: Record "EQM Rental Header"): Text
-    var
-        InS: InStream;
-        TempText: Text;
-        LineText: Text;
-        NewLine: Text[4];
-    begin
-        //NewLine := '\r\n';
-
-        RentalHeader.CalcFields("Outbound Memo Text");
-
-        if RentalHeader."Outbound Memo Text".HasValue then begin
-            RentalHeader."Outbound Memo Text".CreateInStream(InS);
-
-            while not InS.EOS do begin
-                InS.ReadText(LineText);
-                TempText += LineText;
-            end;
-        end;
-
-        exit(TempText);
-    end;
-
-    procedure CustomerAddress(RentalHeader: Record "EQM Rental Header")
-    var
-        LineNo: Integer;
-        Customer: Record Customer;
-        Country: Record "Country/Region";
-        Location: Record Location;
-    begin
-        LineNo := 1;
-
-        if not Location.Get(RentalHeader."Location Code") then
-            exit;
-
-        // Name
-        if Location.Name <> '' then begin
-            CustAddr[LineNo] := Location.Name;
-            LineNo += 1;
-        end;
-
-        // Name 2
-        if Location."Name 2" <> '' then begin
-            CustAddr[LineNo] := Location."Name 2";
-            LineNo += 1;
-        end;
-
-        // Address 1
-        if Location.Address <> '' then begin
-            CustAddr[LineNo] := Location.Address;
-            LineNo += 1;
-        end;
-
-        // Address 2
-        if Location."Address 2" <> '' then begin
-            CustAddr[LineNo] := Location."Address 2";
-            LineNo += 1;
-        end;
-
-        // Post Code + City
-        if (Location."Post Code" <> '') or (Location.City <> '') then begin
-            CustAddr[LineNo] := Location."Post Code" + ' ' + Location.City;
-            LineNo += 1;
-        end;
-
-        // // County
-        // if Location.County <> '' then begin
-        //     CustAddr[LineNo] := Location.County;
-        //     LineNo += 1;
-        // end;
-
-        // Country
-        if Location."Country/Region Code" <> '' then begin
-            Country.Get(Location."Country/Region Code");
-            CustAddr[LineNo] := Country.Name;
-        end;
-    end;
-
-    procedure CompanyAddress()
-    var
-        LineNo: Integer;
-        CompanyInfoL: Record "Company Information";
-        Country: Record "Country/Region";
-    begin
-        LineNo := 1;
-
-        CompanyInfoL.Get();
-
-        // Name
-        if CompanyInfoL.Name <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL.Name;
-            LineNo += 1;
-        end;
-
-        // Name 2
-        if CompanyInfoL."Name 2" <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL."Name 2";
-            LineNo += 1;
-        end;
-
-        // Address 1
-        if CompanyInfoL.Address <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL.Address;
-            LineNo += 1;
-        end;
-
-        // Address 2
-        if CompanyInfoL."Address 2" <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL."Address 2";
-            LineNo += 1;
-        end;
-
-        // Post Code + City
-        if (CompanyInfoL."Post Code" <> '') or (CompanyInfoL.City <> '') then begin
-            CompanyAddr[LineNo] := CompanyInfoL."Post Code" + ' ' + CompanyInfoL.City;
-            LineNo += 1;
-        end;
-
-        // // County
-        // if CompanyInfoL.County <> '' then begin
-        //     CompanyAddr[LineNo] := CompanyInfoL.County;
-        //     LineNo += 1;
-        // end;
-
-        // Country
-        if CompanyInfoL."Country/Region Code" <> '' then begin
-            Country.Get(CompanyInfoL."Country/Region Code");
-            CompanyAddr[LineNo] := Country.Name;
-        end;
-    end;
-
-    procedure UpdateFooterData(RentalOrder: Record "EQM Rental Header")
-    var
-        Customer: Record Customer;
-        CustomerPosting: Record "Customer Posting Group";
-        CompanyInfoL: Record "Company Information";
-    begin
-        CompanyInfoL.Get();
-
-        CompanyNameTxt := CompanyInfoL.Name;
-        CompanyAddressTxt := CompanyInfoL.Address;
-        if CompanyInfoL."Address 2" <> '' then
-            CompanyAddressTxt += ', ' + CompanyInfoL."Address 2";
-
-        if (CompanyInfoL."Post Code" <> '') or (CompanyInfoL.City <> '') then begin
-            CompanyCityTxt := CompanyInfoL."Post Code" + ' ' + CompanyInfoL.City;
-        end;
-
-
-        CompanyPhoneNo := CompanyInfoL."Phone No.";
-        CompanyEmail := CompanyInfoL."E-Mail";
-        CompanyHomePage := CompanyInfoL."Home Page";
-        CompanyRegNo := CompanyInfoL."Registration No.";
-        CompanyContactPerson := CompanyInfoL."Contact Person";
-        CompanyBankName := CompanyInfoL."Bank Name";
-        CompanyBankAccNo := CompanyInfoL."Bank Account No.";
-        CompanySwiftCode := CompanyInfoL."SWIFT Code";
-
-        if not Customer.Get(RentalOrder."Customer No.") then
-            exit;
-
-        if not CustomerPosting.Get(Customer."Customer Posting Group") then
-            exit;
-
-        if (CustomerPosting.Code = 'AUSTRIA') or (CustomerPosting.Description = 'AUSTRIA') then begin
-            CompanyPhoneNo := CompanyInfoL."I2I Phone No. AT";
-            CompanyEmail := CompanyInfoL."I2I Email AT";
-            CompanyHomePage := CompanyInfoL."I2I Home Page AT";
-            CompanyRegNo := CompanyInfoL."I2I Company Reg No. AT";
-            CompanyContactPerson := CompanyInfoL."I2I Contact Person AT";
-            CompanyBankName := CompanyInfoL."I2I Bank Name AT";
-            CompanyBankAccNo := CompanyInfoL."I2I Bank Acc. No. AT";
-            CompanySwiftCode := CompanyInfoL."I2I Swift AT";
-        end else
-            if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
-                CompanyPhoneNo := CompanyInfoL."I2I Phone No. CH";
-                CompanyEmail := CompanyInfoL."I2I Email CH";
-                CompanyHomePage := CompanyInfoL."I2I Home Page CH";
-                CompanyRegNo := CompanyInfoL."I2I Company Reg No. CH";
-                CompanyContactPerson := CompanyInfoL."I2I Contact Person CH";
-                CompanyBankName := CompanyInfoL."I2I Bank Name CH";
-                CompanyBankAccNo := CompanyInfoL."I2I Bank Acc. No. CH";
-                CompanySwiftCode := CompanyInfoL."I2I Swift CH";
-            end;
-    end;
-
-    procedure GetHomePageFromLocation(LocationCode: Code[20])
-    var
-        LocationL: Record Location;
-    begin
-        Clear(LocationL);
-        if not LocationL.Get(LocationCode) then begin
-            OpeningHours := '';
-            exit;
-        end;
-
-        OpeningHours := LocationL."Home Page";
-    end;
+        RentalOrderLbl: Label 'Rental Order';
+        ContractNoLbl: Label 'Contract No.';
+        CustomerNameLbl: Label 'Customer Name';
+        ReferenceLbl: Label 'Reference';
+        PickupDateLbl: Label 'Pickup Date';
+        DateLbl: Label 'Date';
+        CustomerDetailsLbl: Label 'Customer Details:';
+        PaymentDetailsLbl: Label 'Payment Details:';
+        MaterialsLbl: Label 'Materials:';
+        ItemNoLbl: Label 'Item No.';
+        DescriptionLbl: Label 'Description';
+        QuantityLbl: Label 'Quantity';
+        RemarksLbl: Label 'Remarks:';
 }
