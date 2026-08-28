@@ -1,6 +1,9 @@
 namespace RoldoRent.RoldoRent;
 
 using Microsoft.Sales.History;
+using Microsoft.Finance.GeneralLedger.Setup;
+using RoldoRentGermany.RoldoRentGermany;
+using Microsoft.Sales.Setup;
 using Microsoft.Foundation.Address;
 using Microsoft.Sales.Customer;
 using Microsoft.Foundation.Company;
@@ -116,22 +119,25 @@ report 60010 "I2I Combine Invoice"
 
             trigger OnAfterGetRecord()
             var
-            //TotalLineAmountL: Decimal;
+                ReportHelper: Codeunit "I2I Report Helper";
+                RecRefL: RecordRef;
+                UnusedShipAddress: array[8] of Text[100];
             begin
+                RecRefL.GetTable(SalesInvoiceHeader);
+
                 CalcFields(Amount, "Amount Including VAT");
                 Clear(StartDate);
                 Clear(EndDate);
                 StartDateValue := 0D;
                 EndDateValue := 0D;
                 Clear(CustomerAddress);
-                CustomerAddressL(SalesInvoiceHeader);
+                ReportHelper.GetShipAndCustomerAddressData(RecRefL, UnusedShipAddress, CustomerAddress);
                 CompanyAddress();
-                UpdatePhEmailHP(SalesInvoiceHeader);
                 SetInvoicePeriodDates(SalesInvoiceHeader);
                 TotalLineAmount := CalculateLineAmount(SalesInvoiceHeader);
                 VATLblTxt := StrSubstNo(VATLbl, GetInvoiceVATPercent(SalesInvoiceHeader));
-                ExclVATLblTxt := StrSubstNo(ExclVATLbl, GetInvoiceCurrencyCode(SalesInvoiceHeader));
-                InclVATLblTxt := StrSubstNo(InclVATLbl, GetInvoiceCurrencyCode(SalesInvoiceHeader));
+                ExclVATLblTxt := StrSubstNo(ExclVATLbl, ReportHelper.GetCurrencyCode(SalesInvoiceHeader."Currency Code"));
+                InclVATLblTxt := StrSubstNo(InclVATLbl, ReportHelper.GetCurrencyCode(SalesInvoiceHeader."Currency Code"));
             end;
         }
     }
@@ -211,23 +217,23 @@ report 60010 "I2I Combine Invoice"
         TotalAmount: Decimal;
         TotalVATAmount: Decimal;
         TotalInclAmount: Decimal;
-        CombineInvLbl: Label 'Sammelrechnung';
-        ReferenceLbl: Label 'Referenz:';
-        ProjectCodeLbl: Label 'Projektcode';
-        CustomerLbl: Label 'Kunde';
-        DateLbl: Label 'Datum';
-        InvNoLbl: Label 'Rechnungsnr.';
-        StartDateLbl: Label 'Anfangsdatum';
-        EndDateLbl: Label 'Enddatum';
-        ProjectNoLbl: Label 'Projektnr.';
-        DescriptionLbl: Label 'Beschreibung';
-        AmountLbl: Label 'Betrag';
-        TotalLbl: Label 'Gesamt';
-        ExclVATLbl: Label 'Gesamt %1 exkl. MwSt.';
+        CombineInvLbl: Label 'Combine Invoice';
+        ReferenceLbl: Label 'Reference:';
+        ProjectCodeLbl: Label 'Project Code:';
+        CustomerLbl: Label 'Customer';
+        DateLbl: Label 'Date';
+        InvNoLbl: Label 'Invoice No.';
+        StartDateLbl: Label 'Start Date';
+        EndDateLbl: Label 'End Date';
+        ProjectNoLbl: Label 'Project No.';
+        DescriptionLbl: Label 'Description';
+        AmountLbl: Label 'Amount';
+        TotalLbl: Label 'Total';
+        ExclVATLbl: Label 'Total %1 excl. VAT';
         ExclVATLblTxt: Text[100];
-        VATLbl: Label '%1 % MwSt.';
+        VATLbl: Label '%1 % VAT';
         VATLblTxt: Text[100];
-        InclVATLbl: Label 'Gesamt %1 inkl. MwSt.';
+        InclVATLbl: Label 'Total %1 incl. VAT';
         InclVATLblTxt: Text[100];
 
     procedure CustomerAddressL(SalesInvHeader: Record "Sales Invoice Header");
@@ -351,13 +357,7 @@ report 60010 "I2I Combine Invoice"
         exit(0);
     end;
 
-    procedure GetInvoiceCurrencyCode(SalesInvHeader: Record "Sales Invoice Header"): Code[10]
-    begin
-        if SalesInvHeader."Currency Code" <> '' then
-            exit(SalesInvHeader."Currency Code");
 
-        exit('EUR');
-    end;
 
     procedure UpdatePhEmailHP(SalesInvHeader: Record "Sales Invoice Header")
     var

@@ -36,12 +36,12 @@ tableextension 60014 "I2I Company Information" extends "Company Information"
             Caption = 'Swift AT';
             DataClassification = ToBeClassified;
         }
-        field(60006; "I2I Bank Name AT"; Code[20])
+        field(60006; "I2I Bank Name AT"; Text[100])
         {
             Caption = 'Bank Name AT';
             DataClassification = ToBeClassified;
         }
-        field(60007; "I2I Contact Person AT"; Code[20])
+        field(60007; "I2I Contact Person AT"; Text[100])
         {
             Caption = 'Contact Person AT';
             DataClassification = ToBeClassified;
@@ -56,12 +56,12 @@ tableextension 60014 "I2I Company Information" extends "Company Information"
             Caption = 'Phone No. CH';
             DataClassification = ToBeClassified;
         }
-        field(600010; "I2I Email CH"; Text[100])
+        field(60010; "I2I Email CH"; Text[100])
         {
             Caption = 'Email CH';
             DataClassification = ToBeClassified;
         }
-        field(600011; "I2I Home Page CH"; Text[100])
+        field(60011; "I2I Home Page CH"; Text[100])
         {
             Caption = 'Home Page Swiss';
             DataClassification = ToBeClassified;
@@ -81,12 +81,12 @@ tableextension 60014 "I2I Company Information" extends "Company Information"
             Caption = 'Swift Swiss';
             DataClassification = ToBeClassified;
         }
-        field(60015; "I2I Bank Name CH"; Code[20])
+        field(60015; "I2I Bank Name CH"; Text[100])
         {
             Caption = 'Bank Name Swiss';
             DataClassification = ToBeClassified;
         }
-        field(60016; "I2I Contact Person CH"; Code[20])
+        field(60016; "I2I Contact Person CH"; Text[100])
         {
             Caption = 'Contact Person Swiss';
             DataClassification = ToBeClassified;

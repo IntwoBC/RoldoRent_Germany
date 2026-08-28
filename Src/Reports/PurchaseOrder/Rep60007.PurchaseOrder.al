@@ -510,7 +510,7 @@ report 60007 "Purchase Order"
                 wlRecRef: RecordRef;
                 CountryRegionL: Record "Country/Region";
             begin
-
+                CurrReport.Language := ReportHelper.GetReportLanguageId(PurchHdr."Language Code", PurchHdr."Sell-to Customer No.", DefaultLanguageCodeLbl);
                 ShipToAddr[1] := PurchHdr."Ship-to Name";
                 ShipToAddr[2] := PurchHdr."Ship-to Contact";
                 ShipToAddr[3] := PurchHdr."Ship-to Address";
@@ -784,6 +784,7 @@ report 60007 "Purchase Order"
         PaymentTermsLbl: Label 'Payment Terms';
         ShippingMethodLbl: Label 'Shipping Method';
         RemarkLbl: Label 'Remark:';
+        DefaultLanguageCodeLbl: Label 'DE', Locked = true;
 
     local procedure Trl(pLblName: Text): Text;
     begin

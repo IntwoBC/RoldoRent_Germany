@@ -119,6 +119,7 @@ report 60001 "Order Conf. W/O Transport"
                 Salesperson: Record "Salesperson/Purchaser";
                 ReportHelper: Codeunit "I2I Report Helper";
             begin
+                CurrReport.Language := ReportHelper.GetReportLanguageId(EQMRentalHeader."Language Code", EQMRentalHeader."Customer No.", DefaultLanguageCodeLbl);
                 OutBoundText := GetOutboundMemoL(EQMRentalHeader);
 
                 ReportHelper.GetShipToAddressFromLocation(EQMRentalHeader."Location Code", ShipToAddr);
@@ -222,13 +223,14 @@ report 60001 "Order Conf. W/O Transport"
         UnitPriceExclLbl: Label 'Unit Price Excl. VAT';
         UOMLbl: Label 'Unit of Measure';
         DiscountPercentLbl: Label 'Discount %';
-        HandlingCostLbl: Label 'The costs for incoming and outgoing handling are €%1 for <500 items and €%2 for >500 items.';
+        HandlingCostLbl: Label 'The costs for incoming and outgoing handling are €%1 for %2%3 items and €%4 for %5%6 items.';
         RemarksLbl: Label 'Remark :';
         ContactQuestionsLbl: Label 'If you have any questions, please feel free to contact me at Tel. %1 or by email %2.';
         ReturnConditionLbl: Label 'If the materials are not returned clean or in accordance with our return instructions, costs will be charged; the rate for this is €47.50 per working hour.';
         TermsConditionsLbl: Label 'Our general terms and conditions apply to this order, see %1/downloads.';
         KindRegardsLbl: Label 'Kind regards,';
         FooterNoteTxt: Text;
+        DefaultLanguageCodeLbl: Label 'DE', Locked = true;
 
     local procedure GetOutboundMemoL(var RentalHeader: Record "EQM Rental Header"): Text
     var
@@ -253,7 +255,7 @@ report 60001 "Order Conf. W/O Transport"
     var
         TextBuilder: TextBuilder;
     begin
-        TextBuilder.AppendLine(StrSubstNo(HandlingCostLbl, BelowThresholdCost, AboveThresholdCost));
+        TextBuilder.AppendLine(StrSubstNo(HandlingCostLbl, BelowThresholdCost, '<', '500', AboveThresholdCost, '>', '500'));
         TextBuilder.AppendLine();
 
         if OutBoundText <> '' then begin

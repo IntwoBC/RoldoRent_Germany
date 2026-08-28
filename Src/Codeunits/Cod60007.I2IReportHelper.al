@@ -74,7 +74,7 @@ codeunit 60007 "I2I Report Helper"
                         RentalCollectionOrder."Ship-to Address", RentalCollectionOrder."Ship-to Address 2",
                         RentalCollectionOrder."Ship-to Post Code", RentalCollectionOrder."Ship-to-City",
                         RentalCollectionOrder."Ship-to Country/Region Code");
-                    SetAddress(BillAddress, RentalCollectionOrder."Ship-to Name", RentalCollectionOrder."Ship-to Name 2",
+                    SetAddress(BillAddress, RentalCollectionOrder."Customer Name", RentalCollectionOrder."Customer Name 2",
                         RentalCollectionOrder."Ship-to Address", RentalCollectionOrder."Ship-to Address 2",
                         RentalCollectionOrder."Ship-to Post Code", RentalCollectionOrder."Ship-to-City",
                         RentalCollectionOrder."Ship-to Country/Region Code");
@@ -87,10 +87,10 @@ codeunit 60007 "I2I Report Helper"
                         SalesCrMemo."Ship-to Address", SalesCrMemo."Ship-to Address 2",
                         SalesCrMemo."Ship-to Post Code", SalesCrMemo."Ship-to City",
                         SalesCrMemo."Ship-to Country/Region Code");
-                    SetAddress(BillAddress, SalesCrMemo."Ship-to Name", SalesCrMemo."Ship-to Name 2",
-                        SalesCrMemo."Ship-to Address", SalesCrMemo."Ship-to Address 2",
-                        SalesCrMemo."Ship-to Post Code", SalesCrMemo."Ship-to City",
-                        SalesCrMemo."Ship-to Country/Region Code");
+                    SetAddress(BillAddress, SalesCrMemo."Bill-to Name", SalesCrMemo."Bill-to Name 2",
+                        SalesCrMemo."Bill-to Address", SalesCrMemo."Bill-to Address 2",
+                        SalesCrMemo."Bill-to Post Code", SalesCrMemo."Bill-to City",
+                        SalesCrMemo."Bill-to Country/Region Code");
                     CustomerAddress(CustAddressArr, SalesCrMemo."Bill-to Customer No.");
                 end;
             Database::"EQM Rental Header":
@@ -100,16 +100,15 @@ codeunit 60007 "I2I Report Helper"
                         RentalHeader."Ship-to Address", RentalHeader."Ship-to Address 2",
                         RentalHeader."Ship-to Post Code", RentalHeader."Ship-to-City",
                         RentalHeader."Ship-to Country/Region Code");
-                    SetAddress(BillAddress, RentalHeader."Ship-to Name", RentalHeader."Ship-to Name 2",
-                        RentalHeader."Ship-to Address", RentalHeader."Ship-to Address 2",
-                        RentalHeader."Ship-to Post Code", RentalHeader."Ship-to-City",
-                        RentalHeader."Ship-to Country/Region Code");
+                    SetAddress(BillAddress, RentalHeader."Bill-to Name", RentalHeader."Bill-to Name 2",
+                        RentalHeader."Bill-to Address", RentalHeader."Bill-to Address 2",
+                        RentalHeader."Bill-to Post Code", RentalHeader."Bill-to-City",
+                        RentalHeader."Bill-to Country/Region Code");
                     CustomerAddress(CustAddressArr, RentalHeader."Bill-to Customer No.");
                 end;
             Database::"Sales Invoice Header":
                 begin
                     RecRef.SetTable(SalesInvHdr);
-
                     SetAddress(
                         ShipAddress,
                         SalesInvHdr."Ship-to Name",
@@ -336,58 +335,58 @@ codeunit 60007 "I2I Report Helper"
         end;
     end;
 
-        procedure UpdateCompanyReportData(CustomerNo: Code[20]; OpeningHoursLocationCode: Code[20];
-            var CompanyAddressArr: array[8] of Text[100];
-            var CompanyNameTxt: Text[100]; var CompanyAddressTxt: Text[100]; var CompanyCityTxt: Text[100];
-            var CompanyPhoneNo: Text[100]; var CompanyEmail: Text[100]; var CompanyHomePage: Text[100];
-            var CompanyRegNo: Text[100]; var CompanyContactPerson: Text[100];
-            var CompanyBankName: Text[100]; var CompanyBankAccNo: Text[100]; var CompanySwiftCode: Text[100];
-            var OpeningHours: Text[100])
-        begin
-            CompanyAddress(CompanyAddressArr);
-            UpdateFooterData(
-                CustomerNo,
-                CompanyNameTxt,
-                CompanyAddressTxt,
-                CompanyCityTxt,
-                CompanyPhoneNo,
-                CompanyEmail,
-                CompanyHomePage,
-                CompanyRegNo,
-                CompanyContactPerson,
-                CompanyBankName,
-                CompanyBankAccNo,
-                CompanySwiftCode);
-            OpeningHours := GetHomePageFromLocation(OpeningHoursLocationCode);
-        end;
+    procedure UpdateCompanyReportData(CustomerNo: Code[20]; OpeningHoursLocationCode: Code[20];
+        var CompanyAddressArr: array[8] of Text[100];
+        var CompanyNameTxt: Text[100]; var CompanyAddressTxt: Text[100]; var CompanyCityTxt: Text[100];
+        var CompanyPhoneNo: Text[100]; var CompanyEmail: Text[100]; var CompanyHomePage: Text[100];
+        var CompanyRegNo: Text[100]; var CompanyContactPerson: Text[100];
+        var CompanyBankName: Text[100]; var CompanyBankAccNo: Text[100]; var CompanySwiftCode: Text[100];
+        var OpeningHours: Text[100])
+    begin
+        CompanyAddress(CompanyAddressArr);
+        UpdateFooterData(
+            CustomerNo,
+            CompanyNameTxt,
+            CompanyAddressTxt,
+            CompanyCityTxt,
+            CompanyPhoneNo,
+            CompanyEmail,
+            CompanyHomePage,
+            CompanyRegNo,
+            CompanyContactPerson,
+            CompanyBankName,
+            CompanyBankAccNo,
+            CompanySwiftCode);
+        OpeningHours := GetHomePageFromLocation(OpeningHoursLocationCode);
+    end;
 
-        procedure GetFirstDispatchContractNo(DocumentNo: Code[20]): Text[100]
-        var
-            RentalDispLine: Record "EQM Rental Dispatch Line";
-        begin
-            RentalDispLine.SetRange("Document No.", DocumentNo);
-            if RentalDispLine.FindSet() then
-                repeat
-                    if RentalDispLine."Contract No." <> '' then
-                        exit(RentalDispLine."Contract No.");
-                until RentalDispLine.Next() = 0;
-        end;
+    procedure GetFirstDispatchContractNo(DocumentNo: Code[20]): Text[100]
+    var
+        RentalDispLine: Record "EQM Rental Dispatch Line";
+    begin
+        RentalDispLine.SetRange("Document No.", DocumentNo);
+        if RentalDispLine.FindSet() then
+            repeat
+                if RentalDispLine."Contract No." <> '' then
+                    exit(RentalDispLine."Contract No.");
+            until RentalDispLine.Next() = 0;
+    end;
 
-        procedure BuildTransportFooterTexts(DeliveryConfirmationDateLineLbl: Text; DeliveryConfirmationNameLineLbl: Text;
-            DeliveryConfirmationSignatureLineLbl: Text; ContactInfoLbl: Text; TermsAndConditionsLbl: Text;
-            CompanyPhoneNo: Text[100]; CompanyEmail: Text[100]; CompanyHomePage: Text[100];
-            var DeliveryConfirmationTxt: Text[512]; var ContactInfoTxt: Text[512]; var TermsAndConditionsTxt: Text[250])
-        var
-            TextBuilder: TextBuilder;
-        begin
-            TextBuilder.AppendLine(DeliveryConfirmationDateLineLbl);
-            TextBuilder.AppendLine(DeliveryConfirmationNameLineLbl);
-            TextBuilder.Append(DeliveryConfirmationSignatureLineLbl);
-            DeliveryConfirmationTxt := TextBuilder.ToText();
+    procedure BuildTransportFooterTexts(DeliveryConfirmationDateLineLbl: Text; DeliveryConfirmationNameLineLbl: Text;
+        DeliveryConfirmationSignatureLineLbl: Text; ContactInfoLbl: Text; TermsAndConditionsLbl: Text;
+        CompanyPhoneNo: Text[100]; CompanyEmail: Text[100]; CompanyHomePage: Text[100];
+        var DeliveryConfirmationTxt: Text[512]; var ContactInfoTxt: Text[512]; var TermsAndConditionsTxt: Text[250])
+    var
+        TextBuilder: TextBuilder;
+    begin
+        TextBuilder.AppendLine(DeliveryConfirmationDateLineLbl);
+        TextBuilder.AppendLine(DeliveryConfirmationNameLineLbl);
+        TextBuilder.Append(DeliveryConfirmationSignatureLineLbl);
+        DeliveryConfirmationTxt := TextBuilder.ToText();
 
-            ContactInfoTxt := StrSubstNo(ContactInfoLbl, CompanyPhoneNo, CompanyEmail);
-            TermsAndConditionsTxt := StrSubstNo(TermsAndConditionsLbl, CompanyHomePage);
-        end;
+        ContactInfoTxt := StrSubstNo(ContactInfoLbl, CompanyPhoneNo, CompanyEmail);
+        TermsAndConditionsTxt := StrSubstNo(TermsAndConditionsLbl, CompanyHomePage);
+    end;
 
     procedure GetHomePageFromLocation(LocationCode: Code[20]) OpeningHours: Text[100]
     var
@@ -509,5 +508,15 @@ codeunit 60007 "I2I Report Helper"
             TempText += LineText;
         end;
         exit(TempText);
+    end;
+
+    procedure GetCurrencyCode(CurrencyCode: Code[20]): Code[10]
+    var
+        GLSetup: Record "General Ledger Setup";
+    begin
+        if CurrencyCode <> '' then
+            exit(CurrencyCode);
+        GLSetup.Get();
+        exit(GLSetup."LCY Code");
     end;
 }

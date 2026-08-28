@@ -159,6 +159,8 @@ report 60002 "I2I Order Conf. for Ret. Tran."
                 FooterNoteTxt := BuildFooterNote(CompanyPhoneNo, CompanyEmail, CompanyHomePage, CreatedName);
 
                 ContractNo := ReportHelper.GetFirstDispatchContractNo(EQMRentalDispatchHeader."No.");
+
+                CurrReport.Language := ReportHelper.GetReportLanguageId(EQMRentalDispatchHeader."Language Code", EQMRentalDispatchHeader."Customer No.", DefaultLanguageCodeLbl);
             end;
         }
     }
@@ -236,6 +238,7 @@ report 60002 "I2I Order Conf. for Ret. Tran."
         ReturnConditionLbl: Label 'If the materials are not returned clean or in accordance with our return instructions, costs will be charged; the rate for this is €47.50 per working hour.';
         TermsConditionsLbl: Label 'Our general terms and conditions apply to this order, see %1/downloads.';
         KindRegardsLbl: Label 'Kind regards,';
+        DefaultLanguageCodeLbl: Label 'DE', Locked = true;
 
     local procedure GetOutboundMemoL(var RentalDispHeader: Record "EQM Rental Dispatch Header"): Text
     var

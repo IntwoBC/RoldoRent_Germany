@@ -94,8 +94,8 @@ report 60004 "Posted Rental Invoice"
             column(AmountLbl; AmountLbl) { }
             column(RentLbl; RentLbl) { }
             column(ReturnLbl; ReturnLbl) { }
-            column(TotalEURLbl; TotalEURLbl) { }
-            column(TotalInclEURLbl; TotalInclEURLbl) { }
+            column(TotalEURLbl; TotalExclVATTxt) { }
+            column(TotalInclEURLbl; TotalInclVATTxt) { }
             column(ExclVATLbl; ExclVATLbl) { }
             column(VATLbl; VATLbl) { }
             column(InclVATLbl; InclVATLbl) { }
@@ -188,7 +188,10 @@ report 60004 "Posted Rental Invoice"
                 SalesInvLine: Record "Sales Invoice Line";
                 PaymentTerms: Record "Payment Terms";
                 ReportHelper: Codeunit "I2I Report Helper";
+                RecRefl: RecordRef;
             begin
+                RecRefl.GetTable(SalesInvoiceHeader);
+
                 if "Language Code" <> '' then
                     LanguageId := LanguageMgt.GetLanguageId("Language Code")
                 else
@@ -210,9 +213,8 @@ report 60004 "Posted Rental Invoice"
                 CalcFields("Amount Including VAT", Amount);
                 AmountIncludingVATDecimal := Round("Amount Including VAT", 0.01);
                 AmountDecimal := Round(Amount, 0.01);
-                ShipAddress(SalesInvoiceHeader);
-                CustomerAddress(SalesInvoiceHeader);
-                CompanyAddress();
+                ReportHelper.GetShipAndBillAddressData(RecRefL, CustAddr, ShipToAddr);
+                ReportHelper.CompanyAddress(CompanyAddr);
 
                 if Customer.Get("Bill-to Customer No.") then begin
                     CustVATRegNo := Customer."VAT Registration No.";
@@ -270,6 +272,10 @@ report 60004 "Posted Rental Invoice"
                                     CompanySwiftCode,
                                     OpeningHours);
                 BuildInVerhuurText();
+
+                TotalExclVATTxt := StrSubstNo(TotalEURLbl, ReportHelper.GetCurrencyCode(SalesInvoiceHeader."Currency Code"));
+                TotalInclVATTxt := StrSubstNo(TotalInclEURLbl, ReportHelper.GetCurrencyCode(SalesInvoiceHeader."Currency Code"));
+
                 if not IsReportInPreviewMode() then
                     CODEUNIT.Run(CODEUNIT::"Sales Inv.-Printed", SalesInvoiceHeader);
             end;
@@ -353,15 +359,15 @@ report 60004 "Posted Rental Invoice"
         AmountLbl: Label 'Amount';
         RentLbl: Label 'Rent';
         ReturnLbl: Label 'Return';
-        TotalEURLbl: Label 'Total EUR';
-        TotalInclEURLbl: Label 'Total EUR';
+        TotalEURLbl: Label 'Total %1';
+        TotalInclEURLbl: Label 'Total %1';
         ExclVATLbl: Label 'excl. VAT';
         VATLbl: Label 'VAT';
         InclVATLbl: Label 'incl. VAT';
         VATReverseChargeLbl: Label 'VAT reverse charge.';
         UntilLbl: Label 'up to and incl.';
         OnRentAsOfLbl: Label 'On rent as of';
-        DefaultLanguageCodeLbl: Label 'NL', Locked = true;
+        DefaultLanguageCodeLbl: Label 'DE', Locked = true;
         CompanyNameTxt: Text[100];
         CompanyAddressTxt: Text[100];
         CompanyCityTxt: Text[100];
@@ -373,6 +379,8 @@ report 60004 "Posted Rental Invoice"
         CompanyBankAccNo: Text[100];
         CompanyBankName: Text[100];
         CompanySwiftCode: Text[100];
+        TotalExclVATTxt: Text[50];
+        TotalInclVATTxt: Text[50];
 
     local procedure BuildVATAmountLines()
     var
@@ -926,117 +934,6 @@ report 60004 "Posted Rental Invoice"
 
         if InVerhuurQtyText <> '' then
             InVerhuurHdrText := Format(RentalToDate + 1, 0, '<Day,2>-<Month,2>-<Year>');
-    end;
-
-    local procedure ShipAddress(SalesInvoiceHeader: Record "Sales Invoice Header")
-    var
-        Country: Record "Country/Region";
-        LineNo: Integer;
-    begin
-        Clear(ShipToAddr);
-        LineNo := 1;
-
-        if SalesInvoiceHeader."Ship-to Name" <> '' then begin
-            ShipToAddr[LineNo] := SalesInvoiceHeader."Ship-to Name";
-            LineNo += 1;
-        end;
-        if SalesInvoiceHeader."Ship-to Name 2" <> '' then begin
-            ShipToAddr[LineNo] := SalesInvoiceHeader."Ship-to Name 2";
-            LineNo += 1;
-        end;
-        if SalesInvoiceHeader."Ship-to Address" <> '' then begin
-            ShipToAddr[LineNo] := SalesInvoiceHeader."Ship-to Address";
-            LineNo += 1;
-        end;
-        if SalesInvoiceHeader."Ship-to Address 2" <> '' then begin
-            ShipToAddr[LineNo] := SalesInvoiceHeader."Ship-to Address 2";
-            LineNo += 1;
-        end;
-        if (SalesInvoiceHeader."Ship-to Post Code" <> '') or (SalesInvoiceHeader."Ship-to City" <> '') then begin
-            ShipToAddr[LineNo] := SalesInvoiceHeader."Ship-to Post Code" + ' ' + SalesInvoiceHeader."Ship-to City";
-            LineNo += 1;
-        end;
-        if SalesInvoiceHeader."Ship-to Country/Region Code" <> '' then
-            if Country.Get(SalesInvoiceHeader."Ship-to Country/Region Code") then
-                ShipToAddr[LineNo] := Country.Name;
-    end;
-
-    local procedure CustomerAddress(SalesInvoiceHeader: Record "Sales Invoice Header")
-    var
-        Customer: Record Customer;
-        Country: Record "Country/Region";
-        LineNo: Integer;
-    begin
-        Clear(CustAddr);
-        LineNo := 1;
-
-        if not Customer.Get(SalesInvoiceHeader."Bill-to Customer No.") then
-            exit;
-
-        if Customer.Name <> '' then begin
-            CustAddr[LineNo] := Customer.Name;
-            LineNo += 1;
-        end;
-        if Customer."Name 2" <> '' then begin
-            CustAddr[LineNo] := Customer."Name 2";
-            LineNo += 1;
-        end;
-        if Customer.Address <> '' then begin
-            CustAddr[LineNo] := Customer.Address;
-            LineNo += 1;
-        end;
-        if Customer."Address 2" <> '' then begin
-            CustAddr[LineNo] := Customer."Address 2";
-            LineNo += 1;
-        end;
-        if (Customer."Post Code" <> '') or (Customer.City <> '') then begin
-            CustAddr[LineNo] := Customer."Post Code" + ' ' + Customer.City;
-            LineNo += 1;
-        end;
-        if Customer.County <> '' then begin
-            CustAddr[LineNo] := Customer.County;
-            LineNo += 1;
-        end;
-        if Customer."Country/Region Code" <> '' then
-            if Country.Get(Customer."Country/Region Code") then
-                CustAddr[LineNo] := Country.Name;
-    end;
-
-    local procedure CompanyAddress()
-    var
-        Country: Record "Country/Region";
-        LineNo: Integer;
-    begin
-        Clear(CompanyAddr);
-        LineNo := 1;
-
-        if CompanyInfo.Name <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfo.Name;
-            LineNo += 1;
-        end;
-        if CompanyInfo."Name 2" <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfo."Name 2";
-            LineNo += 1;
-        end;
-        if CompanyInfo.Address <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfo.Address;
-            LineNo += 1;
-        end;
-        if CompanyInfo."Address 2" <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfo."Address 2";
-            LineNo += 1;
-        end;
-        if (CompanyInfo."Post Code" <> '') or (CompanyInfo.City <> '') then begin
-            CompanyAddr[LineNo] := CompanyInfo."Post Code" + ' ' + CompanyInfo.City;
-            LineNo += 1;
-        end;
-        if CompanyInfo.County <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfo.County;
-            LineNo += 1;
-        end;
-        if CompanyInfo."Country/Region Code" <> '' then
-            if Country.Get(CompanyInfo."Country/Region Code") then
-                CompanyAddr[LineNo] := Country.Name;
     end;
 
     procedure IsReportInPreviewMode(): Boolean

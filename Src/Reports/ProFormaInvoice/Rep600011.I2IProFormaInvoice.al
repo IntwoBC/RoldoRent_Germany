@@ -103,8 +103,8 @@ Report 60011 "I2I Pro Forma Invoice"
             column(AmountLbl; AmountLbl) { }
             column(RentLbl; RentLbl) { }
             column(ReturnLbl; ReturnLbl) { }
-            column(TotalEURLbl; TotalEURLbl) { }
-            column(TotalInclEURLbl; TotalInclEURLbl) { }
+            column(TotalEURLbl; TotalExclVATTxt) { }
+            column(TotalInclEURLbl; TotalInclVATTxt) { }
             column(ExclVATLbl; ExclVATLbl) { }
             column(VATLbl; VATLbl) { }
             column(InclVATLbl; InclVATLbl) { }
@@ -200,10 +200,13 @@ Report 60011 "I2I Pro Forma Invoice"
                 PaymentTerms: Record "Payment Terms";
                 ReportHelper: Codeunit "I2I Report Helper";
                 RecRefL: RecordRef;
+                ReportLanguageId: Integer;
             begin
-
-                CurrReport.Language := ReportHelper.GetReportLanguageId(SalesHeader."Language Code", SalesHeader."Bill-to Customer No.", DefaultLanguageCodeLbl);
                 RecRefL.GetTable(SalesHeader);
+
+                ReportLanguageId := ReportHelper.GetReportLanguageId(SalesHeader."Language Code", SalesHeader."Bill-to Customer No.", DefaultLanguageCodeLbl);
+                if ReportLanguageId <> 0 then
+                    CurrReport.Language := ReportLanguageId;
 
                 Clear(RentalFromDate);
                 Clear(RentalToDate);
@@ -216,7 +219,7 @@ Report 60011 "I2I Pro Forma Invoice"
 
                 AmountIncludingVATDecimal := Round("Amount Including VAT", 0.01);
                 AmountDecimal := Round(Amount, 0.01);
-                ReportHelper.GetShipAndBillAddressData(RecRefL, ShipToAddr, CustAddr);
+                ReportHelper.GetShipAndBillAddressData(RecRefL, CustAddr, ShipToAddr);
                 ReportHelper.CompanyAddress(CompanyAddr);
 
                 if Customer.Get("Bill-to Customer No.") then begin
@@ -247,7 +250,7 @@ Report 60011 "I2I Pro Forma Invoice"
                     until SalesLine.Next() = 0;
 
                 if (RentalFromDate <> 0D) and (RentalToDate <> 0D) then
-                    RentalPeriodText := Format(RentalFromDate, 0, '<Day,2>-<Month,2>-<Year>') + ' tm ' + Format(RentalToDate, 0, '<Day,2>-<Month,2>-<Year>');
+                    RentalPeriodText := Format(RentalFromDate, 0, '<Day,2>-<Month,2>-<Year>') + toLbl + Format(RentalToDate, 0, '<Day,2>-<Month,2>-<Year>');
 
                 BuildVATAmountLines();
 
@@ -260,6 +263,8 @@ Report 60011 "I2I Pro Forma Invoice"
 
                 BuildInVerhuurText();
                 InvoiceTitle := StrSubstNo(InvoiceTitleLbl, SalesHeader."No.");
+                TotalExclVATTxt := StrSubstNo(TotalEURLbl, ReportHelper.GetCurrencyCode(SalesHeader."Currency Code"));
+                TotalInclVATTxt := StrSubstNo(TotalInclEURLbl, ReportHelper.GetCurrencyCode(SalesHeader."Currency Code"));
 
                 ReportHelper.UpdateCompanyReportData(
                     SalesHeader."Sell-to Customer No.",
@@ -344,15 +349,16 @@ Report 60011 "I2I Pro Forma Invoice"
         AmountLbl: Label 'Amount';
         RentLbl: Label 'Rent';
         ReturnLbl: Label 'Return';
-        TotalEURLbl: Label 'Total EUR';
-        TotalInclEURLbl: Label 'Total EUR';
+        TotalEURLbl: Label 'Total %1';
+        TotalInclEURLbl: Label 'Total %1';
         ExclVATLbl: Label 'excl. VAT';
         VATLbl: Label 'VAT';
         InclVATLbl: Label 'incl. VAT';
         VATReverseChargeLbl: Label 'VAT reverse charge.';
         UntilLbl: Label 'up to and incl.';
         OnRentAsOfLbl: Label 'On rent as of';
-        DefaultLanguageCodeLbl: Label 'NL', Locked = true;
+        DefaultLanguageCodeLbl: Label 'DE', Locked = true;
+        InverhuurperLbl: Label 'In verhuur per ';
         CompanyNameTxt: Text[100];
         CompanyAddressTxt: Text[100];
         CompanyCityTxt: Text[100];
@@ -364,6 +370,9 @@ Report 60011 "I2I Pro Forma Invoice"
         CompanyBankAccNo: Text[100];
         CompanyBankName: Text[100];
         CompanySwiftCode: Text[100];
+        TotalExclVATTxt: Text[50];
+        TotalInclVATTxt: Text[50];
+        toLbl: Label ' to ';
 
     local procedure BuildVATAmountLines()
     var
@@ -920,6 +929,6 @@ Report 60011 "I2I Pro Forma Invoice"
         end;
 
         if InVerhuurQtyText <> '' then
-            InVerhuurHdrText := 'In verhuur per ' + Format(RentalToDate + 1, 0, '<Day,2>-<Month,2>-<Year>') + ' :';
+            InVerhuurHdrText := InverhuurperLbl + Format(RentalToDate + 1, 0, '<Day,2>-<Month,2>-<Year>') + ' :';
     end;
 }

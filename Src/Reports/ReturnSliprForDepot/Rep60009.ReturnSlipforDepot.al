@@ -104,6 +104,7 @@ report 60009 "Return Slip for Depot"
                 ReportHelper: Codeunit "I2I Report Helper";
                 RecRefL: RecordRef;
             begin
+                CurrReport.Language := ReportHelper.GetReportLanguageId("EQM Rental Dispatch Header"."Language Code", "EQM Rental Dispatch Header"."Customer No.", DefaultLanguageCodeLbl);
                 RecRefL.GetTable("EQM Rental Dispatch Header");
 
                 OutBoundText := ReportHelper.GetMemoTextFromBlob(RecRefL, "EQM Rental Dispatch Header".FieldNo("Inbound Memo Text"));
@@ -179,4 +180,5 @@ report 60009 "Return Slip for Depot"
         RemarksLbl: Label 'Remarks:';
         ContactInfoLbl: Label 'If you have any questions, please feel free to contact me at Tel. %1 or by email at %2.';
         ContactInfoTxt: Text;
+        DefaultLanguageCodeLbl: Label 'DE', Locked = true;
 }

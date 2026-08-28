@@ -9,77 +9,77 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 1245862610" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Betrag</source>
+          <source>Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType AmountLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 3217016174" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sammelrechnung</source>
+          <source>Combine Invoice</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType CombineInvLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 76061626" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Kunde</source>
+          <source>Customer</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType CustomerLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 1542941690" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Datum</source>
+          <source>Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType DateLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Beschreibung</source>
+          <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType DescriptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 3106015547" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Enddatum</source>
+          <source>End Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType EndDateLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 3309968797" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Gesamt %1 exkl. MwSt.</source>
+          <source>Total %1 excl. VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType ExclVATLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 3964871683" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Gesamt %1 inkl. MwSt.</source>
+          <source>Total %1 incl. VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType InclVATLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 259914550" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Rechnungsnr.</source>
+          <source>Invoice No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType InvNoLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 1415756030" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Projektcode</source>
+          <source>Project Code:</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType ProjectCodeLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 1267518538" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Projektnr.</source>
+          <source>Project No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType ProjectNoLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 1162595851" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Referenz:</source>
+          <source>Reference:</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType ReferenceLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 2980905154" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Anfangsdatum</source>
+          <source>Start Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType StartDateLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 2410138484" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Gesamt</source>
+          <source>Total</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType TotalLbl</note>
         </trans-unit>
         <trans-unit id="Report 4268504998 - NamedType 2617756395" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 % MwSt.</source>
+          <source>%1 % VAT</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Combine Invoice - NamedType VATLbl</note>
         </trans-unit>
@@ -288,6 +288,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Pro Forma Invoice - NamedType InclVATLbl</note>
         </trans-unit>
+        <trans-unit id="Report 671063771 - NamedType 2837776603" size-unit="char" translate="yes" xml:space="preserve">
+          <source>In verhuur per </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report I2I Pro Forma Invoice - NamedType InverhuurperLbl</note>
+        </trans-unit>
         <trans-unit id="Report 671063771 - NamedType 1259904353" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Date:</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -353,13 +358,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Pro Forma Invoice - NamedType ReturnLbl</note>
         </trans-unit>
+        <trans-unit id="Report 671063771 - NamedType 2885522451" size-unit="char" translate="yes" xml:space="preserve">
+          <source> to </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report I2I Pro Forma Invoice - NamedType toLbl</note>
+        </trans-unit>
         <trans-unit id="Report 671063771 - NamedType 608550454" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total EUR</source>
+          <source>Total %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Pro Forma Invoice - NamedType TotalEURLbl</note>
         </trans-unit>
         <trans-unit id="Report 671063771 - NamedType 472982654" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total EUR</source>
+          <source>Total %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report I2I Pro Forma Invoice - NamedType TotalInclEURLbl</note>
         </trans-unit>
@@ -1554,7 +1564,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Order Conf. W/O Transport - NamedType DocumentLbl</note>
         </trans-unit>
         <trans-unit id="Report 1908435300 - NamedType 1554321210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The costs for incoming and outgoing handling are €%1 for &lt;500 items and €%2 for &gt;500 items.</source>
+          <source>The costs for incoming and outgoing handling are €%1 for %2%3 items and €%4 for %5%6 items.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Order Conf. W/O Transport - NamedType HandlingCostLbl</note>
         </trans-unit>
@@ -1679,7 +1689,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Order Confirmation - NamedType DocumentLbl</note>
         </trans-unit>
         <trans-unit id="Report 1757112339 - NamedType 1554321210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The costs for incoming and outgoing handling are €%1 for &lt;500 items and €%2 for &gt;500 items.</source>
+          <source>The costs for incoming and outgoing handling are €%1 for %2%3 items and €%4 for %5%6 items.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Order Confirmation - NamedType HandlingCostLbl</note>
         </trans-unit>
@@ -1864,12 +1874,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Posted Rental Invoice - NamedType ReturnLbl</note>
         </trans-unit>
         <trans-unit id="Report 2549607652 - NamedType 608550454" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total EUR</source>
+          <source>Total %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Posted Rental Invoice - NamedType TotalEURLbl</note>
         </trans-unit>
         <trans-unit id="Report 2549607652 - NamedType 472982654" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total EUR</source>
+          <source>Total %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Posted Rental Invoice - NamedType TotalInclEURLbl</note>
         </trans-unit>

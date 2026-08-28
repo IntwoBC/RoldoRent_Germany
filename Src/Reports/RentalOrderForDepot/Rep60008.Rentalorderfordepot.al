@@ -100,6 +100,7 @@ report 60008 "Rental Order For depot"
                 ReportHelper: Codeunit "I2I Report Helper";
                 RecRefL: RecordRef;
             begin
+                CurrReport.Language := ReportHelper.GetReportLanguageId(EQMRentalHeader."Language Code", EQMRentalHeader."Customer No.", DefaultLanguageCodeLbl);
                 RecRefL.GetTable(EQMRentalHeader);
 
                 OutBoundText := ReportHelper.GetMemoTextFromBlob(RecRefL, EQMRentalHeader.FieldNo("Outbound Memo Text"));
@@ -185,4 +186,5 @@ report 60008 "Rental Order For depot"
         DescriptionLbl: Label 'Description';
         QuantityLbl: Label 'Quantity';
         RemarksLbl: Label 'Remarks:';
+        DefaultLanguageCodeLbl: Label 'DE', Locked = true;
 }

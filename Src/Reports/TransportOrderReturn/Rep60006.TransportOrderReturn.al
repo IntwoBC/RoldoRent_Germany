@@ -123,6 +123,7 @@ report 60006 "Transport Order Return"
                 ReportHelper: Codeunit "I2I Report Helper";
                 RecRefL: RecordRef;
             begin
+                CurrReport.Language := ReportHelper.GetReportLanguageId(EQMRentalDispatchHeader."Language Code", EQMRentalDispatchHeader."Customer No.", DefaultLanguageCodeLbl);
                 RecRefL.GetTable(EQMRentalDispatchHeader);
 
                 OutBoundText := ReportHelper.GetMemoTextFromBlob(RecRefL, EQMRentalDispatchHeader.FieldNo("Inbound Memo Text"));
@@ -244,4 +245,5 @@ report 60006 "Transport Order Return"
         DeliveryConfirmationSignatureLineLbl: Label 'Customer signature:          ..............................';
         ContactInfoLbl: Label 'If you have any questions, please contact me at Tel. %1, or by email %2 ';
         TermsAndConditionsLbl: Label 'Our general terms and conditions apply to this order, see %1/downloads ';
+        DefaultLanguageCodeLbl: Label 'DE', Locked = true;
 }
