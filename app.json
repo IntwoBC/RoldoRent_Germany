@@ -1,8 +1,8 @@
 {
   "id": "55de0f74-9af3-4de1-b765-5464e4c7e232",
-  "name": "RoldoRent",
+  "name": "RoldoRent_DE",
   "publisher": "INTWO",
-  "version": "1.0.440.26",
+  "version": "1.0.440.28",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -35,6 +35,7 @@
   },
   "runtime": "14.0",
   "features": [
-    "NoImplicitWith"
+    "NoImplicitWith",
+    "TranslationFile"
   ]
 }

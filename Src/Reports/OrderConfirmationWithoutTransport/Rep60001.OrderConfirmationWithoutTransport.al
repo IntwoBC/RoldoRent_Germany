@@ -45,15 +45,44 @@ report 60001 "Order Conf. W/O Transport"
             column(ShipToAddr7; ShipToAddr[7]) { }
             column(ShipToAddr8; ShipToAddr[8]) { }
             column(ContactEmail; ContactEmail) { }
-            column(CompanyPhoneNo; CompanyInfo."Phone No.") { }
-            column(CompanyEmail; CompanyInfo."E-Mail") { }
-            column(CompanyHomePage; CompanyInfo."Home Page") { }
-            column(CompanyBankName; CompanyInfo."Bank Name") { }
-            column(CompanyBankAccNo; CompanyInfo."Bank Account No.") { }
+            //Footer Fields
+            column(CompanyNameTxt; CompanyNameTxt) { }
+            column(CompanyAddressTxt; CompanyAddressTxt) { }
+            column(CompanyCityTxt; CompanyCityTxt) { }
+            column(CompanyPhoneNo; CompanyPhoneNo) { }
+            column(CompanyEmail; CompanyEmail) { }
+            column(CompanyHomePage; CompanyHomePage) { }
+            column(CompanyRegNo; CompanyRegNo) { }
+            column(CompanyContactPerson; CompanyContactPerson) { }
+            column(CompanyBankName; CompanyBankName) { }
+            column(CompanyBankAccNo; CompanyBankAccNo) { }
             column(CompanyVATRegNo; CompanyInfo."VAT Registration No.") { }
-            column(CompanyRegNo; CompanyInfo."Registration No.") { }
-            column(CompanySwiftCode; CompanyInfo."SWIFT Code") { }
+            column(CompanySwiftCode; CompanySwiftCode) { }
+            column(CompanyDOC; CompanyInfo."I2I DOC. Text") { }
             column(UserName; UserName) { }
+            //Threshold Columns
+            column(AboveThreshold; AboveThreshold) { }
+            column(BelowThreshold; BelowThreshold) { }
+            column(OpeningHours; OpeningHours) { }
+            column(OpeningHoursLbl; OpeningHoursLbl) { }
+            column(DocumentLbl; DocumentLbl) { }
+            column(ContractNumberLbl; ContractNumberLbl) { }
+            column(ContactPersonLbl; ContactPersonLbl) { }
+            column(ContactEmailLbl; ContactEmailLbl) { }
+            column(ReferenceLbL; ReferenceLbL) { }
+            column(PickupDateLbl; PickupDateLbl) { }
+            column(DateLbl; DateLbl) { }
+            column(CustomerDetailsLbl; CustomerDetailsLbl) { }
+            column(PickupAddressLbl; PickupAddressLbl) { }
+            column(OrderConfirmationTextLbl; OrderConfirmationTextLbl) { }
+            column(MaterialsLbl; MaterialsLbl) { }
+            column(ItemNoLbl; ItemNoLbl) { }
+            column(DescriptionLbl; DescriptionLbl) { }
+            column(QuantityLbl; QuantityLbl) { }
+            column(UnitPriceExclLbl; UnitPriceExclLbl) { }
+            column(UOMLbl; UOMLbl) { }
+            column(DiscountPercentLbl; DiscountPercentLbl) { }
+            column(FooterNoteTxt; FooterNoteTxt) { }
             dataitem("EQM Rental Line"; "EQM Rental Line")
             {
                 DataItemLink = "Contract Type" = field("Contract Type"), "Contract No." = field("Contract No.");
@@ -72,16 +101,46 @@ report 60001 "Order Conf. W/O Transport"
                         CurrReport.Skip();
                 end;
             }
+            trigger OnPreDataItem()
+            var
+                GLSetup: Record "General Ledger Setup";
+            begin
+                GLSetup.Get();
+                AboveThreshold := Format(GLSetup."I2I Rental Price Abv. Thres.", 0, '<Precision,2:2><Standard Format,1>');
+                AboveThreshold := AboveThreshold.Replace(',', '|').Replace('.', ',').Replace('|', '.');
+                BelowThreshold := Format(GLSetup."I2I Rental Price Bel. Thres.", 0, '<Precision,2:2><Standard Format,1>');
+                BelowThreshold := BelowThreshold.Replace(',', '|').Replace('.', ',').Replace('|', '.');
+            end;
+
             trigger OnAfterGetRecord()
             var
                 Contact: Record Contact;
                 User: Record User;
                 Salesperson: Record "Salesperson/Purchaser";
+                ReportHelper: Codeunit "I2I Report Helper";
             begin
+                CurrReport.Language := ReportHelper.GetReportLanguageId(EQMRentalHeader."Language Code", EQMRentalHeader."Customer No.", DefaultLanguageCodeLbl);
                 OutBoundText := GetOutboundMemoL(EQMRentalHeader);
-                ShipAddress(EQMRentalHeader);
-                CustomerAddress(EQMRentalHeader);
-                CompanyAddress();
+
+                ReportHelper.GetShipToAddressFromLocation(EQMRentalHeader."Location Code", ShipToAddr);
+                ReportHelper.CustomerAddress(CustAddr, EQMRentalHeader."Customer No.");
+                ReportHelper.UpdateCompanyReportData(
+                    EQMRentalHeader."Customer No.",
+                    EQMRentalHeader."Location Code",
+                    CompanyAddr,
+                    CompanyNameTxt,
+                    CompanyAddressTxt,
+                    CompanyCityTxt,
+                    CompanyPhoneNo,
+                    CompanyEmail,
+                    CompanyHomePage,
+                    CompanyRegNo,
+                    CompanyContactPerson,
+                    CompanyBankName,
+                    CompanyBankAccNo,
+                    CompanySwiftCode,
+                    OpeningHours);
+
                 if Contact.Get(EQMRentalHeader."Contact No.") then
                     ContactEmail := Contact."E-Mail";
                 if User.Get(SystemCreatedBy) then
@@ -91,6 +150,9 @@ report 60001 "Order Conf. W/O Transport"
                     Salesperson.Get(EQMRentalHeader."Salesperson Code");
                     SalepersonName := Salesperson.Name;
                 end;
+
+                FooterNoteTxt := BuildFooterNote(BelowThreshold, AboveThreshold, OutBoundText,
+                    CompanyPhoneNo, CompanyEmail, CompanyHomePage, UserName);
             end;
         }
     }
@@ -125,50 +187,50 @@ report 60001 "Order Conf. W/O Transport"
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
         ContactEmail: Text[100];
+        ContactName: Text[100];
+        CompanyNameTxt: Text[100];
+        CompanyAddressTxt: Text[100];
+        CompanyCityTxt: Text[100];
+        CompanyPhoneNo: Text[100];
+        CompanyEmail: Text[100];
+        CompanyHomePage: Text[100];
+        CompanyRegNo: Text[100];
+        CompanyContactPerson: Text[100];
+        CompanyBankAccNo: Text[100];
+        CompanyBankName: Text[100];
+        CompanySwiftCode: Text[100];
         OutBoundText: Text[2048];
         UserName: Text[100];
         SalepersonName: Text[100];
-
-    procedure ShipAddress(RentalHeader: Record "EQM Rental Header")
-    var
-        LineNo: Integer;
-        Country: Record "Country/Region";
-        Location: Record Location;
-    begin
-        LineNo := 1;
-        if not Location.Get(RentalHeader."Location Code") then
-            exit;
-        // Name
-        if Location.Name <> '' then begin
-            ShipToAddr[LineNo] := Location.Name;
-            LineNo += 1;
-        end;
-        // Name 2
-        if Location."Name 2" <> '' then begin
-            ShipToAddr[LineNo] := Location."Name 2";
-            LineNo += 1;
-        end;
-        // Address 1
-        if Location.Address <> '' then begin
-            ShipToAddr[LineNo] := Location.Address;
-            LineNo += 1;
-        end;
-        // Address 2
-        if Location."Address 2" <> '' then begin
-            ShipToAddr[LineNo] := Location."Address 2";
-            LineNo += 1;
-        end;
-        // Post Code + City
-        if (Location."Post Code" <> '') or (Location.City <> '') then begin
-            ShipToAddr[LineNo] := Location."Post Code" + ' ' + Location.City;
-            LineNo += 1;
-        end;
-        // Country
-        if Location."Country/Region Code" <> '' then begin
-            Country.Get(Location."Country/Region Code");
-            ShipToAddr[LineNo] := Country.Name;
-        end;
-    end;
+        AboveThreshold: Text[20];
+        BelowThreshold: Text[20];
+        OpeningHours: Text[100];
+        OpeningHoursLbl: Label 'Öffnungszeiten';
+        DocumentLbl: Label 'Order Confirmation';
+        ContractNumberLbl: Label 'Contract Number';
+        ContactPersonLbl: Label 'Contact Person';
+        ContactEmailLbl: Label 'Contact Email';
+        ReferenceLbL: Label 'Reference';
+        PickupDateLbl: Label 'Pickup Date';
+        DateLbl: Label 'Date';
+        CustomerDetailsLbl: Label 'Customer Details';
+        PickupAddressLbl: Label 'Pickup Address';
+        OrderConfirmationTextLbl: Label 'Thank you for your order. You have made a rental reservation according to the specifications below:';
+        MaterialsLbl: Label 'Materials :';
+        ItemNoLbl: Label 'Item No.';
+        DescriptionLbl: Label 'Description';
+        QuantityLbl: Label 'Quantity';
+        UnitPriceExclLbl: Label 'Unit Price Excl. VAT';
+        UOMLbl: Label 'Unit of Measure';
+        DiscountPercentLbl: Label 'Discount %';
+        HandlingCostLbl: Label 'The costs for incoming and outgoing handling are €%1 for %2%3 items and €%4 for %5%6 items.';
+        RemarksLbl: Label 'Remark :';
+        ContactQuestionsLbl: Label 'If you have any questions, please feel free to contact me at Tel. %1 or by email %2.';
+        ReturnConditionLbl: Label 'If the materials are not returned clean or in accordance with our return instructions, costs will be charged; the rate for this is €47.50 per working hour.';
+        TermsConditionsLbl: Label 'Our general terms and conditions apply to this order, see %1/downloads.';
+        KindRegardsLbl: Label 'Kind regards,';
+        FooterNoteTxt: Text;
+        DefaultLanguageCodeLbl: Label 'DE', Locked = true;
 
     local procedure GetOutboundMemoL(var RentalHeader: Record "EQM Rental Header"): Text
     var
@@ -188,110 +250,29 @@ report 60001 "Order Conf. W/O Transport"
         exit(TempText);
     end;
 
-    procedure CustomerAddress(RentalHeader: Record "EQM Rental Header")
+    procedure BuildFooterNote(BelowThresholdCost: Text; AboveThresholdCost: Text; OutBoundText: Text;
+    CompanyPhoneNo: Text[100]; CompanyEmail: Text[100]; CompanyHomePage: Text[100]; CreatedName: Text[100]): Text
     var
-        LineNo: Integer;
-        Customer: Record Customer;
-        Country: Record "Country/Region";
+        TextBuilder: TextBuilder;
     begin
-        LineNo := 1;
+        TextBuilder.AppendLine(StrSubstNo(HandlingCostLbl, BelowThresholdCost, '<', '500', AboveThresholdCost, '>', '500'));
+        TextBuilder.AppendLine();
 
-        if not Customer.Get(RentalHeader."Customer No.") then
-            exit;
-
-        // Name
-        if Customer.Name <> '' then begin
-            CustAddr[LineNo] := Customer.Name;
-            LineNo += 1;
+        if OutBoundText <> '' then begin
+            TextBuilder.AppendLine(RemarksLbl);
+            TextBuilder.AppendLine(OutBoundText);
+            TextBuilder.AppendLine();
         end;
 
-        // Name 2
-        if Customer."Name 2" <> '' then begin
-            CustAddr[LineNo] := Customer."Name 2";
-            LineNo += 1;
-        end;
+        TextBuilder.AppendLine(StrSubstNo(ContactQuestionsLbl, CompanyPhoneNo, CompanyEmail));
+        TextBuilder.AppendLine();
+        TextBuilder.AppendLine(ReturnConditionLbl);
+        TextBuilder.AppendLine();
+        TextBuilder.AppendLine(StrSubstNo(TermsConditionsLbl, CompanyHomePage));
+        TextBuilder.AppendLine();
+        TextBuilder.AppendLine(KindRegardsLbl);
+        TextBuilder.Append(CreatedName);
 
-        // Address 1
-        if Customer.Address <> '' then begin
-            CustAddr[LineNo] := Customer.Address;
-            LineNo += 1;
-        end;
-
-        // Address 2
-        if Customer."Address 2" <> '' then begin
-            CustAddr[LineNo] := Customer."Address 2";
-            LineNo += 1;
-        end;
-
-        // Post Code + City
-        if (Customer."Post Code" <> '') or (Customer.City <> '') then begin
-            CustAddr[LineNo] := Customer."Post Code" + ' ' + Customer.City;
-            LineNo += 1;
-        end;
-
-        // County
-        if Customer.County <> '' then begin
-            CustAddr[LineNo] := Customer.County;
-            LineNo += 1;
-        end;
-
-        // Country
-        if Customer."Country/Region Code" <> '' then begin
-            Country.Get(RentalHeader."Ship-to Country/Region Code");
-            CustAddr[LineNo] := Country.Name;
-        end;
-    end;
-
-    procedure CompanyAddress()
-    var
-        LineNo: Integer;
-        CompanyInfoL: Record "Company Information";
-        Country: Record "Country/Region";
-    begin
-        LineNo := 1;
-
-        CompanyInfoL.Get();
-
-        // Name
-        if CompanyInfoL.Name <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL.Name;
-            LineNo += 1;
-        end;
-
-        // Name 2
-        if CompanyInfoL."Name 2" <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL."Name 2";
-            LineNo += 1;
-        end;
-
-        // Address 1
-        if CompanyInfoL.Address <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL.Address;
-            LineNo += 1;
-        end;
-
-        // Address 2
-        if CompanyInfoL."Address 2" <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL."Address 2";
-            LineNo += 1;
-        end;
-
-        // Post Code + City
-        if (CompanyInfoL."Post Code" <> '') or (CompanyInfoL.City <> '') then begin
-            CompanyAddr[LineNo] := CompanyInfoL."Post Code" + ' ' + CompanyInfoL.City;
-            LineNo += 1;
-        end;
-
-        // County
-        if CompanyInfoL.County <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL.County;
-            LineNo += 1;
-        end;
-
-        // Country
-        if CompanyInfoL."Country/Region Code" <> '' then begin
-            Country.Get(CompanyInfoL."Country/Region Code");
-            CompanyAddr[LineNo] := Country.Name;
-        end;
+        exit(TextBuilder.ToText());
     end;
 }

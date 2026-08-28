@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="fr-FR" original="RoldoRent PTE by Armada">
+    <body>
+      <group id="body">
+        <trans-unit id="Report 2427146384 - NamedType 1245862610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target>Montant</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType AmountLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 2898685577" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.:</source>
+          <target>N° Client :</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType CustomerNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1542941690" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <target>Date</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType DateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Article</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3988748604" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Discount %</source>
+          <target>Rabais %</target>
+          <note from="Developer" annotates="general" priority="2">%  is a literal percent sign</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType DiscountPctLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 481445982" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Due Date:</source>
+          <target>Date d'échéance :</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType DueDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3309968797" size-unit="char" translate="yes" xml:space="preserve">
+          <source>excl. VAT</source>
+          <target>excl. TVA</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType ExclVATLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3964871683" size-unit="char" translate="yes" xml:space="preserve">
+          <source>incl. VAT</source>
+          <target>TTC</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType InclVATLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1259904353" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Date:</source>
+          <target>Date facture :</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType InvoiceDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3330534589" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Invoice</source>
+          <target>Facture de location</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType InvoiceTitleLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1988219453" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mutation</source>
+          <target>Mutation</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType MutationLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3632926527" size-unit="char" translate="yes" xml:space="preserve">
+          <source>On rent as of</source>
+          <target>En location depuis</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType OnRentAsOfLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 2694455927" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Terms:</source>
+          <target>Conditions paiement :</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType PaymentTermsLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 471129168" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Price/Day</source>
+          <target>Prix/jour</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType PricePerDayLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1415756030" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Project Code:</source>
+          <target>Code Projet :</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType ProjectCodeLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 358261150" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty. on Rent</source>
+          <target>Quantité en location</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType QtyOnRentLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 2448900585" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt No.</source>
+          <target>N° Ordre</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType ReceiptNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 16357567" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Days</source>
+          <target>Jours de location</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType RentalDaysLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3096712723" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rental Period:</source>
+          <target>Période de location :</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType RentalPeriodHdrLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3187523764" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your Reference:</source>
+          <target>Votre référence :</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType YourReferenceLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 453033153" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rent</source>
+          <target>Location</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType RentLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 416273108" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return</source>
+          <target>Retour</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType ReturnLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 608550454" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total EUR</source>
+          <target>Montant EUR</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType TotalEURLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 472982654" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total EUR</source>
+          <target>Totale EUR</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType TotalInclEURLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1113073684" size-unit="char" translate="yes" xml:space="preserve">
+          <source>up to and incl.</source>
+          <target>y compris</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType UntilLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 2617756395" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <target>TVA</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType VATLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 1201184860" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT No.:</source>
+          <target>N° TVA :</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType VATNoLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 2427146384 - NamedType 3542564261" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT reverse charge.</source>
+          <target>TVA décalée</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ADA Posted Rental Invoice - NamedType VATReverseChargeLbl</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

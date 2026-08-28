@@ -1,6 +1,9 @@
 namespace RoldoRent.RoldoRent;
 
 using Microsoft.Sales.History;
+using Microsoft.Finance.GeneralLedger.Setup;
+using RoldoRentGermany.RoldoRentGermany;
+using Microsoft.Sales.Setup;
 using Microsoft.Foundation.Address;
 using Microsoft.Sales.Customer;
 using Microsoft.Foundation.Company;
@@ -116,21 +119,25 @@ report 60010 "I2I Combine Invoice"
 
             trigger OnAfterGetRecord()
             var
-            //TotalLineAmountL: Decimal;
+                ReportHelper: Codeunit "I2I Report Helper";
+                RecRefL: RecordRef;
+                UnusedShipAddress: array[8] of Text[100];
             begin
+                RecRefL.GetTable(SalesInvoiceHeader);
+
                 CalcFields(Amount, "Amount Including VAT");
                 Clear(StartDate);
                 Clear(EndDate);
                 StartDateValue := 0D;
                 EndDateValue := 0D;
                 Clear(CustomerAddress);
-                CustomerAddressL(SalesInvoiceHeader);
+                ReportHelper.GetShipAndCustomerAddressData(RecRefL, UnusedShipAddress, CustomerAddress);
                 CompanyAddress();
                 SetInvoicePeriodDates(SalesInvoiceHeader);
                 TotalLineAmount := CalculateLineAmount(SalesInvoiceHeader);
                 VATLblTxt := StrSubstNo(VATLbl, GetInvoiceVATPercent(SalesInvoiceHeader));
-                ExclVATLblTxt := StrSubstNo(ExclVATLbl, GetInvoiceCurrencyCode(SalesInvoiceHeader));
-                InclVATLblTxt := StrSubstNo(InclVATLbl, GetInvoiceCurrencyCode(SalesInvoiceHeader));
+                ExclVATLblTxt := StrSubstNo(ExclVATLbl, ReportHelper.GetCurrencyCode(SalesInvoiceHeader."Currency Code"));
+                InclVATLblTxt := StrSubstNo(InclVATLbl, ReportHelper.GetCurrencyCode(SalesInvoiceHeader."Currency Code"));
             end;
         }
     }
@@ -211,22 +218,22 @@ report 60010 "I2I Combine Invoice"
         TotalVATAmount: Decimal;
         TotalInclAmount: Decimal;
         CombineInvLbl: Label 'Combine Invoice';
-        ReferenceLbl: Label 'Reference :';
-        ProjectCodeLbl: Label 'Project Code';
+        ReferenceLbl: Label 'Reference:';
+        ProjectCodeLbl: Label 'Project Code:';
         CustomerLbl: Label 'Customer';
         DateLbl: Label 'Date';
         InvNoLbl: Label 'Invoice No.';
-        StartDateLbl: Label 'Starting Date';
-        EndDateLbl: Label 'Ending Date';
+        StartDateLbl: Label 'Start Date';
+        EndDateLbl: Label 'End Date';
         ProjectNoLbl: Label 'Project No.';
         DescriptionLbl: Label 'Description';
         AmountLbl: Label 'Amount';
         TotalLbl: Label 'Total';
-        ExclVATLbl: Label 'Total %1 Excl. VAT';
+        ExclVATLbl: Label 'Total %1 excl. VAT';
         ExclVATLblTxt: Text[100];
-        VATLbl: Label '%1% VAT';
+        VATLbl: Label '%1 % VAT';
         VATLblTxt: Text[100];
-        InclVATLbl: Label 'Total %1 Incl. VAT';
+        InclVATLbl: Label 'Total %1 incl. VAT';
         InclVATLblTxt: Text[100];
 
     procedure CustomerAddressL(SalesInvHeader: Record "Sales Invoice Header");
@@ -347,15 +354,38 @@ report 60010 "I2I Combine Invoice"
                 if SalesInvLine."VAT %" <> 0 then
                     exit(SalesInvLine."VAT %");
             until SalesInvLine.Next() = 0;
-
         exit(0);
     end;
 
-    procedure GetInvoiceCurrencyCode(SalesInvHeader: Record "Sales Invoice Header"): Code[10]
-    begin
-        if SalesInvHeader."Currency Code" <> '' then
-            exit(SalesInvHeader."Currency Code");
 
-        exit('EUR');
+
+    procedure UpdatePhEmailHP(SalesInvHeader: Record "Sales Invoice Header")
+    var
+        Customer: Record Customer;
+        CustomerPosting: Record "Customer Posting Group";
+        CompanyInfoL: Record "Company Information";
+    begin
+        CompanyInfoL.Get();
+
+        CompanyPhNo := CompanyInfoL."Phone No.";
+        CompanyEmail := CompanyInfoL."E-Mail";
+        CompanyHP := CompanyInfoL."Home Page";
+
+        if not Customer.Get(SalesInvHeader."Bill-to Customer No.") then
+            exit;
+
+        if not CustomerPosting.Get(Customer."Customer Posting Group") then
+            exit;
+
+        if (CustomerPosting.Code = 'AUSTRIA') or (CustomerPosting.Description = 'AUSTRIA') then begin
+            CompanyPhNo := CompanyInfoL."I2I Phone No. AT";
+            CompanyEmail := CompanyInfoL."I2I Email AT";
+            CompanyHP := CompanyInfoL."I2I Home Page AT";
+        end else
+            if (CustomerPosting.Code = 'SCHWEIZ') or (CustomerPosting.Description = 'SCHWEIZ') then begin
+                CompanyPhNo := CompanyInfoL."I2I Phone No. CH";
+                CompanyEmail := CompanyInfoL."I2I Email CH";
+                CompanyHP := CompanyInfoL."I2I Home Page CH";
+            end;
     end;
 }

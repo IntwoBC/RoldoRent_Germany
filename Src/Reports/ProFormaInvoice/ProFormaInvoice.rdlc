@@ -101,7 +101,7 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <Top>4.5cm</Top>
+                              <Top>4.45cm</Top>
                               <Left>3.6cm</Left>
                               <Height>2.8cm</Height>
                               <Width>7cm</Width>
@@ -126,7 +126,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Fields!InvoiceTitleLbl.Value &amp; " : " &amp; Fields!No_SalesInvoiceHeader.Value</Value>
+                                      <Value>=Fields!InvoiceTitleLbl.Value</Value>
                                       <Style>
                                         <FontSize>12pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
@@ -293,7 +293,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=IIF(Fields!Your_Reference.Value = "", "", Fields!YourReferenceLbl.Value)</Value>
+                                      <Value>=Fields!YourReferenceLbl.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -338,7 +338,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=IIF(Fields!RentalFromText.Value = "", "", Fields!RentalFromText.Value &amp; " " &amp; Fields!UntilLbl.Value &amp; " " &amp; Fields!RentalToText.Value)</Value>
+                                      <Value>=Fields!RentalPeriodText.Value</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -702,7 +702,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=IIF(First(Fields!HasDiscount.Value, "grpSalesInvoiceHeader"), First(Fields!DiscountPctLbl.Value, "grpSalesInvoiceHeader"), "")</Value>
+                                                <Value>=Fields!DiscountPctLbl.Value</Value>
                                                 <Style>
                                                   <FontSize>7pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
@@ -1807,7 +1807,6 @@
                                           <PaddingRight>1pt</PaddingRight>
                                         </Style>
                                       </Textbox>
-                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                   <TablixCell>
@@ -2221,7 +2220,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=IIF(First(Fields!VATReversedText.Value, "grpDocument") = "", "", First(Fields!VATReverseChargeLbl.Value, "grpDocument"))</Value>
+                                      <Value>=First(Fields!VATReversedText.Value, "grpDocument")</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -2247,7 +2246,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=IIF(First(Fields!InVerhuurhdrText.Value, "grpDocument") = "", "", First(Fields!OnRentAsOfLbl.Value, "grpDocument") &amp; " " &amp; First(Fields!InVerhuurhdrText.Value, "grpDocument") &amp; " :")</Value>
+                                      <Value>=First(Fields!InVerhuurhdrText.Value, "grpDocument")</Value>
                                       <Style>
                                         <FontSize>8pt</FontSize>
                                       </Style>
@@ -2361,13 +2360,12 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Top>0cm</Top>
             <Height>17.76cm</Height>
             <Width>19cm</Width>
             <Style />
           </Tablix>
         </ReportItems>
-        <Height>17.76cm</Height>
+        <Height>17.86cm</Height>
         <Style />
       </Body>
       <Width>19cm</Width>
@@ -3007,12 +3005,6 @@
         <Field Name="RentalPeriodText">
           <DataField>RentalPeriodText</DataField>
         </Field>
-        <Field Name="RentalFromText">
-          <DataField>RentalFromText</DataField>
-        </Field>
-        <Field Name="RentalToText">
-          <DataField>RentalToText</DataField>
-        </Field>
         <Field Name="PaymentTermsDescription">
           <DataField>PaymentTermsDescription</DataField>
         </Field>
@@ -3105,6 +3097,9 @@
         </Field>
         <Field Name="OnRentAsOfLbl">
           <DataField>OnRentAsOfLbl</DataField>
+        </Field>
+        <Field Name="DefaultLanguageCodeLbl">
+          <DataField>DefaultLanguageCodeLbl</DataField>
         </Field>
         <Field Name="CompanyNameTxt">
           <DataField>CompanyNameTxt</DataField>

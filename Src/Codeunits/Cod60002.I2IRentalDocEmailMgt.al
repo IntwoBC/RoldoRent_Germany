@@ -157,7 +157,7 @@ codeunit 60002 "I2I Rental Doc. Email Mgt"
                 end;
             DocumentType::"Rental Collection Order":
                 begin
-                    AddSelectableReport(TempBuffer, DocumentType, Report::"Order Conf. for Ret. Transport", RentalCollectionOrderConfirmationReturnLbl);
+                    AddSelectableReport(TempBuffer, DocumentType, Report::"I2I Order Conf. for Ret. Tran.", RentalCollectionOrderConfirmationReturnLbl);
                     AddSelectableReport(TempBuffer, DocumentType, Report::"Transport Order Return", RentalCollectionTransportOrderLbl);
                     AddSelectableReport(TempBuffer, DocumentType, Report::"Return Slip for Depot", RentalCollectionReturnSlipLbl);
                 end;

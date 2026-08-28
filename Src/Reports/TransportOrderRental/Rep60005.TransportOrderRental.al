@@ -50,14 +50,44 @@ report 60005 "Transport Order Rental"
             column(ShipToAddr6; ShipToAddr[6]) { }
             column(ShipToAddr7; ShipToAddr[7]) { }
             column(ShipToAddr8; ShipToAddr[8]) { }
-            column(CompanyPhoneNo; CompanyInfo."Phone No.") { }
-            column(CompanyEmail; CompanyInfo."E-Mail") { }
-            column(CompanyHomePage; CompanyInfo."Home Page") { }
-            column(CompanyBankName; CompanyInfo."Bank Name") { }
-            column(CompanyBankAccNo; CompanyInfo."Bank Account No.") { }
+            //Footer Fields
+            column(CompanyNameTxt; CompanyNameTxt) { }
+            column(CompanyAddressTxt; CompanyAddressTxt) { }
+            column(CompanyCityTxt; CompanyCityTxt) { }
+            column(CompanyPhoneNo; CompanyPhoneNo) { }
+            column(CompanyEmail; CompanyEmail) { }
+            column(CompanyHomePage; CompanyHomePage) { }
+            column(CompanyRegNo; CompanyRegNo) { }
+            column(CompanyContactPerson; CompanyContactPerson) { }
+            column(CompanyBankName; CompanyBankName) { }
+            column(CompanyBankAccNo; CompanyBankAccNo) { }
             column(CompanyVATRegNo; CompanyInfo."VAT Registration No.") { }
-            column(CompanyRegNo; CompanyInfo."Registration No.") { }
-            column(CompanySwiftCode; CompanyInfo."SWIFT Code") { }
+            column(CompanySwiftCode; CompanySwiftCode) { }
+            column(CompanyDOC; CompanyInfo."I2I DOC. Text") { }
+            column(OpeningHours; OpeningHours) { }
+            column(OpeningHoursLbl; OpeningHoursLbl) { }
+            column(PickupAddressRoldoRentLbl; PickupAddressRoldoRentLbl) { }
+            column(DeliveryAddressCustomerLbl; DeliveryAddressCustomerLbl) { }
+            column(ContractNumberLbl; ContractNumberLbl) { }
+            column(ContactPersonLbl; ContactPersonLbl) { }
+            column(ContactEmailLbl; ContactEmailLbl) { }
+            column(ReferenceLbl; ReferenceLbl) { }
+            column(DateLbl; DateLbl) { }
+            column(CarrierLbl; CarrierLbl) { }
+            column(PickupDateLbl; PickupDateLbl) { }
+            column(TransportDeliveryDateLbl; TransportDeliveryDateLbl) { }
+            column(MaterialsLbl; MaterialsLbl) { }
+            column(TransportOrderRentalLbl; TransportOrderRentalLbl) { }
+            column(ItemNumberLbl; ItemNumberLbl) { }
+            column(DescriptionLbl; DescriptionLbl) { }
+            column(QuantityLbl; QuantityLbl) { }
+            column(TotalWeightKgLbl; TotalWeightKgLbl) { }
+            column(ContractNoHeaderLbl; ContractNoHeaderLbl) { }
+            column(RemarksLbl; RemarksLbl) { }
+            column(LoadingMetersLbl; LoadingMetersLbl) { }
+            column(DeliveryConfirmationLbl; DeliveryConfirmationLbl) { }
+            column(ContactInfoTxt; ContactInfoTxt) { }
+            column(TermsAndConditionsTxt; TermsAndConditionsTxt) { }
             dataitem("EQM Rental Line"; "EQM Rental Line")
             {
                 DataItemLink = "Contract Type" = field("Contract Type"), "Contract No." = field("Contract No.");
@@ -74,20 +104,47 @@ report 60005 "Transport Order Rental"
             }
             trigger OnAfterGetRecord()
             var
-                Contact: Record Contact;
                 Customer: Record Customer;
                 ShippingAgent: Record "Shipping Agent";
-                SalesInvLine: Record "Sales Invoice Line";
                 SalesPerson: Record "Salesperson/Purchaser";
+                ReportHelper: Codeunit "I2I Report Helper";
+                RecRefL: RecordRef;
             begin
-                OutBoundText := GetOutboundMemoL(EQMRentalHeader);
-                ShipAddress(EQMRentalHeader);
-                CustomerAddress(EQMRentalHeader);
-                CompanyAddress();
-                // if Contact.Get(EQMRentalHeader."Customer No.") then begin
-                //     ContactEmail := Contact."E-Mail";
-                //     ContactName := Contact.Name;
-                // end;
+                CurrReport.Language := ReportHelper.GetReportLanguageId(EQMRentalHeader."Language Code", EQMRentalHeader."Customer No.", DefaultLanguageCodeLbl);
+                RecRefL.GetTable(EQMRentalHeader);
+
+                OutBoundText := ReportHelper.GetMemoTextFromBlob(RecRefL, EQMRentalHeader.FieldNo("Outbound Memo Text"));
+                ReportHelper.GetShipAddressData(RecRefL, ShipToAddr);
+                ReportHelper.GetShipToAddressFromLocation(EQMRentalHeader."Location Code", CustAddr);
+                ReportHelper.UpdateCompanyReportData(
+                    EQMRentalHeader."Customer No.",
+                    EQMRentalHeader."Location Code",
+                    CompanyAddr,
+                    CompanyNameTxt,
+                    CompanyAddressTxt,
+                    CompanyCityTxt,
+                    CompanyPhoneNo,
+                    CompanyEmail,
+                    CompanyHomePage,
+                    CompanyRegNo,
+                    CompanyContactPerson,
+                    CompanyBankName,
+                    CompanyBankAccNo,
+                    CompanySwiftCode,
+                    OpeningHours);
+                ReportHelper.BuildTransportFooterTexts(
+                    DeliveryConfirmationDateLineLbl,
+                    DeliveryConfirmationNameLineLbl,
+                    DeliveryConfirmationSignatureLineLbl,
+                    ContactInfoLbl,
+                    TermsAndConditionsLbl,
+                    CompanyPhoneNo,
+                    CompanyEmail,
+                    CompanyHomePage,
+                    DeliveryConfirmationLbl,
+                    ContactInfoTxt,
+                    TermsAndConditionsTxt);
+
                 if Customer.Get("Bill-to Customer No.") then begin
                     CustContactNo := Customer.Contact;
                 end;
@@ -126,199 +183,53 @@ report 60005 "Transport Order Rental"
 
     var
         CompanyInfo: Record "Company Information";
-        FormatAddr: Codeunit "Format Address";
         CustAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
         ContactEmail: Text[100];
         ContactName: Text[100];
+        CompanyNameTxt: Text[100];
+        CompanyAddressTxt: Text[100];
+        CompanyCityTxt: Text[100];
+        CompanyPhoneNo: Text[100];
+        CompanyEmail: Text[100];
+        CompanyHomePage: Text[100];
+        CompanyRegNo: Text[100];
+        CompanyContactPerson: Text[100];
+        CompanyBankAccNo: Text[100];
+        CompanyBankName: Text[100];
+        CompanySwiftCode: Text[100];
         CustContactNo: Text[100];
         ShipAgentName: Text[100];
-        VATAmount: Decimal;
-        VATPercent: Decimal;
-        RentalFromDate: Date;
-        RentalToDate: Date;
         OutBoundText: Text;
-
-
-    procedure ShipAddress(RentalHeader: Record "EQM Rental Header")
-    var
-        LineNo: Integer;
-        Country: Record "Country/Region";
-    begin
-        LineNo := 1;
-
-        // Name
-        if RentalHeader."Ship-to Name" <> '' then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to Name";
-            LineNo += 1;
-        end;
-
-        // Name 2
-        if RentalHeader."Ship-to Name 2" <> '' then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to Name 2";
-            LineNo += 1;
-        end;
-
-        // Address 1
-        if RentalHeader."Ship-to Address" <> '' then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to Address";
-            LineNo += 1;
-        end;
-
-        // Address 2
-        if RentalHeader."Ship-to Address 2" <> '' then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to Address 2";
-            LineNo += 1;
-        end;
-
-        // Post Code + City (combined)
-        if (RentalHeader."Ship-to Post Code" <> '') or (RentalHeader."Ship-to-City" <> '') then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to Post Code" + ' ' + RentalHeader."Ship-to-City";
-            LineNo += 1;
-        end;
-
-        // County
-        if RentalHeader."Ship-to County" <> '' then begin
-            ShipToAddr[LineNo] := RentalHeader."Ship-to County";
-            LineNo += 1;
-        end;
-
-        // Country
-        if RentalHeader."Ship-to Country/Region Code" <> '' then begin
-            Country.Get(RentalHeader."Ship-to Country/Region Code");
-            ShipToAddr[LineNo] := Country.Name;
-        end;
-    end;
-
-    procedure CustomerAddress(RentalHeader: Record "EQM Rental Header")
-    var
-        LineNo: Integer;
-        Customer: Record Customer;
-        Country: Record "Country/Region";
-        Location: Record Location;
-    begin
-        LineNo := 1;
-
-        if not Location.Get(RentalHeader."Location Code") then
-            exit;
-
-        // Name
-        if Location.Name <> '' then begin
-            CustAddr[LineNo] := Location.Name;
-            LineNo += 1;
-        end;
-
-        // Name 2
-        if Location."Name 2" <> '' then begin
-            CustAddr[LineNo] := Location."Name 2";
-            LineNo += 1;
-        end;
-
-        // Address 1
-        if Location.Address <> '' then begin
-            CustAddr[LineNo] := Location.Address;
-            LineNo += 1;
-        end;
-
-        // Address 2
-        if Location."Address 2" <> '' then begin
-            CustAddr[LineNo] := Location."Address 2";
-            LineNo += 1;
-        end;
-
-        // Post Code + City
-        if (Location."Post Code" <> '') or (Location.City <> '') then begin
-            CustAddr[LineNo] := Location."Post Code" + ' ' + Location.City;
-            LineNo += 1;
-        end;
-
-        // County
-        if Location.County <> '' then begin
-            CustAddr[LineNo] := Location.County;
-            LineNo += 1;
-        end;
-
-        // Country
-        if Location."Country/Region Code" <> '' then begin
-            Country.Get(Location."Country/Region Code");
-            CustAddr[LineNo] := Country.Name;
-        end;
-    end;
-
-    procedure CompanyAddress()
-    var
-        LineNo: Integer;
-        CompanyInfoL: Record "Company Information";
-        Country: Record "Country/Region";
-    begin
-        LineNo := 1;
-
-        CompanyInfoL.Get();
-
-        // Name
-        if CompanyInfoL.Name <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL.Name;
-            LineNo += 1;
-        end;
-
-        // Name 2
-        if CompanyInfoL."Name 2" <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL."Name 2";
-            LineNo += 1;
-        end;
-
-        // Address 1
-        if CompanyInfoL.Address <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL.Address;
-            LineNo += 1;
-        end;
-
-        // Address 2
-        if CompanyInfoL."Address 2" <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL."Address 2";
-            LineNo += 1;
-        end;
-
-        // Post Code + City
-        if (CompanyInfoL."Post Code" <> '') or (CompanyInfoL.City <> '') then begin
-            CompanyAddr[LineNo] := CompanyInfoL."Post Code" + ' ' + CompanyInfoL.City;
-            LineNo += 1;
-        end;
-
-        // County
-        if CompanyInfoL.County <> '' then begin
-            CompanyAddr[LineNo] := CompanyInfoL.County;
-            LineNo += 1;
-        end;
-
-        // Country
-        if CompanyInfoL."Country/Region Code" <> '' then begin
-            Country.Get(CompanyInfoL."Country/Region Code");
-            CompanyAddr[LineNo] := Country.Name;
-        end;
-    end;
-
-    local procedure GetOutboundMemoL(var RentalHeader: Record "EQM Rental Header"): Text
-    var
-        InS: InStream;
-        TempText: Text;
-        LineText: Text;
-        NewLine: Text[4];
-    begin
-        //NewLine := '\r\n';
-
-        RentalHeader.CalcFields("Outbound Memo Text");
-
-        if RentalHeader."Outbound Memo Text".HasValue then begin
-            RentalHeader."Outbound Memo Text".CreateInStream(InS);
-
-            while not InS.EOS do begin
-                InS.ReadText(LineText);
-                TempText += LineText;
-            end;
-        end;
-
-        exit(TempText);
-    end;
+        OpeningHours: Text[100];
+        OpeningHoursLbl: Label 'Opening Hours';
+        PickupAddressRoldoRentLbl: Label 'Pickup Address Roldo Rent:';
+        DeliveryAddressCustomerLbl: Label 'Delivery Address Customer:';
+        ContractNumberLbl: Label 'Contract Number';
+        ContactPersonLbl: Label 'Contact Person:';
+        ContactEmailLbl: Label 'Contact Email:';
+        ReferenceLbl: Label 'Reference:';
+        DateLbl: Label 'Date';
+        CarrierLbl: Label 'Carrier:';
+        PickupDateLbl: Label 'Pickup Date:';
+        TransportDeliveryDateLbl: Label 'Transport Delivery Date:';
+        MaterialsLbl: Label 'Materials:';
+        TransportOrderRentalLbl: Label 'Transport Order Rental';
+        ItemNumberLbl: Label 'Item No.';
+        DescriptionLbl: Label 'Description';
+        QuantityLbl: Label 'Quantity';
+        TotalWeightKgLbl: Label 'Total Weight (kg)';
+        ContractNoHeaderLbl: Label 'Contract No';
+        RemarksLbl: Label 'Remarks: ';
+        LoadingMetersLbl: Label 'Loading Meters:';
+        DeliveryConfirmationLbl: Text[512];
+        ContactInfoTxt: Text[512];
+        TermsAndConditionsTxt: Text[250];
+        DeliveryConfirmationDateLineLbl: Label 'Date:                        ..............................';
+        DeliveryConfirmationNameLineLbl: Label 'Name (full):                 ..............................';
+        DeliveryConfirmationSignatureLineLbl: Label 'Customer signature:          ..............................';
+        ContactInfoLbl: Label 'If you have any questions, please contact me at Tel. %1, or by email %2 ';
+        TermsAndConditionsLbl: Label 'Our general terms and conditions apply to this order, see %1/downloads ';
+        DefaultLanguageCodeLbl: Label 'DE', Locked = true;
 }

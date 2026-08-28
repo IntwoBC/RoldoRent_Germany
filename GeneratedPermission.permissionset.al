@@ -1,12 +1,13 @@
 namespace RoldoRent;
 
 using RoldoRent.RoldoRent;
+using RoldoRentGermany.RoldoRentGermany;
 
 permissionset 60000 GeneratedPermission
 {
     Assignable = true;
     Permissions = report "Credit Note" = X,
-        report "Order Conf. for Ret. Transport" = X,
+        report "I2I Order Conf. for Ret. Tran." = X,
         report "Order Conf. W/O Transport" = X,
         report "Order Confirmation" = X,
         report "Posted Rental Invoice" = X,
@@ -28,6 +29,10 @@ permissionset 60000 GeneratedPermission
         codeunit "I2I Rental Doc. Email Mgt" = X,
         page "I2I Invoice Email Markers" = X,
         page "I2I Rental Email Report Select" = X,
+        tabledata "I2I Rental Movement Line" = RIMD,
+        table "I2I Rental Movement Line" = X,
         report "I2I Combine Invoice" = X,
-        codeunit "I2I Email Body Sig. Inserter" = X;
+        report "I2I Pro Forma Invoice" = X,
+        codeunit "I2I Email Body Sig. Inserter" = X,
+        codeunit "I2I Report Helper" = X;
 }

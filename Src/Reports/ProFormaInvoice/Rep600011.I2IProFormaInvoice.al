@@ -1,16 +1,27 @@
-report 60004 "Posted Rental Invoice"
+namespace RoldoRentGermany.RoldoRentGermany;
+using Microsoft.Sales.Document;
+using Microsoft.Sales.Customer;
+using Microsoft.Foundation.Company;
+using Microsoft.Finance.VAT.Calculation;
+using System.Reflection;
+using Microsoft.Foundation.Address;
+using System.Utilities;
+using Microsoft.Foundation.PaymentTerms;
+
+Report 60011 "I2I Pro Forma Invoice"
 {
     ApplicationArea = All;
-    Caption = 'Posted Rental Invoice';
+    Caption = 'Proforma Rental Invoice';
     UsageCategory = ReportsAndAnalysis;
     DefaultLayout = RDLC;
-    RDLCLayout = 'Src/Reports/PostedRentalInvoice/PostedRentalInvoice.rdlc';
-    Permissions = tabledata "Sales Invoice Header" = r;
+    RDLCLayout = 'Src\Reports\ProFormaInvoice\ProFormaInvoice.rdlc';
+    Permissions = tabledata "Sales Header" = r;
 
     dataset
     {
-        dataitem(SalesInvoiceHeader; "Sales Invoice Header")
+        dataitem(SalesHeader; "Sales Header")
         {
+            DataItemTableView = where("Document Type" = const(Invoice));
             RequestFilterFields = "No.";
             column(No_SalesInvoiceHeader; "No.") { }
             column(EQM_Contract_No_; "EQM Contract No.") { }
@@ -19,7 +30,7 @@ report 60004 "Posted Rental Invoice"
             column(VAT_Registration_No_; "VAT Registration No.") { }
             column(External_Document_No_; "External Document No.") { }
             column(Your_Reference; "Your Reference") { }
-            column(EQMCombine_Customer_Proj; "EQMCombine Customer Proj") { }
+            column(EQMCombine_Customer_Proj; "EQM Combine Customer Project") { }
             column(Bill_to_Customer_No_; "Bill-to Customer No.") { }
             column(CompanyPicture; CompanyInfo.Picture) { }
             column(CompanyAddr1; CompanyAddr[1]) { }
@@ -69,12 +80,10 @@ report 60004 "Posted Rental Invoice"
             column(RentalFromDate_H; RentalFromDate) { }
             column(RentalToDate_H; RentalToDate) { }
             column(RentalPeriodText; RentalPeriodText) { }
-            column(RentalFromText; RentalFromText) { }
-            column(RentalToText; RentalToText) { }
             column(PaymentTermsDescription; PaymentTermsDesc) { }
             column(CustVATRegNo; CustVATRegNo) { }
             column(HasDiscount; HasDiscount) { }
-            column(InvoiceTitleLbl; InvoiceTitleLbl) { }
+            column(InvoiceTitleLbl; InvoiceTitle) { }
             column(ProjectCodeLbl; ProjectCodeLbl) { }
             column(InvoiceDateLbl; InvoiceDateLbl) { }
             column(DueDateLbl; DueDateLbl) { }
@@ -102,6 +111,7 @@ report 60004 "Posted Rental Invoice"
             column(VATReverseChargeLbl; VATReverseChargeLbl) { }
             column(UntilLbl; UntilLbl) { }
             column(OnRentAsOfLbl; OnRentAsOfLbl) { }
+            column(DefaultLanguageCodeLbl; DefaultLanguageCodeLbl) { }
             //Footer Fields
             column(CompanyNameTxt; CompanyNameTxt) { }
             column(CompanyAddressTxt; CompanyAddressTxt) { }
@@ -116,6 +126,7 @@ report 60004 "Posted Rental Invoice"
             column(CompanyVATRegNo; CompanyInfo."VAT Registration No.") { }
             column(CompanySwiftCode; CompanySwiftCode) { }
             column(CompanyDOC; CompanyInfo."I2I DOC. Text") { }
+
             dataitem(MovementLine; Integer)
             {
                 DataItemTableView = sorting(Number);
@@ -185,32 +196,27 @@ report 60004 "Posted Rental Invoice"
             trigger OnAfterGetRecord()
             var
                 Customer: Record Customer;
-                SalesInvLine: Record "Sales Invoice Line";
+                SalesLine: Record "Sales Line";
                 PaymentTerms: Record "Payment Terms";
                 ReportHelper: Codeunit "I2I Report Helper";
-                RecRefl: RecordRef;
+                RecRefL: RecordRef;
+                ReportLanguageId: Integer;
             begin
-                RecRefl.GetTable(SalesInvoiceHeader);
+                RecRefL.GetTable(SalesHeader);
 
-                if "Language Code" <> '' then
-                    LanguageId := LanguageMgt.GetLanguageId("Language Code")
-                else
-                    LanguageId := 0;
-                if LanguageId = 0 then
-                    LanguageId := LanguageMgt.GetLanguageId(DefaultLanguageCodeLbl);
-                if LanguageId <> 0 then
-                    CurrReport.Language := LanguageId;
+                ReportLanguageId := ReportHelper.GetReportLanguageId(SalesHeader."Language Code", SalesHeader."Bill-to Customer No.", DefaultLanguageCodeLbl);
+                if ReportLanguageId <> 0 then
+                    CurrReport.Language := ReportLanguageId;
 
                 Clear(RentalFromDate);
                 Clear(RentalToDate);
                 Clear(PaymentTermsDesc);
                 Clear(CustVATRegNo);
                 Clear(RentalPeriodText);
-                Clear(RentalFromText);
-                Clear(RentalToText);
                 Clear(VATReversedText);
 
                 CalcFields("Amount Including VAT", Amount);
+
                 AmountIncludingVATDecimal := Round("Amount Including VAT", 0.01);
                 AmountDecimal := Round(Amount, 0.01);
                 ReportHelper.GetShipAndBillAddressData(RecRefL, CustAddr, ShipToAddr);
@@ -219,7 +225,7 @@ report 60004 "Posted Rental Invoice"
                 if Customer.Get("Bill-to Customer No.") then begin
                     CustVATRegNo := Customer."VAT Registration No.";
                     if Customer."Country/Region Code" = 'BE' then
-                        VATReversedText := 'X';
+                        VATReversedText := 'BTW verlegd.';
                 end;
 
                 if PaymentTerms.Get("Payment Terms Code") then
@@ -227,25 +233,24 @@ report 60004 "Posted Rental Invoice"
 
                 VATAmount := "Amount Including VAT" - Amount;
 
-                SalesInvLine.SetRange("Document No.", "No.");
-                SalesInvLine.SetFilter(Type, '%1|%2', SalesInvLine.Type::Item, SalesInvLine.Type::"G/L Account");
-                SalesInvLine.SetRange("EQM Rental Sale", false);
-                if SalesInvLine.FindSet() then
+                SalesLine.SetRange("Document Type", SalesLine."Document Type"::Invoice);
+                SalesLine.SetRange("Document No.", "No.");
+                SalesLine.SetFilter(Type, '%1|%2', SalesLine.Type::Item, SalesLine.Type::"G/L Account");
+                SalesLine.SetRange("EQM Rental Sale", false);
+                if SalesLine.FindSet() then
                     repeat
-                        if SalesInvLine."EQM Rental" then begin
-                            if (SalesInvLine."EQM Rental From Date" <> 0D) then
-                                if (RentalFromDate = 0D) or (SalesInvLine."EQM Rental From Date" < RentalFromDate) then
-                                    RentalFromDate := SalesInvLine."EQM Rental From Date";
-                            if (SalesInvLine."EQM Rental To Date" <> 0D) then
-                                if (SalesInvLine."EQM Rental To Date" > RentalToDate) then
-                                    RentalToDate := SalesInvLine."EQM Rental To Date";
+                        if SalesLine."EQM Rental" then begin
+                            if (SalesLine."EQM Rental From Date" <> 0D) then
+                                if (RentalFromDate = 0D) or (SalesLine."EQM Rental From Date" < RentalFromDate) then
+                                    RentalFromDate := SalesLine."EQM Rental From Date";
+                            if (SalesLine."EQM Rental To Date" <> 0D) then
+                                if (SalesLine."EQM Rental To Date" > RentalToDate) then
+                                    RentalToDate := SalesLine."EQM Rental To Date";
                         end;
-                    until SalesInvLine.Next() = 0;
+                    until SalesLine.Next() = 0;
 
-                if (RentalFromDate <> 0D) and (RentalToDate <> 0D) then begin
-                    RentalFromText := Format(RentalFromDate, 0, '<Day,2>-<Month,2>-<Year>');
-                    RentalToText := Format(RentalToDate, 0, '<Day,2>-<Month,2>-<Year>');
-                end;
+                if (RentalFromDate <> 0D) and (RentalToDate <> 0D) then
+                    RentalPeriodText := Format(RentalFromDate, 0, '<Day,2>-<Month,2>-<Year>') + toLbl + Format(RentalToDate, 0, '<Day,2>-<Month,2>-<Year>');
 
                 BuildVATAmountLines();
 
@@ -255,40 +260,29 @@ report 60004 "Posted Rental Invoice"
                     VATPercentText := FormatVATPercent(VATPercent);
 
                 BuildMovementLines();
-                ReportHelper.UpdateCompanyReportData(
-                                    SalesInvoiceHeader."Sell-to Customer No.",
-                                    SalesInvoiceHeader."Location Code",
-                                    CompanyAddr,
-                                    CompanyNameTxt,
-                                    CompanyAddressTxt,
-                                    CompanyCityTxt,
-                                    CompanyPhoneNo,
-                                    CompanyEmail,
-                                    CompanyHomePage,
-                                    CompanyRegNo,
-                                    CompanyContactPerson,
-                                    CompanyBankName,
-                                    CompanyBankAccNo,
-                                    CompanySwiftCode,
-                                    OpeningHours);
+
                 BuildInVerhuurText();
+                InvoiceTitle := StrSubstNo(InvoiceTitleLbl, SalesHeader."No.");
+                TotalExclVATTxt := StrSubstNo(TotalEURLbl, ReportHelper.GetCurrencyCode(SalesHeader."Currency Code"));
+                TotalInclVATTxt := StrSubstNo(TotalInclEURLbl, ReportHelper.GetCurrencyCode(SalesHeader."Currency Code"));
 
-                TotalExclVATTxt := StrSubstNo(TotalEURLbl, ReportHelper.GetCurrencyCode(SalesInvoiceHeader."Currency Code"));
-                TotalInclVATTxt := StrSubstNo(TotalInclEURLbl, ReportHelper.GetCurrencyCode(SalesInvoiceHeader."Currency Code"));
-
-                if not IsReportInPreviewMode() then
-                    CODEUNIT.Run(CODEUNIT::"Sales Inv.-Printed", SalesInvoiceHeader);
+                ReportHelper.UpdateCompanyReportData(
+                    SalesHeader."Sell-to Customer No.",
+                    SalesHeader."Location Code",
+                    CompanyAddr,
+                    CompanyNameTxt,
+                    CompanyAddressTxt,
+                    CompanyCityTxt,
+                    CompanyPhoneNo,
+                    CompanyEmail,
+                    CompanyHomePage,
+                    CompanyRegNo,
+                    CompanyContactPerson,
+                    CompanyBankName,
+                    CompanyBankAccNo,
+                    CompanySwiftCode,
+                    OpeningHours);
             end;
-        }
-    }
-
-    requestpage
-    {
-        layout
-        {
-            area(Content)
-            {
-            }
         }
     }
 
@@ -301,9 +295,7 @@ report 60004 "Posted Rental Invoice"
     var
         TempMovementLine: Record "I2I Rental Movement Line" temporary;
         TempVATAmountLine: Record "VAT Amount Line" temporary;
-        RentalInvoice: Report "Standard Sales - Invoice";
         CompanyInfo: Record "Company Information";
-        LanguageMgt: Codeunit Language;
         CustAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
@@ -311,7 +303,6 @@ report 60004 "Posted Rental Invoice"
         VATPercent: Decimal;
         AmountIncludingVATDecimal: Decimal;
         AmountDecimal: Decimal;
-        LanguageId: Integer;
         VATPercentText: Text[30];
         RentalFromDate: Date;
         RentalToDate: Date;
@@ -323,8 +314,6 @@ report 60004 "Posted Rental Invoice"
         PaymentTermsDesc: Text[100];
         CustVATRegNo: Text[20];
         RentalPeriodText: Text[50];
-        RentalFromText: Text[20];
-        RentalToText: Text[20];
         MovBonnrHuur: Code[35];
         MovBonnrRetour: Code[35];
         MovDatumHuur: Text[20];
@@ -335,11 +324,12 @@ report 60004 "Posted Rental Invoice"
         MovHuurDagen: Decimal;
         MovPrijsPerDag: Decimal;
         MovBedrag: Decimal;
+        OpeningHours: Text[100];
         MovIsReturnLine: Boolean;
         MovKortingPct: Decimal;
         HasDiscount: Boolean;
-        OpeningHours: Text[100];
-        InvoiceTitleLbl: Label 'Rental Invoice';
+        InvoiceTitle: Text[100];
+        InvoiceTitleLbl: Label 'ProFormaInvoice %1';
         ProjectCodeLbl: Label 'Project Code:';
         InvoiceDateLbl: Label 'Invoice Date:';
         DueDateLbl: Label 'Due Date:';
@@ -368,6 +358,7 @@ report 60004 "Posted Rental Invoice"
         UntilLbl: Label 'up to and incl.';
         OnRentAsOfLbl: Label 'On rent as of';
         DefaultLanguageCodeLbl: Label 'DE', Locked = true;
+        InverhuurperLbl: Label 'In verhuur per ';
         CompanyNameTxt: Text[100];
         CompanyAddressTxt: Text[100];
         CompanyCityTxt: Text[100];
@@ -381,32 +372,34 @@ report 60004 "Posted Rental Invoice"
         CompanySwiftCode: Text[100];
         TotalExclVATTxt: Text[50];
         TotalInclVATTxt: Text[50];
+        toLbl: Label ' to ';
 
     local procedure BuildVATAmountLines()
     var
-        SalesInvLine: Record "Sales Invoice Line";
+        SalesLine: Record "Sales Line";
     begin
         TempVATAmountLine.Reset();
         TempVATAmountLine.DeleteAll();
 
-        SalesInvLine.SetRange("Document No.", SalesInvoiceHeader."No.");
-        SalesInvLine.SetFilter(Type, '<>%1', SalesInvLine.Type::" ");
-        SalesInvLine.SetFilter("Line Amount", '<>0');
-        if SalesInvLine.FindSet() then
+        SalesLine.SetRange("Document Type", SalesLine."Document Type"::Invoice);
+        SalesLine.SetRange("Document No.", SalesHeader."No.");
+        SalesLine.SetFilter(Type, '<>%1', SalesLine.Type::" ");
+        SalesLine.SetFilter("Line Amount", '<>0');
+        if SalesLine.FindSet() then
             repeat
                 TempVATAmountLine.Init();
-                TempVATAmountLine."VAT Identifier" := SalesInvLine."VAT Identifier";
-                TempVATAmountLine."VAT Calculation Type" := SalesInvLine."VAT Calculation Type";
-                TempVATAmountLine."Tax Group Code" := SalesInvLine."Tax Group Code";
-                TempVATAmountLine."VAT %" := SalesInvLine."VAT %";
-                TempVATAmountLine."VAT Base" := SalesInvLine.Amount;
-                TempVATAmountLine."Amount Including VAT" := SalesInvLine."Amount Including VAT";
-                TempVATAmountLine."Line Amount" := SalesInvLine."Line Amount";
-                if SalesInvLine."Allow Invoice Disc." then
-                    TempVATAmountLine."Inv. Disc. Base Amount" := SalesInvLine."Line Amount";
-                TempVATAmountLine."Invoice Discount Amount" := SalesInvLine."Inv. Discount Amount";
+                TempVATAmountLine."VAT Identifier" := SalesLine."VAT Identifier";
+                TempVATAmountLine."VAT Calculation Type" := SalesLine."VAT Calculation Type";
+                TempVATAmountLine."Tax Group Code" := SalesLine."Tax Group Code";
+                TempVATAmountLine."VAT %" := SalesLine."VAT %";
+                TempVATAmountLine."VAT Base" := SalesLine.Amount;
+                TempVATAmountLine."Amount Including VAT" := SalesLine."Amount Including VAT";
+                TempVATAmountLine."Line Amount" := SalesLine."Line Amount";
+                if SalesLine."Allow Invoice Disc." then
+                    TempVATAmountLine."Inv. Disc. Base Amount" := SalesLine."Line Amount";
+                TempVATAmountLine."Invoice Discount Amount" := SalesLine."Inv. Discount Amount";
                 TempVATAmountLine.InsertLine();
-            until SalesInvLine.Next() = 0;
+            until SalesLine.Next() = 0;
     end;
 
     local procedure GetSingleVATPercent(var SingleVATPercent: Decimal): Boolean
@@ -458,7 +451,7 @@ report 60004 "Posted Rental Invoice"
 
     local procedure BuildRentalMovementDisplayLines(var NextLineNumber: Integer): Boolean
     var
-        SalesInvoiceLine: Record "Sales Invoice Line";
+        SalesLine: Record "Sales Line";
         GroupKeys: List of [Text];
         GroupRentalNos: List of [Code[20]];
         GroupDescriptions: List of [Text[100]];
@@ -474,34 +467,34 @@ report 60004 "Posted Rental Invoice"
         LinesAdded: Boolean;
         i: Integer;
     begin
-        ApplyRentalMovementLineFilters(SalesInvoiceLine);
-        if SalesInvoiceLine.FindSet() then
+        ApplyRentalMovementLineFilters(SalesLine);
+        if SalesLine.FindSet() then
             repeat
-                if IsRentalMovementInvoiceLine(SalesInvoiceLine) then begin
-                    KeyValue := MakeItemGroupKey(SalesInvoiceLine);
-                    PairValue := SalesInvoiceLine."EQM Contract No." + '~' + Format(SalesInvoiceLine."EQM Rental Line No.");
+                if IsRentalMovementInvoiceLine(SalesLine) then begin
+                    KeyValue := MakeItemGroupKey(SalesLine);
+                    PairValue := SalesLine."EQM Contract No." + '~' + Format(SalesLine."EQM Rental Line No.");
                     GroupIndex := GroupKeys.IndexOf(KeyValue);
                     if GroupIndex = 0 then begin
                         GroupKeys.Add(KeyValue);
-                        GroupRentalNos.Add(SalesInvoiceLine."EQM Rental No.");
-                        GroupDescriptions.Add(SalesInvoiceLine.Description);
-                        GroupUnitPrices.Add(SalesInvoiceLine."Unit Price");
-                        GroupDiscounts.Add(SalesInvoiceLine."Line Discount %");
-                        GroupPeriodFroms.Add(SalesInvoiceLine."EQM Rental From Date");
-                        GroupPeriodTos.Add(SalesInvoiceLine."EQM Rental To Date");
+                        GroupRentalNos.Add(SalesLine."EQM Rental No.");
+                        GroupDescriptions.Add(SalesLine.Description);
+                        GroupUnitPrices.Add(SalesLine."Unit Price");
+                        GroupDiscounts.Add(SalesLine."Line Discount %");
+                        GroupPeriodFroms.Add(SalesLine."EQM Rental From Date");
+                        GroupPeriodTos.Add(SalesLine."EQM Rental To Date");
                         GroupContractExtLinePairs.Add(PairValue);
                     end else begin
                         ExistingPairs := GroupContractExtLinePairs.Get(GroupIndex);
                         if StrPos(';' + ExistingPairs + ';', ';' + PairValue + ';') = 0 then
                             GroupContractExtLinePairs.Set(GroupIndex, ExistingPairs + ';' + PairValue);
-                        if (SalesInvoiceLine."EQM Rental From Date" <> 0D) then
-                            if (GroupPeriodFroms.Get(GroupIndex) = 0D) or (SalesInvoiceLine."EQM Rental From Date" < GroupPeriodFroms.Get(GroupIndex)) then
-                                GroupPeriodFroms.Set(GroupIndex, SalesInvoiceLine."EQM Rental From Date");
-                        if SalesInvoiceLine."EQM Rental To Date" > GroupPeriodTos.Get(GroupIndex) then
-                            GroupPeriodTos.Set(GroupIndex, SalesInvoiceLine."EQM Rental To Date");
+                        if (SalesLine."EQM Rental From Date" <> 0D) then
+                            if (GroupPeriodFroms.Get(GroupIndex) = 0D) or (SalesLine."EQM Rental From Date" < GroupPeriodFroms.Get(GroupIndex)) then
+                                GroupPeriodFroms.Set(GroupIndex, SalesLine."EQM Rental From Date");
+                        if SalesLine."EQM Rental To Date" > GroupPeriodTos.Get(GroupIndex) then
+                            GroupPeriodTos.Set(GroupIndex, SalesLine."EQM Rental To Date");
                     end;
                 end;
-            until SalesInvoiceLine.Next() = 0;
+            until SalesLine.Next() = 0;
 
         for i := 1 to GroupKeys.Count() do
             if EmitMovementRowsForItemGroup(
@@ -764,91 +757,93 @@ report 60004 "Posted Rental Invoice"
         TempMovementLineCount += 1;
     end;
 
-    local procedure MakeItemGroupKey(SalesInvoiceLine: Record "Sales Invoice Line"): Text
+    local procedure MakeItemGroupKey(SalesLine: Record "Sales Line"): Text
     begin
-        exit(SalesInvoiceLine."EQM Rental No." + '|' +
-             Format(SalesInvoiceLine."Unit Price", 0, 9) + '|' +
-             Format(SalesInvoiceLine."Line Discount %", 0, 9));
+        exit(SalesLine."EQM Rental No." + '|' +
+             Format(SalesLine."Unit Price", 0, 9) + '|' +
+             Format(SalesLine."Line Discount %", 0, 9));
     end;
 
     local procedure AddDirectInvoiceDisplayLines(var NextLineNumber: Integer; MovementDisplayLinesAdded: Boolean)
     var
-        SalesInvoiceLine: Record "Sales Invoice Line";
+        SalesLine: Record "Sales Line";
     begin
-        SalesInvoiceLine.SetRange("Document No.", SalesInvoiceHeader."No.");
-        SalesInvoiceLine.SetFilter("Sell-to Customer No.", '<>%1', '');
-        SalesInvoiceLine.SetFilter(Type, '<>%1', SalesInvoiceLine.Type::" ");
-        SalesInvoiceLine.SetRange("EQM Hide Line", false);
-        if SalesInvoiceLine.FindSet() then
+        SalesLine.SetRange("Document Type", SalesLine."Document Type"::Invoice);
+        SalesLine.SetRange("Document No.", SalesHeader."No.");
+        SalesLine.SetFilter("Sell-to Customer No.", '<>%1', '');
+        SalesLine.SetFilter(Type, '<>%1', SalesLine.Type::" ");
+        SalesLine.SetRange("EQM Hide Line", false);
+        if SalesLine.FindSet() then
             repeat
-                if ShouldAddDirectInvoiceDisplayLine(SalesInvoiceLine, MovementDisplayLinesAdded) then
-                    InsertDirectInvoiceDisplayLine(SalesInvoiceLine, NextLineNumber);
-            until SalesInvoiceLine.Next() = 0;
+                if ShouldAddDirectInvoiceDisplayLine(SalesLine, MovementDisplayLinesAdded) then
+                    InsertDirectInvoiceDisplayLine(SalesLine, NextLineNumber);
+            until SalesLine.Next() = 0;
     end;
 
-    local procedure ShouldAddDirectInvoiceDisplayLine(SalesInvoiceLine: Record "Sales Invoice Line"; MovementDisplayLinesAdded: Boolean): Boolean
+    local procedure ShouldAddDirectInvoiceDisplayLine(SalesLine: Record "Sales Line"; MovementDisplayLinesAdded: Boolean): Boolean
     begin
-        if IsRentalMovementInvoiceLine(SalesInvoiceLine) then
+        if IsRentalMovementInvoiceLine(SalesLine) then
             exit(false);
 
-        if MovementDisplayLinesAdded and IsSalesInvoiceLineRepresentedByMovement(SalesInvoiceLine) then
+        if MovementDisplayLinesAdded and IsSalesInvoiceLineRepresentedByMovement(SalesLine) then
             exit(false);
 
         exit(true);
     end;
 
-    local procedure InsertDirectInvoiceDisplayLine(SalesInvoiceLine: Record "Sales Invoice Line"; var NextLineNumber: Integer)
+    local procedure InsertDirectInvoiceDisplayLine(SalesLine: Record "Sales Line"; var NextLineNumber: Integer)
     begin
         NextLineNumber += 1;
         TempMovementLine.Init();
         TempMovementLine."Line No." := NextLineNumber;
-        TempMovementLine.Description := SalesInvoiceLine.Description;
-        TempMovementLine.AantalInHuur := SalesInvoiceLine.Quantity;
+        TempMovementLine.Description := SalesLine.Description;
+        TempMovementLine.AantalInHuur := SalesLine.Quantity;
         TempMovementLine.HuurDagen := 0;
-        TempMovementLine.PrijsPerDag := SalesInvoiceLine."Unit Price";
-        TempMovementLine.Bedrag := SalesInvoiceLine."Line Amount";
+        TempMovementLine.PrijsPerDag := SalesLine."Unit Price";
+        TempMovementLine.Bedrag := SalesLine."Line Amount";
         TempMovementLine.Mutatie := 0;
         TempMovementLine.IsReturnLine := false;
-        TempMovementLine.RentalNo := SalesInvoiceLine."EQM Contract No.";
+        TempMovementLine.RentalNo := SalesLine."EQM Contract No.";
         TempMovementLine.SortOrder := 9;
         TempMovementLine.SortDate := 0D;
-        TempMovementLine.ExtLineNo := SalesInvoiceLine."EQM Rental Line No.";
-        TempMovementLine.KortingPct := SalesInvoiceLine."Line Discount %";
+        TempMovementLine.ExtLineNo := SalesLine."EQM Rental Line No.";
+        TempMovementLine.KortingPct := SalesLine."Line Discount %";
         TempMovementLine.Insert();
         TempMovementLineCount += 1;
     end;
 
-    local procedure IsRentalMovementInvoiceLine(SalesInvoiceLine: Record "Sales Invoice Line"): Boolean
+    local procedure IsRentalMovementInvoiceLine(SalesLine: Record "Sales Line"): Boolean
     begin
         exit(
-            (not SalesInvoiceLine."EQM Rental Sale") and
-            (SalesInvoiceLine."EQM Rental No." <> ''));
+            (not SalesLine."EQM Rental Sale") and
+            (SalesLine."EQM Rental No." <> ''));
     end;
 
-    local procedure IsSalesInvoiceLineRepresentedByMovement(SalesInvoiceLine: Record "Sales Invoice Line"): Boolean
+    local procedure IsSalesInvoiceLineRepresentedByMovement(SalesLine: Record "Sales Line"): Boolean
     begin
         exit(
-            (SalesInvoiceLine."Sell-to Customer No." <> '') and
-            (not SalesInvoiceLine."EQM Rental Sale") and
-            (not SalesInvoiceLine."EQM Hide Line") and
-            (SalesInvoiceLine."EQM Rental" or
-             (SalesInvoiceLine."EQM Rental No." <> '') or
-             (SalesInvoiceLine."EQM Rental Quantity" <> 0) or
-             (SalesInvoiceLine."EQM Rental From Date" <> 0D) or
-             (SalesInvoiceLine."EQM Rental To Date" <> 0D)));
+            (SalesLine."Sell-to Customer No." <> '') and
+            (not SalesLine."EQM Rental Sale") and
+            (not SalesLine."EQM Hide Line") and
+            (SalesLine."EQM Rental" or
+             (SalesLine."EQM Rental No." <> '') or
+             (SalesLine."EQM Rental Quantity" <> 0) or
+             (SalesLine."EQM Rental From Date" <> 0D) or
+             (SalesLine."EQM Rental To Date" <> 0D)));
     end;
 
-    local procedure ApplyRentalMovementLineFilters(var SalesInvoiceLine: Record "Sales Invoice Line")
+    local procedure ApplyRentalMovementLineFilters(var SalesLine: Record "Sales Line")
     begin
-        SalesInvoiceLine.SetRange("Document No.", SalesInvoiceHeader."No.");
-        SalesInvoiceLine.SetFilter("Sell-to Customer No.", '<>%1', '');
-        SalesInvoiceLine.SetRange("EQM Rental Sale", false);
-        SalesInvoiceLine.SetRange("EQM Hide Line", false);
+        SalesLine.SetRange("Document Type", SalesLine."Document Type"::Invoice);
+        SalesLine.SetRange("Document No.", SalesHeader."No.");
+        SalesLine.SetFilter("Sell-to Customer No.", '<>%1', '');
+        SalesLine.SetRange("EQM Rental Sale", false);
+        SalesLine.SetRange("EQM Hide Line", false);
     end;
 
     local procedure BuildInVerhuurText()
     var
-        SalesInvLine: Record "Sales Invoice Line";
+        SalesLine: Record "Sales Line";
         RentalLine: Record "EQM Rental Line";
         RentalReturnEntry: Record "EQM Rental Return Entry";
         TypeHelper: Codeunit "Type Helper";
@@ -871,20 +866,21 @@ report 60004 "Posted Rental Invoice"
         if RentalToDate = 0D then
             exit;
 
-        SalesInvLine.SetRange("Document No.", SalesInvoiceHeader."No.");
-        SalesInvLine.SetFilter("EQM Contract No.", '<>%1', '');
-        SalesInvLine.SetFilter("EQM Rental Line No.", '<>%1', 0);
-        if SalesInvLine.FindSet() then
+        SalesLine.SetRange("Document Type", SalesLine."Document Type"::Invoice);
+        SalesLine.SetRange("Document No.", SalesHeader."No.");
+        SalesLine.SetFilter("EQM Contract No.", '<>%1', '');
+        SalesLine.SetFilter("EQM Rental Line No.", '<>%1', 0);
+        if SalesLine.FindSet() then
             repeat
-                LineKey := SalesInvLine."EQM Contract No." + '|' + Format(SalesInvLine."EQM Rental Line No.");
+                LineKey := SalesLine."EQM Contract No." + '|' + Format(SalesLine."EQM Rental Line No.");
                 if not ProcessedLines.Contains(LineKey) then begin
                     ProcessedLines.Add(LineKey);
 
-                    if RentalLine.Get(RentalLine."Contract Type"::Contract, SalesInvLine."EQM Contract No.", SalesInvLine."EQM Rental Line No.") then
+                    if RentalLine.Get(RentalLine."Contract Type"::Contract, SalesLine."EQM Contract No.", SalesLine."EQM Rental Line No.") then
                         if (not RentalLine."Non-Billable") and (not RentalLine."Rental Sale") then begin
                             RentalReturnEntry.Reset();
-                            RentalReturnEntry.SetRange("Contract No.", SalesInvLine."EQM Contract No.");
-                            RentalReturnEntry.SetRange("Ext. Rental Line No.", SalesInvLine."EQM Rental Line No.");
+                            RentalReturnEntry.SetRange("Contract No.", SalesLine."EQM Contract No.");
+                            RentalReturnEntry.SetRange("Ext. Rental Line No.", SalesLine."EQM Rental Line No.");
                             RentalReturnEntry.SetRange("Entry Type", RentalReturnEntry."Entry Type"::Shipment);
                             RentalReturnEntry.SetRange("Undo Entry", false);
                             RentalReturnEntry.SetRange("Fully Consumed Accessory", false);
@@ -893,8 +889,8 @@ report 60004 "Posted Rental Invoice"
                             NetQuantity := RentalReturnEntry.Quantity;
 
                             RentalReturnEntry.Reset();
-                            RentalReturnEntry.SetRange("Contract No.", SalesInvLine."EQM Contract No.");
-                            RentalReturnEntry.SetRange("Ext. Rental Line No.", SalesInvLine."EQM Rental Line No.");
+                            RentalReturnEntry.SetRange("Contract No.", SalesLine."EQM Contract No.");
+                            RentalReturnEntry.SetRange("Ext. Rental Line No.", SalesLine."EQM Rental Line No.");
                             RentalReturnEntry.SetRange("Entry Type", RentalReturnEntry."Entry Type"::Return);
                             RentalReturnEntry.SetRange("Undo Entry", false);
                             RentalReturnEntry.SetRange("Fully Consumed Accessory", false);
@@ -915,7 +911,7 @@ report 60004 "Posted Rental Invoice"
                             end;
                         end;
                 end;
-            until SalesInvLine.Next() = 0;
+            until SalesLine.Next() = 0;
 
         ItemKeys := ItemQuantities.Keys();
         for i := 1 to ItemKeys.Count() - 1 do
@@ -933,13 +929,6 @@ report 60004 "Posted Rental Invoice"
         end;
 
         if InVerhuurQtyText <> '' then
-            InVerhuurHdrText := Format(RentalToDate + 1, 0, '<Day,2>-<Month,2>-<Year>');
-    end;
-
-    procedure IsReportInPreviewMode(): Boolean
-    var
-        MailManagement: Codeunit "Mail Management";
-    begin
-        exit(CurrReport.Preview() or MailManagement.IsHandlingGetEmailBody());
+            InVerhuurHdrText := InverhuurperLbl + Format(RentalToDate + 1, 0, '<Day,2>-<Month,2>-<Year>') + ' :';
     end;
 }
