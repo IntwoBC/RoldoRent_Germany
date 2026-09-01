@@ -792,7 +792,13 @@ Report 60011 "I2I Pro Forma Invoice"
     end;
 
     local procedure InsertDirectInvoiceDisplayLine(SalesLine: Record "Sales Line"; var NextLineNumber: Integer)
+    var
+        ReceiptNo: Code[35];
+        ReceiptDate: Text[100];
     begin
+        Clear(ReceiptNo);
+        Clear(ReceiptDate);
+
         NextLineNumber += 1;
         TempMovementLine.Init();
         TempMovementLine."Line No." := NextLineNumber;
@@ -808,8 +814,36 @@ Report 60011 "I2I Pro Forma Invoice"
         TempMovementLine.SortDate := 0D;
         TempMovementLine.ExtLineNo := SalesLine."EQM Rental Line No.";
         TempMovementLine.KortingPct := SalesLine."Line Discount %";
+        if (SalesLine.Type = SalesLine.Type::Item) and SalesLine."EQM Rental Sale" then begin
+            GetRentalSaleReceiptInfo(SalesLine, ReceiptNo, ReceiptDate);
+            TempMovementLine.BonnrHuur := ReceiptNo;
+            if ReceiptDate <> '' then begin
+                TempMovementLine.DatumHuur := Format(ReceiptDate, 0, '<Day,2>-<Month,2>-<Year>');
+                Evaluate(TempMovementLine.SortDate, ReceiptDate);
+            end;
+        end;
         TempMovementLine.Insert();
         TempMovementLineCount += 1;
+    end;
+
+    local procedure GetRentalSaleReceiptInfo(SalesLine: Record "Sales Line"; var ReceiptNo: Code[35]; var ReceiptDate: Text[100])
+    var
+        RentalReturnEntry: Record "EQM Rental Return Entry";
+    begin
+        Clear(ReceiptNo);
+        Clear(ReceiptDate);
+
+        if (SalesLine."EQM Contract No." = '') or (SalesLine."EQM Rental Line No." = 0) then
+            exit;
+
+        RentalReturnEntry.SetRange("Contract No.", SalesLine."EQM Contract No.");
+        RentalReturnEntry.SetRange("Ext. Rental Line No.", SalesLine."EQM Rental Line No.");
+        RentalReturnEntry.SetRange("Undo Entry", false);
+        //RentalReturnEntry.SetRange("Entry Type", RentalReturnEntry."Entry Type"::"On-Rent");
+        if RentalReturnEntry.FindLast() then begin
+            ReceiptNo := RentalReturnEntry."I2I External Document No.";
+            ReceiptDate := Format(RentalReturnEntry."On-Rent Date", 0, '<Day,2>-<Month,2>-<Year>');
+        end;
     end;
 
     local procedure IsRentalMovementInvoiceLine(SalesLine: Record "Sales Line"): Boolean
